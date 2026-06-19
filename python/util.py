@@ -60,8 +60,9 @@ def window_index(t, train_obs, rolling):
 def rolling_oos_forecast(y, X, train_obs, rolling):
     """OLS y ~ const + X, re-estimated each step (sklearn LinearRegression).
 
-    X is n x k (k may be 0 -> benchmark only). A step is used only if the
-    whole training window and the next test row have complete data.
+    X is n x k (k may be 0 -> benchmark only).  Mirrors MATLAB: NaN rows are
+    stripped upfront (per-predictor) so that expanding windows start from the
+    first complete observation, not from index 0.
     Returns (yhat, yhat_bm), both length n with NaN where not forecast.
     """
     n = len(y)
@@ -69,27 +70,31 @@ def rolling_oos_forecast(y, X, train_obs, rolling):
     yhat_bm = np.full(n, np.nan)
     k = 0 if X is None else X.shape[1]
 
-    for t in range(train_obs - 1, n - 1):
+    # Build complete-case mask (mirrors MATLAB's per-predictor NaN removal).
+    if k == 0:
+        ok = ~np.isnan(y)
+    else:
+        ok = ~(np.isnan(y) | np.isnan(X).any(axis=1))
+    orig_idx = np.where(ok)[0]          # original positions of compact rows
+    yc = y[ok]
+    Xc = X[ok, :] if k > 0 else None
+    nc = len(yc)
+
+    for t in range(train_obs - 1, nc - 1):
         idx = window_index(t, train_obs, rolling)
         i_out = t + 1
 
-        yin = y[idx]
-        if np.isnan(yin).any() or np.isnan(y[i_out]):
-            continue
-
+        yin = yc[idx]
         if k == 0:
-            yhat[i_out] = yin.mean()
-            yhat_bm[i_out] = yin.mean()
+            yhat[orig_idx[i_out]] = yin.mean()
+            yhat_bm[orig_idx[i_out]] = yin.mean()
             continue
 
-        Xin = X[idx, :]
-        xout = X[i_out, :]
-        if np.isnan(Xin).any() or np.isnan(xout).any():
-            continue
-
+        Xin = Xc[idx, :]
+        xout = Xc[i_out, :]
         model = LinearRegression().fit(Xin, yin)
-        yhat[i_out] = model.predict(xout.reshape(1, -1))[0]
-        yhat_bm[i_out] = yin.mean()
+        yhat[orig_idx[i_out]] = model.predict(xout.reshape(1, -1))[0]
+        yhat_bm[orig_idx[i_out]] = yin.mean()
 
     return yhat, yhat_bm
 

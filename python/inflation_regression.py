@@ -24,9 +24,11 @@ import util
 CSV_PATH = "./DATA/Liedtke/US/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE = "single"  # 'single' or 'full'
-ROLLING = True  # True = rolling window, False = expanding
-TRAIN_OBS = 120  # in-sample window length
+MODE = "full"  # 'single' or 'full'
+# single mode: MATLAB bKap3_4 uses rolling=True, iNumIn=240 (trains on 239 obs)
+# full mode  : MATLAB bKap3_6 uses rolling=False (expanding), iNumIn=240
+ROLLING = True   # True = rolling (single/all), False = expanding (kitchen-sink)
+TRAIN_OBS = 239  # matches MATLAB: rolling window is (t-iNumIn+1):(t-1) = iNumIn-1 obs
 TIME_LAG = 1  # predictor lag (1 = standard predictive regression)
 
 # Single mode only: if True, evaluate every predictor on the SAME sample (rows
