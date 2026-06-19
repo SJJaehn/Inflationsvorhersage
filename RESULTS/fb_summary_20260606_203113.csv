@@ -1,0 +1,23 @@
+Key,Value
+Metric,R2OOS
+WindowType,rolling
+TrainObs,60
+TimeLag,0
+NumSelected,2
+SelectedPredictors,CPI_pct1_lag1; Housing_pct1_lag1
+OOS_Beg,1964-03-01
+OOS_End,2025-09-01
+Num_OOS_Obs,739
+R2_OOS,0.250278
+R2_OOS_CT,0.243332
+CW_stat,7.0153
+CW_p,0.0000
+DM_stat,4.7572
+DM_p,0.0000
+RMSE,0.002469
+MAE,0.001730
+Cor,0.629245
+HitRate,0.895805
+R2_MZ,0.395950
+F_MZ,483.0970
+p_MZ,0.0000

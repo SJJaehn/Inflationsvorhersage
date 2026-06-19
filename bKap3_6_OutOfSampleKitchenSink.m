@@ -1,0 +1,132 @@
+% Script for performing the out-of-sample regressions in GWZ. This script
+% requires all observations for all predictors to be available
+
+% Clear console
+clear; clc; close all;
+
+% Clear console
+clear; clc; close all;
+
+% Set paths
+sOldPath = path;
+addpath('./Utils/');
+sDataPath = './DATA/Liedtke/US/';
+sResultsPath = './RESULTS/GWZ/';
+
+%% Load data
+% Macro panel produced by DATA/Liedtke/aggregate.py.
+% CSV layout: col 1 = observation_date, col 2 = target (inflation),
+%             col 3..end = predictors (already lag-aligned in Python).
+tData     = readtable([sDataPath, 'aggregated.csv']);
+cAllNames = tData.Properties.VariableNames;
+
+% Parse dates (first column)
+dtDates = tData{:,1};
+if ~isdatetime(dtDates)
+    dtDates = datetime(dtDates);
+end
+
+% Target (col 2) and predictors (col 3..end)
+mX       = tData{:,3:end};          % predictors
+vY       = tData{:,2};              % inflation target
+cXnamesM = cAllNames(3:end)';       % predictor names as an Nx1 cell
+
+%% Data preprocessing
+% Predictive lag (periods). The predictors are already reporting-lag aligned
+% in Python; this is the additional one-period predictive lag.
+iTimeLag = 1;
+
+% Determine dimensions
+[iNumObs, iNumAssets]       = size(vY);
+[iNumObsP, iNumPredictors]  = size(mX);
+
+% Lag the predictors so that they are known one period ahead of the target
+mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
+
+%% Settings
+iNumIn = 240;                       % Number of in-sample periods (10 years)
+iNumOut = 1;                        % Number of forecasting periods 
+lRoll = false;                      % Rolling time window
+
+%% Out-of-sample analysis
+% Get data
+mXtemp      = mXlag;
+vYtemp      = vY;
+dtDateTemp  = dtDates;
+
+% Remove missing values
+lIsNaN = isnan(vYtemp) | any(isnan(mXtemp),2);
+vYtemp(lIsNaN)      = [];
+mXtemp(lIsNaN,:)    = [];
+dtDateTemp(lIsNaN)  = [];
+
+% Number of out-of-sample observations
+iNumObsTemp = size(vYtemp,1);
+
+% Initialize memory
+vYhatTemp   = NaN(iNumObsTemp,1);
+vYrollTemp  = NaN(iNumObsTemp,1);
+
+% Loop over time
+for iIdxT = iNumIn:iNumObsTemp
+    % Get time indices
+    if lRoll
+        vIdxInSample = (iIdxT-iNumIn+1):(iIdxT-1);
+    else
+        vIdxInSample = 1:(iIdxT-1);
+    end
+
+    % Get data
+    mXin    = mXtemp(vIdxInSample,:);       % t-1
+    vXout   = mXtemp(iIdxT,:);              % t-1
+    vYin    = vYtemp(vIdxInSample,:);       % t
+
+    % Regress only if all observations are available
+    if any(isnan(mXin),'all')
+        continue
+    end
+
+    % % Filter out correlated predictors
+    % [mXin, vIncludeX]   = fFilterMulticolinearity(mXin);
+    % vXout               = vXout(vIncludeX);
+
+    % Add constant
+    mXin    = [ones(size(mXin,1),1), mXin];
+    vXout   = [ones(size(vXout,1),1), vXout];
+
+    % Regression
+    vBetaTemp = mXin\vYin;
+
+    % Prediction
+    vYhatTemp(iIdxT) = vXout * vBetaTemp;
+
+    % Rolling mean prediction
+    vYrollTemp(iIdxT) = mean(vYin);
+end   
+
+% Add missing values
+mYhat  = [NaN(sum(lIsNaN),1); vYhatTemp];
+mYroll = [NaN(sum(lIsNaN),1); vYrollTemp];
+
+% Evaluate quality
+[rStatsOOS] = fEvaluatePerformanceOOS(vY,mYroll,mYhat);
+
+% === Create table
+% Merge all results and round to two digits
+mResults = round([rStatsOOS.vR2OOS * 100; ...
+    rStatsOOS.vCWp * 100; ...
+    rStatsOOS.vR2OOSCT * 100;...
+    rStatsOOS.vCWp_CT * 100],2);
+
+% Make to cell
+cTable_OOS = sprintfc('%.2f', mResults');
+
+% Add column header
+cTable_OOS = [{'OOS R2', 'CW (p)', 'OOS R2 CT', 'CW (p) CT'}; cTable_OOS];
+
+% === Save results
+sFilename = [sResultsPath,'OutOfSampleKitchenSinkResults.mat'];
+save(sFilename, "cTable_OOS", 'mYhat','mYroll','rStatsOOS');
+
+% Restore path
+path(sOldPath);

@@ -1,0 +1,24 @@
+Key,Value
+WindowType,rolling
+TrainObs,60
+TimeLag,1
+NumPredictors,11
+Predictors,CPI_pct12_lag1; CapcacityUtilization_pct1_lag1; CoreCPI_pct12_lag1; DXY_Datastream_pct1; FedFundsRate_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_pct1_lag1
+OOS_Beg,1987-03-01
+OOS_End,2025-04-01
+Num_OOS_Obs,457
+R2_OOS,-0.11333153016810638
+R2_OOS_CT,0.020357306551358922
+CW_stat,
+CW_p,
+CW_stat_CT,5.254524060409073
+CW_p_CT,1.1415769685108046e-07
+DM_stat,-0.792957885312884
+DM_p,0.42821473378168673
+RMSE,0.01587633593165688
+MAE,0.010803967766325225
+Cor,0.49232621034071317
+HitRate,0.962800875273523
+R2_MZ,0.2423850973884482
+F_MZ,145.56896773226484
+p_MZ,2.831764188114996e-29

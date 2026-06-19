@@ -1,0 +1,4 @@
+Step,Action,Predictor,Metric
+1,ADD,DXY_pct1,0.021636876513254
+2,ADD,CPI_pct1_lag1,0.0391630325947699
+3,ADD,M2MoneySupply_pct1_lag1,0.0999769419421526

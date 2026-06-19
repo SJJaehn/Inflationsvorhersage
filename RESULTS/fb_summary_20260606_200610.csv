@@ -1,0 +1,23 @@
+Key,Value
+Metric,R2OOS
+WindowType,rolling
+TrainObs,60
+TimeLag,0
+NumSelected,3
+SelectedPredictors,CapcacityUtilization; CoreCPI; DXY
+OOS_Beg,2011-01-01
+OOS_End,2025-10-01
+Num_OOS_Obs,178
+R2_OOS,0.994704
+R2_OOS_CT,0.994704
+CW_stat,11.3895
+CW_p,0.0000
+DM_stat,11.5564
+DM_p,0.0000
+RMSE,1.368328
+MAE,1.026343
+Cor,0.999070
+HitRate,1.000000
+R2_MZ,0.998140
+F_MZ,94449.9381
+p_MZ,0.0000

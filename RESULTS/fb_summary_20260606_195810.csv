@@ -1,0 +1,23 @@
+Key,Value
+Metric,R2OOS
+WindowType,rolling
+TrainObs,60
+TimeLag,1
+NumSelected,7
+SelectedPredictors,CapcacityUtilization; CoreCPI; DXY; FedFundsRate; M2MoneySupply; T10Y3M; TradeSales
+OOS_Beg,2011-02-01
+OOS_End,2025-10-01
+Num_OOS_Obs,177
+R2_OOS,0.996027
+R2_OOS_CT,0.996027
+CW_stat,11.4210
+CW_p,0.0000
+DM_stat,11.5314
+DM_p,0.0000
+RMSE,1.187599
+MAE,0.894100
+Cor,0.999279
+HitRate,1.000000
+R2_MZ,0.998559
+F_MZ,121282.4069
+p_MZ,0.0000

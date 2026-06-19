@@ -1,0 +1,23 @@
+Key,Value
+WindowType,rolling
+TrainObs,60
+ReportLag,1
+Lookback,optimal[1  2  3  4  5  6]
+OOS_Beg,2010-03-01
+OOS_End,2024-12-01
+Num_OOS_Obs,178
+R2_OOS,0.040874
+R2_OOS_CT,0.041786
+CW_stat,2.3117
+CW_p,0.0110
+CW_stat_CT,2.3672
+CW_p_CT,0.0094
+DM_stat,0.8069
+DM_p,0.4208
+RMSE,0.002255
+MAE,0.001766
+Cor,0.188716
+HitRate,0.758427
+R2_MZ,0.035614
+F_MZ,6.4995
+p_MZ,0.0116
