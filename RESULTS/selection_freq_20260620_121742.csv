@@ -1,0 +1,12 @@
+Predictor,TimesSelected,FracOrigins
+DXY_Datastream_pct1,261,0.9190140845070423
+T10Y3M_diff1,102,0.3591549295774648
+FedFundsRate_diff1,100,0.352112676056338
+Payroll_pct1_lag1,66,0.2323943661971831
+Unemployment_diff1_lag1,62,0.21830985915492956
+TradeSales_pct1_lag2,44,0.15492957746478872
+CoreCPI_pct1_lag1,41,0.1443661971830986
+CPI_pct1_lag1,8,0.028169014084507043
+CapacityUtilization_diff1_lag1,6,0.02112676056338028
+Housing_pct1_lag1,6,0.02112676056338028
+M2MoneySupply_pct1_lag1,0,0.0

@@ -84,30 +84,30 @@ for iIdxT = iNumIn : iNumObs-1
     end
     vYhatBM(iIdxOut) = mean(vYin, 'omitnan');
 
-    % Recent target tail that the AR lags will read. It must be present and
-    % contiguous so fPredictVAR's end-relative indexing stays calendar-correct.
-    vTailIdx = (iIdxT - iReportLag - iNumLags + 1) : iIdxT;
-    lTailOK  = all(vTailIdx >= 1) && ~any(isnan(vY(vTailIdx)));
+    % AR lag regressors taken from the FULL series (mYlag, computed above) and
+    % passed as EXOGENOUS regressors with iNumLags = 0. Using the full series
+    % means the first r+p rows of each window keep their valid lags instead of
+    % being discarded by fEstVAR's within-window lagging, so the whole window
+    % length is used. With iNumLags = 0 fPredictVAR no longer reads the in-sample
+    % tail, so a forecast is made whenever the next-step regressor row exists.
+    mYlagIn  = mYlag(vIdxIn, :);
+    vYlagOut = mYlag(iIdxOut, :);
 
     % --- AR model (target lags only) -----------------------------------
-    if lTailOK
-        rAR     = fEstVAR(vYin, [], 'iNumLags', iNumLags, ...
-            'iReportLag', iReportLag, 'lEstAlpha', true);
-        mYhatAR = fPredictVAR(rAR, 1, []);
+    if ~any(isnan(vYlagOut))
+        rAR     = fEstVAR(vYin, mYlagIn, 'iNumLags', 0, 'lEstAlpha', true);
+        mYhatAR = fPredictVAR(rAR, 1, vYlagOut);
         vYhatAR(iIdxOut) = mYhatAR(1);
     end
 
     % --- VARX model (AR lags + exogenous predictors) -------------------
-    vXout    = mX(iIdxOut, :);
-    mXin     = mX(vIdxIn, :);
-    lComplX  = ~isnan(vYin) & ~any(isnan(mXin), 2);
-    % Need: a complete next-step predictor row, a complete recent tail (so the
-    % complete-case target series ends at iIdxT), and enough complete rows.
-    if lTailOK && ~any(isnan(vXout)) && ~any(isnan(mX(vTailIdx, :)), 'all') ...
-            && sum(lComplX) >= iMinCompleteX
-        rVARX     = fEstVAR(vYin, mXin, 'iNumLags', iNumLags, ...
-            'iReportLag', iReportLag, 'lEstAlpha', true);
-        mYhatVARX = fPredictVAR(rVARX, 1, vXout);
+    mZin    = [mYlagIn,  mX(vIdxIn, :)];
+    vZout   = [vYlagOut, mX(iIdxOut, :)];
+    lComplZ = ~isnan(vYin) & ~any(isnan(mZin), 2);
+    % Need a complete next-step regressor row and enough complete in-sample rows.
+    if ~any(isnan(vZout)) && sum(lComplZ) >= iMinCompleteX
+        rVARX     = fEstVAR(vYin, mZin, 'iNumLags', 0, 'lEstAlpha', true);
+        mYhatVARX = fPredictVAR(rVARX, 1, vZout);
         vYhatVARX(iIdxOut) = mYhatVARX(1);
     end
 end

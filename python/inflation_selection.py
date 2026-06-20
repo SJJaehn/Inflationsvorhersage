@@ -35,7 +35,7 @@ OUTPUT_DIR = "./RESULTS/"
 ROLLING    = True
 TRAIN_OBS  = 60
 TIME_LAG   = 1
-N_SPLITS   = 3            # TimeSeriesSplit folds (holdout metrics only)
+N_SPLITS   = 2            # TimeSeriesSplit folds (holdout metrics only)
 
 # 'R2OOS','RMSE','MAE','Cor','HitRate'  -> scored by TimeSeriesSplit CV
 # 'AIC','BIC'                            -> scored in-sample on the full window
@@ -183,7 +183,7 @@ beg = dates[valid].iloc[0].strftime("%Y-%m-%d") if valid.any() else ""
 end = dates[valid].iloc[-1].strftime("%Y-%m-%d") if valid.any() else ""
 
 print("\n========== Final OOS metrics ==========")
-print(f"  OOS R2     : {oos['R2OOS']:.6f}   OOS R2-CT: {oos['R2OOS_CT']:.6f}")
+print(f"  OOS R2     : {oos['R2OOS']:.6f}")
 print(f"  CW  / p    : {oos['CW']:.4f} / {oos['CWp']:.4f}")
 print(f"  DM  / p    : {oos['DM']:.4f} / {oos['DMp']:.4f}")
 print(f"  RMSE / MAE : {fq['RMSE']:.6f} / {fq['MAE']:.6f}")
@@ -215,11 +215,11 @@ summary = {
     "TrainObs": TRAIN_OBS, "CV_Splits": N_SPLITS, "TimeLag": TIME_LAG,
     "Num_OOS_Obs": int(valid.sum()), "Avg_NumSelected": float(np.nanmean(num_sel)),
     "OOS_Beg": beg, "OOS_End": end,
-    "R2_OOS": oos["R2OOS"], "R2_OOS_CT": oos["R2OOS_CT"],
+    "R2_OOS": oos["R2OOS"],
     "CW_stat": oos["CW"], "CW_p": oos["CWp"],
-    "CW_stat_CT": oos["CW_CT"], "CW_p_CT": oos["CWp_CT"],
     "DM_stat": oos["DM"], "DM_p": oos["DMp"],
     "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
+    "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
 }
 sum_path, _ = util.save_summary(OUTPUT_DIR, "selection", summary)
 print(f"\nResults saved to {OUTPUT_DIR} (selection_predictions / selection_freq / {os.path.basename(sum_path)})")

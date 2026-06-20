@@ -44,7 +44,7 @@ iTimeLag = 1;
 mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 
 %% Settings
-iNumIn = 240;                       % Number of in-sample periods (10 years)
+iNumIn = 60;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
 lRoll = true;                      % Rolling time window
 
@@ -104,9 +104,15 @@ for iIdxT = iNumIn:iNumObsTemp
     vYrollTemp(iIdxT) = mean(vYin);
 end   
 
-% Add missing values
-mYhat  = [NaN(sum(lIsNaN),1); vYhatTemp];
-mYroll = [NaN(sum(lIsNaN),1); vYrollTemp];
+% Write forecasts back to their ORIGINAL calendar positions. The removed rows
+% are scattered through the sample (a late start, a mid-series gap and trailing
+% NaNs), not all at the front, so the compacted forecasts must be re-inserted by
+% logical index. (Prepending sum(lIsNaN) NaNs would misalign every forecast with
+% the actual series whenever a missing row sits anywhere but the start.)
+mYhat  = NaN(iNumObs, 1);
+mYroll = NaN(iNumObs, 1);
+mYhat(~lIsNaN)  = vYhatTemp;
+mYroll(~lIsNaN) = vYrollTemp;
 
 % Evaluate quality
 [rStatsOOS] = fEvaluatePerformanceOOS(vY,mYroll,mYhat);

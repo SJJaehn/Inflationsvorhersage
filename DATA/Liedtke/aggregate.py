@@ -3,20 +3,21 @@
 
 Layout
 ------
-``variables.csv`` (the shared series spec) and this script live in this folder.
-The actual data CSVs live in one subfolder per country, e.g. ``US/CPI.csv``.
-Running the script applies ``variables.csv`` to every country subfolder and
-writes the combined result back into that same subfolder as ``aggregated.csv``
-(e.g. ``US/aggregated.csv``).
+Each country subfolder (e.g. ``US/``, ``UK/``) holds both the data CSVs and
+its own ``variables.csv`` (the series spec for that country).  Set ``COUNTRY``
+near the top of this file to choose which country to aggregate.
 
 Rules
 -----
 * Every input CSV has two columns: an observation date and a value.
 * The output is monthly. Each series is resampled to a monthly grid depending
   on its native frequency:
-    - monthly            -> taken as-is
-    - daily (or weekly)  -> last reported value of each month
-    - quarterly / yearly -> forward filled until a new value is reported
+    - daily (or weekly)  -> last reported value of each month, no fill
+    - monthly            -> taken as-is, no fill
+    - quarterly          -> forward filled for up to 2 months after each value
+                           (so each reported value covers exactly 3 months)
+    - yearly             -> forward filled for up to 11 months after each value
+                           (so each reported value covers exactly 12 months)
 * A per-series reporting lag (in months) is read from ``variables.csv`` and
   applied by shifting the series forward in time. A lag of 2 means the value
   observed for April is reported in (appears at) June.
@@ -28,7 +29,7 @@ Rules
 
 Files
 -----
-* ``variables.csv``  : the list of series to aggregate, one row each ->
+* ``<country>/variables.csv`` : the list of series to aggregate, one row each:
                          - csv        : input file name
                          - lag_months : reporting lag (see above)
                          - rescaleN / change_typeN : up to three change
@@ -53,8 +54,8 @@ Files
                        different settings (e.g. CPI with no lag as a target and
                        CPI with a lag as a predictor); each row becomes its own
                        output column.
-* ``<country>/``      : one subfolder per country holding that country's input
-                       CSVs (named exactly as in ``variables.csv``).
+* ``<country>/``      : the country subfolder holding both data CSVs and
+                       ``variables.csv``.
 * ``<country>/aggregated.csv`` : the combined monthly result for that country.
 """
 
@@ -67,8 +68,12 @@ import re
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-VARIABLES = os.path.join(HERE, "variables.csv")
 OUTPUT_NAME = "aggregated.csv"   # written into each country subfolder
+
+# ── Country selector ──────────────────────────────────────────────────────────
+# Set to "US" or "UK" to choose which country subfolder to aggregate.
+# variables.csv is read from that subfolder (e.g. US/variables.csv).
+COUNTRY = "US"
 
 # Row frequency of the output. "monthly" keeps every month; "quarterly" keeps
 # only the quarter-end months (Mar/Jun/Sep/Dec); "yearly" keeps only the
@@ -84,26 +89,27 @@ KEEP_MONTHS = {
 }
 
 
-def read_variables() -> list[dict]:
-    """Read variables.csv into an ordered list of row settings.
+def read_variables(country_dir: str) -> list[dict]:
+    """Read variables.csv from country_dir into an ordered list of row settings.
 
     Duplicate file names are allowed (each row is kept). Returns a list of
     {"name", "lag", "ops", "column"} dicts in file order, where ``ops`` is the
     ordered list of {"rescale", "change_type"} change operations to apply, and
     ``column`` is a unique name encoding the lag/op settings.
     """
-    if not os.path.exists(VARIABLES):
+    variables_path = os.path.join(country_dir, "variables.csv")
+    if not os.path.exists(variables_path):
         raise SystemExit(
-            f"{VARIABLES} not found. Create it with columns: "
+            f"{variables_path} not found. Create it with columns: "
             "csv,lag_months,rescale1,change_type1,rescale2,change_type2,rescale3,change_type3"
         )
 
     rows: list[dict] = []
-    with open(VARIABLES, newline="") as fh:
+    with open(variables_path, newline="") as fh:
         reader = csv.DictReader(fh)
         fieldnames = reader.fieldnames or []
         if not fieldnames:
-            raise SystemExit(f"{VARIABLES} has no header row.")
+            raise SystemExit(f"{variables_path} has no header row.")
         name_key = fieldnames[0]
 
         # Discover the rescale columns ("rescale", "rescale1", "rescale2", ...)
@@ -119,7 +125,7 @@ def read_variables() -> list[dict]:
             ck = rk.replace("rescale", "change_type", 1)
             op_keys.append((rk, ck))
         if not op_keys:
-            raise SystemExit(f"{VARIABLES} has no rescale/rescaleN column.")
+            raise SystemExit(f"{variables_path} has no rescale/rescaleN column.")
 
         for raw in reader:
             name = (raw.get(name_key) or "").strip()
@@ -168,15 +174,17 @@ def read_variables() -> list[dict]:
 
 
 def detect_frequency(dates: pd.Series) -> str:
-    """Classify a series as 'sub_monthly', 'monthly' or 'low' (quarterly+)."""
+    """Classify a series as 'sub_monthly', 'monthly', 'quarterly', or 'yearly'."""
     if len(dates) < 2:
         return "monthly"
     median_days = dates.sort_values().diff().dt.days.median()
     if median_days < 25:
-        return "sub_monthly"   # daily / weekly -> month-end last value
+        return "sub_monthly"   # daily / weekly -> last value per month, no fill
     if median_days < 45:
-        return "monthly"
-    return "low"               # quarterly / yearly -> forward fill
+        return "monthly"       # no fill
+    if median_days < 200:
+        return "quarterly"     # forward fill up to 2 months (3 months total)
+    return "yearly"            # forward fill up to 11 months (12 months total)
 
 
 def apply_change(monthly: pd.Series, rescale: int, change_type: str) -> pd.Series:
@@ -222,11 +230,14 @@ def to_monthly(column: str, path: str, lag: int, ops: list[dict]) -> pd.Series:
     # Put the series on a gap-free monthly grid so any later shifting and the
     # percentage change below count true calendar months, not just rows.
     full = pd.period_range(monthly.index.min(), monthly.index.max(), freq="M")
-    if freq == "low":
-        # Quarterly / yearly: forward fill so the last reported value carries
-        # forward until a new value is reported.
-        monthly = monthly.reindex(full).ffill()
+    if freq == "quarterly":
+        # Fill up to 2 months after each observation (3 months total per value).
+        monthly = monthly.reindex(full).ffill(limit=2)
+    elif freq == "yearly":
+        # Fill up to 11 months after each observation (12 months total per value).
+        monthly = monthly.reindex(full).ffill(limit=11)
     else:
+        # monthly / sub_monthly: no forward fill.
         monthly = monthly.reindex(full)
 
     # Apply each change operation in order; each one operates on the result of
@@ -261,18 +272,6 @@ def filter_frequency(combined: pd.DataFrame, keep_frequency: str) -> pd.DataFram
     return combined[combined.index.month.isin(months)]
 
 
-def list_countries() -> list[str]:
-    """Return the country subfolder names under HERE (each holds its own CSVs).
-
-    Hidden folders and ``__pycache__`` (anything starting with '.' or '_') are
-    skipped.
-    """
-    return sorted(
-        entry.name
-        for entry in os.scandir(HERE)
-        if entry.is_dir() and not entry.name.startswith((".", "_"))
-    )
-
 
 def aggregate_country(country_dir: str, rows: list[dict], keep_frequency: str) -> pd.DataFrame:
     """Build the combined monthly frame for one country subfolder."""
@@ -288,43 +287,38 @@ def aggregate_country(country_dir: str, rows: list[dict], keep_frequency: str) -
     return filter_frequency(combined, keep_frequency)
 
 
-def main(keep_frequency: str = KEEP_FREQUENCY) -> None:
-    rows = read_variables()
+def main(country: str = COUNTRY, keep_frequency: str = KEEP_FREQUENCY) -> None:
+    country_dir = os.path.join(HERE, country)
+    if not os.path.isdir(country_dir):
+        raise SystemExit(
+            f"Country subfolder not found: {country_dir}. "
+            f"Set COUNTRY to an existing subfolder (e.g. 'US' or 'UK')."
+        )
+
+    rows = read_variables(country_dir)
     if not rows:
-        print("No variables listed in variables.csv.")
+        print(f"No variables listed in {country}/variables.csv.")
         return
 
-    print("Variables read from variables.csv (lag / ops, in months):")
+    print(f"Country: {country}")
+    print(f"Variables read from {country}/variables.csv (lag / ops, in months):")
     for r in rows:
         ops_desc = " -> ".join(f"{op['change_type']}{op['rescale']}" for op in r["ops"]) or "none"
         print(f"  {r['column']}  <- {r['name']}  lag={r['lag']} ops=[{ops_desc}]")
 
-    countries = list_countries()
-    if not countries:
+    needed = [r["name"] for r in rows]
+    missing = sorted(n for n in needed if not os.path.exists(os.path.join(country_dir, n)))
+    if missing:
         raise SystemExit(
-            f"No country subfolders found in {HERE}. Create one (e.g. US/) and "
-            "put that country's data CSVs in it."
+            f"{country}/ is missing data file(s) listed in variables.csv: "
+            f"{', '.join(missing)}"
         )
 
-    needed = [r["name"] for r in rows]
-    for country in countries:
-        country_dir = os.path.join(HERE, country)
-        present = [n for n in needed if os.path.exists(os.path.join(country_dir, n))]
-        if not present:
-            print(f"\nSkipping {country}/ (no matching data CSVs).")
-            continue
-        missing = sorted(set(needed) - set(present))
-        if missing:
-            raise SystemExit(
-                f"{country}/ is missing data file(s) listed in variables.csv: "
-                f"{', '.join(missing)}"
-            )
-
-        combined = aggregate_country(country_dir, rows, keep_frequency)
-        out_path = os.path.join(country_dir, OUTPUT_NAME)
-        combined.to_csv(out_path, date_format="%Y-%m-%d")
-        print(f"\nWrote {out_path}: {combined.shape[0]} rows x {combined.shape[1]} "
-              f"series (keep_frequency={keep_frequency}).")
+    combined = aggregate_country(country_dir, rows, keep_frequency)
+    out_path = os.path.join(country_dir, OUTPUT_NAME)
+    combined.to_csv(out_path, date_format="%Y-%m-%d")
+    print(f"\nWrote {out_path}: {combined.shape[0]} rows x {combined.shape[1]} "
+          f"series (keep_frequency={keep_frequency}).")
 
 
 if __name__ == "__main__":
@@ -340,5 +334,10 @@ if __name__ == "__main__":
         help="Output row frequency: monthly (all months), quarterly "
              "(Mar/Jun/Sep/Dec) or yearly (Dec). Default: %(default)s.",
     )
+    parser.add_argument(
+        "--country",
+        default=COUNTRY,
+        help="Country subfolder to aggregate (e.g. US or UK). Default: %(default)s.",
+    )
     args = parser.parse_args()
-    main(keep_frequency=args.keep_frequency)
+    main(country=args.country, keep_frequency=args.keep_frequency)
