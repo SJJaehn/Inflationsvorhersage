@@ -29,11 +29,11 @@ import util
 # =========================================================================
 #  CONFIG — edit here
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING    = True
-TRAIN_OBS  = 60
+TRAIN_OBS  = 120
 TIME_LAG   = 1
 N_SPLITS   = 2            # TimeSeriesSplit folds (holdout metrics only)
 

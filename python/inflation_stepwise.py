@@ -25,7 +25,7 @@ CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING   = True
-TRAIN_OBS = 60
+TRAIN_OBS = 240
 TIME_LAG  = 1
 
 # 'R2OOS' (higher better) | 'RMSE','MAE' (lower better) | 'Cor','HitRate' (higher)

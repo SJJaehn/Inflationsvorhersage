@@ -1,5 +1,5 @@
 csv,lag_months,rescale1,change_type1,rescale2,change_type2,rescale3,change_type3
-CPI.csv,0,-1,pct,1,diff,,
+CPI.csv,0,1,pct,1,diff,,
 CPI.csv,1,1,pct,,,,
 CapacityUtilization.csv,1,1,diff,,,,
 CoreCPI.csv,1,1,pct,,,,

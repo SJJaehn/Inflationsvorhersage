@@ -25,14 +25,14 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING          = True
-TRAIN_OBS        = 60
+TRAIN_OBS        = 240
 REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
 LOOKBACK         = 1          # p: AR lags, used when OPTIMAL_LOOKBACK is False
-OPTIMAL_LOOKBACK = True       # select p by AIC each window
+OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
 # =========================================================================
 

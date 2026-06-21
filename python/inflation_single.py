@@ -36,7 +36,7 @@ MODE             = "oos"   # "oos" or "insample"
 ROLLING          = True    # (oos) rolling vs expanding window
 TRAIN_OBS        = 60      # (oos) in-sample window length
 TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
-SHARED_TIMEFRAME = True    # evaluate every predictor on the SAME complete sample
+SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
 # =========================================================================
 
 
