@@ -67,19 +67,24 @@ iNumObsTemp = size(vYtemp,1);
 vYhatTemp   = NaN(iNumObsTemp,1);
 vYrollTemp  = NaN(iNumObsTemp,1);
 
-% Loop over time
-for iIdxT = iNumIn:iNumObsTemp
+% Loop over time. The in-sample window holds iNumIn observations and the
+% forecast is made for the NEXT row (iIdxT+1). This matches the Python port
+% (util.rolling_oos_forecast) and the bKap4 OOS convention: previously the
+% rolling window held only iNumIn-1 rows and predicted iIdxT, which differed
+% from the Python kitchen-sink script by one observation.
+for iIdxT = iNumIn:iNumObsTemp-1
     % Get time indices
     if lRoll
-        vIdxInSample = (iIdxT-iNumIn+1):(iIdxT-1);
+        vIdxInSample = (iIdxT-iNumIn+1):iIdxT;
     else
-        vIdxInSample = 1:(iIdxT-1);
+        vIdxInSample = 1:iIdxT;
     end
+    iIdxOut = iIdxT + 1;
 
     % Get data
-    mXin    = mXtemp(vIdxInSample,:);       % t-1
-    vXout   = mXtemp(iIdxT,:);              % t-1
-    vYin    = vYtemp(vIdxInSample,:);       % t
+    mXin    = mXtemp(vIdxInSample,:);
+    vXout   = mXtemp(iIdxOut,:);
+    vYin    = vYtemp(vIdxInSample,:);
 
     % Regress only if all observations are available
     if any(isnan(mXin),'all')
@@ -98,11 +103,11 @@ for iIdxT = iNumIn:iNumObsTemp
     vBetaTemp = mXin\vYin;
 
     % Prediction
-    vYhatTemp(iIdxT) = vXout * vBetaTemp;
+    vYhatTemp(iIdxOut) = vXout * vBetaTemp;
 
     % Rolling mean prediction
-    vYrollTemp(iIdxT) = mean(vYin);
-end   
+    vYrollTemp(iIdxOut) = mean(vYin);
+end
 
 % Write forecasts back to their ORIGINAL calendar positions. The removed rows
 % are scattered through the sample (a late start, a mid-series gap and trailing

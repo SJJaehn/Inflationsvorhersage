@@ -16,8 +16,8 @@ addpath('./Utils/');
 sDataPath  = './DATA/Liedtke/US/';
 iReportLag = 1;       % reporting/publication lag r for the AR terms
 iNumLags   = 1;       % number of AR lags p
-iNumIn     = 240;     % minimum in-sample observations before forecasting
-lRoll      = false;   % false = expanding window, true = rolling window
+iNumIn     = 120;     % minimum in-sample observations before forecasting
+lRoll      = true;   % false = expanding window, true = rolling window
 
 %% Load data
 % CSV layout: col 1 = observation_date, col 2 = target (inflation),
@@ -27,6 +27,15 @@ dtDates  = tData{:,1};
 if ~isdatetime(dtDates); dtDates = datetime(dtDates); end
 vY       = tData{:,2};       % inflation target
 mX       = tData{:,3:end};   % exogenous macro predictors
+
+% Predictive lag: shift the exogenous predictors so that row t holds the
+% PREVIOUS month's (fully published) values. Standing at the end of month t-1
+% we forecast month-t inflation, so using the same-month (end-of-month)
+% predictor row would be look-ahead. This matches the Python port
+% (util.apply_lag(X,1)). Only the exogenous predictors are shifted; the AR
+% terms keep their reporting lag (mYlag below).
+iTimeLag = 1;
+mX       = [NaN(iTimeLag, size(mX,2)); mX(1:end-iTimeLag,:)];
 
 % Drop exogenous predictors that are collinear with the AR lag terms. The VARX
 % includes the reporting-lag regressors y(t-(r+1))..y(t-(r+p)); any predictor

@@ -17,7 +17,7 @@ iTimeLag    = 1;     % additional predictive lag (predictors are already
                      % reporting-lag aligned in DATA/Liedtke/aggregate.py)
 iNumComp    = 3;     % number of principal components to retain
 iTransformX = 2;     % PCA preprocessing: 0 = none, 1 = centre, 2 = z-standardise
-iNumIn      = 240;   % minimum in-sample observations before forecasting
+iNumIn      = 120;   % minimum in-sample observations before forecasting
 lRoll       = false; % false = expanding window, true = rolling window
 
 %% Load data

@@ -31,7 +31,7 @@ CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING    = True
-TRAIN_OBS  = 60           # In-sample window length
+TRAIN_OBS  = 120           # In-sample window length
 TIME_LAG   = 1
 VAL_FRAC   = 0.5          # Fraction of the window used for validation
 

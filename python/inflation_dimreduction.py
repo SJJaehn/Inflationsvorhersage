@@ -33,19 +33,19 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
+CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 METHOD     = "PLS"     # "PCA" (PCR) or "PLS"
 MODE       = "oos"     # "insample" or "oos"
 
 TIME_LAG   = 1         # additional predictive lag
-N_COMP     = 1         # number of components to retain
+N_COMP     = 3         # number of components to retain
 STANDARDIZE = True     # z-standardise predictors (iTransformX = 2)
 
 # OOS-only settings
 ROLLING    = False     # False = expanding, True = rolling
-MIN_INSAMPLE = 240     # minimum in-sample obs before forecasting (rolling: window length)
+MIN_INSAMPLE = 120     # minimum in-sample obs before forecasting (rolling: window length)
 # =========================================================================
 
 

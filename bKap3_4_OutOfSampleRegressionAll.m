@@ -8,7 +8,7 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sDataPath = './DATA/Liedtke/UK/';
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -43,7 +43,7 @@ iTimeLag = 1;
 mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 
 %% Settings
-iNumIn = 60;                       % Number of in-sample periods (10 years)
+iNumIn = 120;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
 lRoll = true;                      % Rolling time window
 

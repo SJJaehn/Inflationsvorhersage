@@ -27,6 +27,13 @@ vY        = tData{:,2};        % inflation target (endogenous)
 mX        = tData{:,3:end};    % macro predictors (exogenous)
 cXnames   = cAllNames(3:end);
 
+% Predictive lag: shift the exogenous predictors so that row t holds the
+% PREVIOUS month's (fully published) values, matching the Python port
+% (util.apply_lag(X,1)). Only the exogenous predictors are shifted; the AR
+% terms keep their reporting lag inside fEstVAR.
+iTimeLag  = 1;
+mX        = [NaN(iTimeLag, size(mX,2)); mX(1:end-iTimeLag,:)];
+
 % Drop exogenous predictors that are collinear with the AR lag terms. The VARX
 % includes the reporting-lag regressors y(t-(r+1))..y(t-(r+p)); any predictor
 % that is (numerically) identical to one of them -- e.g. a lagged copy of the

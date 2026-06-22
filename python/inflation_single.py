@@ -34,7 +34,7 @@ OUTPUT_DIR = "./RESULTS/"
 MODE             = "oos"   # "oos" or "insample"
 
 ROLLING          = True    # (oos) rolling vs expanding window
-TRAIN_OBS        = 60      # (oos) in-sample window length
+TRAIN_OBS        = 120      # (oos) in-sample window length
 TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
 SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
 # =========================================================================

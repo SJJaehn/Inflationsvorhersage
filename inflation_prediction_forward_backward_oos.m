@@ -21,11 +21,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/US/aggregated.csv';  % input CSV
+sCSVPath    = './DATA/Liedtke/UK/aggregated.csv';  % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
 lRolling    = true;     % true = rolling window, false = expanding window
-iTrainObs   = 60;       % in-sample window length (number of observations)
+iTrainObs   = 120;       % in-sample window length (number of observations)
 iTimeLag    = 1;        % predictor lag (periods; 1 = standard predictive regression)
 dValFrac    = 0.5;     % fraction of each training window used for validation
 

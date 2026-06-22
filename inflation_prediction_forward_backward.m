@@ -15,7 +15,7 @@ sCSVPath    = './DATA/Liedtke/US/aggregated.csv';    % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
 lRolling    = true;     % true = rolling window, false = expanding window
-iTrainObs   = 60;       % in-sample window length (number of observations)
+iTrainObs   = 120;       % in-sample window length (number of observations)
 iTimeLag    = 1;        % predictor lag (periods; 1 = standard predictive regression)
 
 % Selection metric — choose ONE of:

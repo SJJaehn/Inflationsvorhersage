@@ -65,19 +65,24 @@ iNumObs         = size(vY,1);
 vYhatTemp   = NaN(iNumObs,1);
 vYrollTemp  = NaN(iNumObs,1);
 
-% Loop over time
-for iIdxT = iNumIn:iNumObs
+% Loop over time. The in-sample window holds iNumIn observations and the
+% forecast is made for the NEXT row (iIdxT+1). This matches the Python port
+% (util.rolling_oos_forecast) and the bKap4 OOS convention: previously the
+% rolling window held only iNumIn-1 rows and predicted iIdxT, which differed
+% from the Python single-predictor script by one observation.
+for iIdxT = iNumIn:iNumObs-1
     % Get time indices
     if lRoll
-        vIdxInSample = (iIdxT-iNumIn+1):(iIdxT-1);
+        vIdxInSample = (iIdxT-iNumIn+1):iIdxT;
     else
-        vIdxInSample = 1:(iIdxT-1);
+        vIdxInSample = 1:iIdxT;
     end
+    iIdxOut = iIdxT + 1;
 
     % Get data
-    vXin    = vXlag(vIdxInSample,:);       % t-1
-    vXout   = vXlag(iIdxT,:);              % t-1
-    vYin    = vY(vIdxInSample,:);          % t
+    vXin    = vXlag(vIdxInSample,:);
+    vXout   = vXlag(iIdxOut,:);
+    vYin    = vY(vIdxInSample,:);
 
     % Add constant
     mXin    = [ones(size(vXin,1),1), vXin];
@@ -88,11 +93,11 @@ for iIdxT = iNumIn:iNumObs
     % vBetaTemp = regress(vYin, mXin)
 
     % Prediction
-    vYhatTemp(iIdxT) = mXout * vBetaTemp;
+    vYhatTemp(iIdxOut) = mXout * vBetaTemp;
 
     % Rolling mean prediction
-    vYrollTemp(iIdxT) = mean(vYin);
-end   
+    vYrollTemp(iIdxOut) = mean(vYin);
+end
 
 % Evaluate quality
 [rStatsOOS] = fEvaluatePerformanceOOS(vY, vYrollTemp, vYhatTemp);

@@ -38,7 +38,7 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 MODE       = "oos"     # "insample" or "oos"
@@ -48,7 +48,7 @@ NUM_LAGS   = 1         # number of AR lags p
 
 # OOS-only settings
 ROLLING      = True   # False = expanding, True = rolling
-MIN_INSAMPLE = 240     # minimum in-sample obs before forecasting (rolling: window length)
+MIN_INSAMPLE = 120     # minimum in-sample obs before forecasting (rolling: window length)
 # =========================================================================
 
 
