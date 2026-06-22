@@ -1,0 +1,526 @@
+Date,Actual,Forecast,Benchmark,NumSelected,SelectedPredictors
+1982-03-01,-0.0031779661016948,,,,
+1982-04-01,0.0031678986272438,,,,
+1982-05-01,0.0063057855832824,,,,
+1982-06-01,0.0019965973327478,,,,
+1982-07-01,-0.0063156423680164,,,,
+1982-08-01,-0.0031033571239755,,,,
+1982-09-01,-0.0020512820512821,,,,
+1982-10-01,0.0040941658137154,,,,
+1982-11-01,-0.0051135338055604,,,,
+1982-12-01,-0.0020418564979508,,,,
+1983-01-01,0.0051083073966535,,,,
+1983-02-01,-0.0010256324472051,,,,
+1983-03-01,-1.04229638742126e-06,,,,
+1983-04-01,0.0061151677796502,,,,
+1983-05-01,-0.0030869929469639,,,,
+1983-06-01,-0.0020324539636935,,,,
+1983-07-01,0.002008015836957,,,,
+1983-08-01,-0.001018132845167,,,,
+1983-09-01,-9.009027045037143e-06,,,,
+1983-10-01,0.0009870607480169,,,,
+1983-11-01,-0.0010078732688294,,,,
+1983-12-01,-8.83142574514828e-06,,,,
+1984-01-01,0.0039359940067538,,,,
+1984-02-01,-0.0020061934097945,,,,
+1984-03-01,-0.0019731830392173,,,,
+1984-04-01,0.0009632925852043,,,,
+1984-05-01,-0.0019511607713198,,,,
+1984-06-01,-3.7412723132845822e-06,,,,
+1984-07-01,0.0019249134674064,,,,
+1984-08-01,-0.0009754362367613,,,,
+1984-09-01,-8.281162012790944e-06,,,,
+1984-10-01,0.0009468761321345,,,,
+1984-11-01,-0.0019174897786888,,,,
+1984-12-01,-3.6143391677345704e-06,,,,
+1985-01-01,-3.6006355121909195e-06,,,,
+1985-02-01,0.0037807081653788,,,,
+1985-03-01,-0.0009727739008231,,,,
+1985-04-01,-0.002831009685682,,,,
+1985-05-01,-3.500297525382834e-06,,,,
+1985-06-01,0.0009293485841819,,,,
+1985-07-01,-0.0009380423464075,,,,
+1985-08-01,-3.454902722799247e-06,,,,
+1985-09-01,-3.442094927974537e-06,,,,
+1985-10-01,0.0018467094021858,,,,
+1985-11-01,0.0009080174100615,,,,
+1985-12-01,-2.113896757283129e-05,,,,
+1986-01-01,-0.000934187926773,,,,
+1986-02-01,-0.0054728042512705,,,,
+1986-03-01,-0.0036496259548126,,,,
+1986-04-01,0.0018031010329814,,,,
+1986-05-01,0.0064262507409877,,,,
+1986-06-01,0.0009098351662264,,,,
+1986-07-01,-0.0027556479881927,,,,
+1986-08-01,-8.347733171376603e-07,,,,
+1986-09-01,0.002736393027364,,,,
+1986-10-01,-0.0018314532183145,,,,
+1986-11-01,-3.2997855139438315e-06,,,,
+1986-12-01,0.0018083063731291,,,,
+1987-01-01,0.0017919740490766,,,,
+1987-02-01,-0.0018244981819832,,,,
+1987-03-01,-1.284674158452681e-05,,,,
+1987-04-01,0.0008785104544337,,,,
+1987-05-01,-0.0017943936467867,,,,
+1987-06-01,0.0017628444221089,,,,
+1987-07-01,-0.0017816069548943,,,,
+1987-08-01,0.0017505013045531,,,,
+1987-09-01,-0.0008941105560398,,,,
+1987-10-01,-0.0008840438101298,,,,
+1987-11-01,0.0008627421250144,,,,
+1987-12-01,-0.0017451586165324,,,,
+1988-01-01,0.0017271053594238,,,,
+1988-02-01,-0.0017360696814223,,,,
+1988-03-01,0.0008576176627692,,,,
+1988-04-01,0.0034268280971834,,,,
+1988-05-01,-0.0034488567285297,,,,
+1988-06-01,0.0016955921864787,,,,
+1988-07-01,-1.8031013342856284e-05,,,,
+1988-08-01,-1.7878852892838637e-05,,,,
+1988-09-01,-1.7728610431477776e-05,,,,
+1988-10-01,-0.0008544003375408,,,,
+1988-11-01,-1.1166906871640236e-05,,,,
+1988-12-01,-1.1092646476473789e-05,,,,
+1989-01-01,0.0008174812898711,,,,
+1989-02-01,-0.0008421720382478,,,,
+1989-03-01,0.0016338804933127,,,,
+1989-04-01,0.0024307649237658,,,,
+1989-05-01,-0.0024908893412269,,,,
+1989-06-01,-0.0016404563594611,,,,
+1989-07-01,-1.0422658337949642e-05,,,,
+1989-08-01,-0.0032232070910556,,,,
+1989-09-01,0.0024096385542169,,,,
+1989-10-01,0.0023980537534753,,,,
+1989-11-01,-0.0008204514783463,,,,
+1989-12-01,-0.0008101161272013,,,,
+1990-01-01,0.0063240629463114,,,,
+1990-02-01,-0.0055796190210051,,,,
+1990-03-01,0.0007659313725489,,,,
+1990-04-01,-0.0023546850699842,,,,
+1990-05-01,-0.0007812245498761,,,,
+1990-06-01,0.0046451563278389,,,,
+1990-07-01,-0.0015778090636366,,,,
+1990-08-01,0.0038101811296045,,,,
+1990-09-01,-0.0015902129988702,,,,
+1990-10-01,-4.645294488714313e-05,,,,
+1990-11-01,-0.00454357726797,,,,
+1990-12-01,0.0014908402193818,,,,
+1991-01-01,-1.3933367293494923e-05,,,,
+1991-02-01,-0.0029833919169053,,,,
+1991-03-01,-0.0007423904974017,,,,
+1991-04-01,0.0022255192878337,,,,
+1991-05-01,0.0014754429623513,,,,
+1991-06-01,-0.0007511097428103,,,,
+1991-07-01,-0.0014792642720806,,,,
+1991-08-01,0.0014662693271141,,,,
+1991-09-01,-8.599875731762907e-06,,,,
+1991-10-01,-0.001468403672078,,,,
+1991-11-01,0.0029133238279672,,,,
+1991-12-01,-0.001470420222827,,,,
+1992-01-01,-0.0021791686182912,,,,
+1992-02-01,0.0014456083955156,,,,
+1992-03-01,0.0014383062105405,0.0003811364502408504,-8.406405872758719e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1992-04-01,-0.0014507818246134,-1.8838158715826816e-05,3.549896742226891e-06,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1992-05-01,-4.6414385574955475e-06,-0.0003592151894556279,-8.370855072163494e-06,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1992-06-01,0.0007111981094969,-0.000571775012533048,-8.340534612694649e-06,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1992-07-01,-8.17495632787768e-06,-0.00022870761504922957,-2.5378036118108216e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+1992-08-01,-0.0007198721807757,-0.0004717541546236723,-2.5829008335393565e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1992-09-01,-4.549498544337283e-06,-0.0003061475506207347,-8.275672896572378e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1992-10-01,0.0021216215127892,0.00070640394690705,-8.246332941042968e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1992-11-01,-0.0014294381227846,-5.473659812473465e-05,8.393259603724557e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1992-12-01,-0.0014154056726478,9.592151945905347e-06,-2.7527201047119875e-06,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1993-01-01,0.0021062439078909,-0.0002713443419799184,-1.3619281278120358e-05,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1993-02-01,-0.0014128631072951,0.00022519008811405173,2.562880471261476e-06,3.0,CapacityUtilization_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1
+1993-03-01,-0.0007032162970006,-0.0006648352079901767,-8.160043678483685e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1993-04-01,0.0020915594919201,-0.0003215695064586567,-1.3386030545567266e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1993-05-01,-0.0007075423627647,0.00016324907158135686,2.3225181295496543e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1993-06-01,-0.0020881598922832,0.00018550521409786612,-2.935740247444788e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1993-07-01,0.0006925201099954,0.00013853696240584325,-1.8268270777119458e-05,4.0,CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1993-08-01,0.0006901231814728,2.1623545356743644e-05,-1.3080034421115665e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1993-09-01,-0.0006949090978609,-0.0003767553893044795,-7.984358943623524e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1993-10-01,0.0027567155648695,-0.00021137902709809456,-1.2926263540150694e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1993-11-01,-0.0013906782872299,0.0001956701446792979,6.8568923770610975e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1993-12-01,-0.0006924582267047,-0.0004025192859120846,-3.0547046414279883e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1994-01-01,-0.002054794520548,-0.00010308870286423257,-7.909659022155256e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1994-02-01,0.0027341079972658,0.00011225391181958057,-2.222353917268564e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+1994-03-01,-7.454963864228503e-06,0.00045820904093516227,-3.082347947418415e-06,4.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1
+1994-04-01,-0.0020468433801046,0.00038576535405310383,-3.1125039192584846e-06,4.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1
+1994-05-01,0.001358233824964,-0.0002994362183733031,-1.7110660605459455e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-06-01,0.0006738209285186,0.0005390627218185317,-7.754575669612791e-06,4.0,CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; T10Y3M_diff1
+1994-07-01,0.0006687982030919,0.00020765569722422665,-3.1493357764491916e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-08-01,0.0006624640747645,-0.00021685870723961204,1.3603792495128837e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-09-01,-0.0020297038658441,0.00035854695995330907,5.767737219612799e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-10-01,-0.0013436304544249,0.00017639460222242077,-7.712207171537616e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-11-01,0.002007583806985,-0.00017294680646090307,-1.6501143008730787e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1994-12-01,-0.000674705944383,0.0003461780580606834,-3.271829610078951e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-01-01,0.0006622198463153,8.900219533371055e-05,-7.631791394318698e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-02-01,-7.082764314381151e-06,-4.028909067870006e-05,-3.310167925224384e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-03-01,-0.0006697357383935,0.00015229937006626282,-3.334351235411286e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-04-01,0.0019801823976777,0.0005010281030403368,-7.578946058074272e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-05-01,-0.0019919693832739,0.00010073012207980679,5.0018219402534124e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-06-01,-3.897997209012516e-06,8.220694914615165e-05,-7.55774538813749e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-07-01,-0.000660050629766,0.0002751412426750574,-7.5348719620179565e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-08-01,0.0006535880262674,-0.00019373151840490014,-1.158776486763275e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-09-01,-0.0006578795107605,0.000272276509749681,-7.481741465564647e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-10-01,0.0013046269830523,-0.0001975803845026619,-1.1471911829337256e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-11-01,-0.0013097398604733,-7.774838167848414e-05,-3.4469185678638572e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1995-12-01,-1.6954217252340698e-06,0.00010099972189636293,-1.1363845488502863e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1996-01-01,0.0038969444624112,0.0002055018219326419,-1.1305601971856666e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1996-02-01,-0.0032589434034222,0.00022755568701033556,1.2097093024449061e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Yield10Y_diff1
+1996-03-01,0.0012865692182579,-0.000423961123774946,-7.373386121066712e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; T10Y3M_diff1; Unemployment_diff1_lag1; Yield10Y_diff1
+1996-04-01,0.0006327144487086,0.00028234607180997767,2.8307899360173074e-07,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-05-01,-0.001936675929149,-0.0001446513632761043,4.003263521337015e-06,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-06-01,-3.686403397651361e-06,0.00029172331223977405,-7.345737605390102e-06,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-07-01,-3.672288259704004e-06,-0.0002431022373926478,-7.3244624065079e-06,4.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1996-08-01,-0.0006406009291965,-7.635456379871517e-05,-7.30335157328938e-06,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-09-01,0.0019067762272897,8.362020471313258e-05,-1.0942992823997486e-05,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-10-01,-1.0084532586107642e-05,8.986897926993493e-05,1.5402719509356287e-08,3.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1
+1996-11-01,-1.0020787120756935e-05,-0.00043528654093726124,-4.1983276545289445e-08,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1996-12-01,-0.0006400773669119,0.00023539700901219966,-9.836069939394282e-08,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1997-01-01,-0.0006348723542199,-0.00016442546028285385,-3.6937483747451004e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1997-02-01,-3.5488203329325785e-06,-5.169457937517374e-05,-7.219885837567196e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1997-03-01,-0.0012558836400431,-0.0001257548337616611,-7.199491029208114e-06,7.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1997-04-01,-3.918486086718076e-07,0.00028095951255758796,-1.4098298482323542e-05,4.0,CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Unemployment_diff1_lag1
+1997-05-01,-0.0006257822277846,-0.0002071386585756412,-1.4022988318182597e-05,4.0,CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Unemployment_diff1_lag1
+1997-06-01,0.0018761726078797,-2.052360931635806e-05,-1.736593498193351e-05,4.0,CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Unemployment_diff1_lag1
+1997-07-01,-0.0006277331571931,0.0001461379253393161,-7.074964640294202e-06,7.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1997-08-01,0.0012453261353482,-9.85141846271299e-05,-1.0429873789228288e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1
+1997-09-01,-6.2033969803199085e-06,-0.0001801931787401339,-3.6784973960163082e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1997-10-01,-0.0006265200054316,-0.00011604910878196748,-3.691999532830766e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1997-11-01,-0.0006226520907437,0.00016759619269981818,-7.00491445782422e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1997-12-01,-0.0006199609030212,2.1322007636374087e-05,-1.0262306924945255e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1
+1998-01-01,0.0006176647532816,0.00016418176809392945,-1.3471246904399228e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1
+1998-02-01,-0.0012360939431395,1.1632538326487472e-05,-1.0166869940074623e-05,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1
+1998-03-01,0.0,9.338796499809705e-05,-1.6551906779654972e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-04-01,0.0012345679012344,0.0003694848472025357,-1.6466145604630855e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-05-01,0.0012315233441417,0.0001544307204456023,-1.0017516497213169e-05,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-06-01,-0.001236078945253,0.00032532641730163825,-3.6506402888084856e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-07-01,0.0012269901568791,-0.0002020125468515335,-9.938539803931913e-06,5.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-08-01,-0.0012315122609238,0.0006869807008587818,-3.659713932444441e-06,6.0,CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+1998-09-01,-0.0006134950920393,-1.3629910929764123e-05,-9.860989422299771e-06,4.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1
+1998-10-01,0.0018344880763889,-0.0002667025602991376,-1.2894326621380176e-05,4.0,CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1
+1998-11-01,-0.0012262269266147,-9.049619759689407e-05,-3.657414606328777e-06,2.0,Housing_pct1_lag1; Yield10Y_diff1
+1998-12-01,0.0006078973110863,2.084498716770355e-05,-9.739849989455002e-06,3.0,DXY_Datastream_pct1; Housing_pct1_lag1; Yield10Y_diff1
+1999-01-01,-3.3360466515919285e-06,-8.02810716199653e-05,-6.682240281159185e-06,2.0,Housing_pct1_lag1; Yield10Y_diff1
+1999-02-01,-0.001824817518248,0.00013893623838779964,-6.665756568698262e-06,2.0,Housing_pct1_lag1; Yield10Y_diff1
+1999-03-01,0.0006071645415908,-4.563104680742077e-05,-1.5578265204381112e-05,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Unemployment_diff1_lag1
+1999-04-01,0.0060675927399624,0.0003079582835589748,-1.2540495415136329e-05,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Unemployment_diff1_lag1
+1999-05-01,-0.0060719845268819,-0.0001408083989962252,1.6974714465337147e-05,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-06-01,-0.0006027727546713,-0.001822980497895259,-1.2440547570156751e-05,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-07-01,0.0042168674698794,0.0016555730087458758,-1.5278683181219948e-05,2.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1
+1999-08-01,-0.0018173473738987,0.0002874807020702265,4.970819943472016e-06,4.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-09-01,0.0017895882223915,-0.001073872623008448,-3.706885741490707e-06,4.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-10-01,-0.0024012656485272,0.0005145676928385418,4.79214320700688e-06,4.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-11-01,-3.1906769835110538e-06,-0.000515731102267771,-6.557185999286546e-06,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+1999-12-01,0.0005906449192525,0.0006476585152989547,-6.541380792639713e-06,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+2000-01-01,0.0005867883959429,5.754283806310307e-05,-3.7507906055128914e-06,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+2000-02-01,0.0011725868715057,-6.341596626390757e-05,-1.004096714590041e-06,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+2000-03-01,0.0017476807616136,-0.0002476243715283405,4.4291948049483365e-06,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+2000-04-01,-0.0064671482628138,-0.00022186127852541086,1.2462612163513552e-05,3.0,CPI_pct1_diff1_lag1; Housing_pct1_lag1; Payroll_pct1_lag1
+2000-05-01,0.0023402078435799,-0.00024677767080935316,-1.7260373501519996e-05,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2000-06-01,0.0040857089733845,0.0017941851883968645,-6.495678446353697e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2000-07-01,-0.0029375210307509,-0.0006756302849431116,1.2105251789241094e-05,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2000-08-01,-0.0029036004645761,-0.0013165060446788544,-1.2414734711215351e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Yield10Y_diff1
+2000-09-01,0.0052113491603937,0.0008985067247213314,-1.4315162620243061e-05,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Yield10Y_diff1
+2000-10-01,-0.0034832385613152,0.0010453481834981427,9.118309680267893e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Yield10Y_diff1
+2000-11-01,-2.9812143746976716e-06,-0.0017639075773676163,-6.472569208104738e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2000-12-01,0.0005710818667312,0.0009546633830682407,-6.457052075511817e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-01-01,0.0034311656099623,8.198745604255336e-05,-3.901570133889199e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-02-01,-0.0034494725333791,-0.0003515161267966606,1.1230884403979476e-05,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-03-01,-0.0017097225098365,-0.000982374621568674,-3.9476393582270116e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-04-01,0.0011353956945951,0.000991384519393559,-1.1396437919267503e-05,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-05-01,0.0033984633035495,0.00031654901097270626,-6.4103851692050366e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-06-01,-0.0028459776465579,-0.0005164849297238352,8.329327768971176e-06,3.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag1
+2001-07-01,-0.0039443017741578,-0.0013628075502053693,-3.973719534161885e-06,4.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Payroll_pct1_lag1
+2001-08-01,0.0016882386043892,0.0016061669791349279,-2.088499873855518e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2001-09-01,0.0039458850056368,0.001436197739339515,-1.3581051716641699e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2001-10-01,-0.0067532965721724,-0.0010631825393085034,3.2677400167772014e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2001-11-01,0.0022443485034725,-0.0008367317989976682,-2.5361769780634567e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2001-12-01,-3.172186270328226e-07,0.0012312461877979032,-1.578493318462978e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-01-01,0.0022544738555344,-0.00050144553995741,-1.5719942787328952e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2002-02-01,-2.8549694548463123e-06,-2.0894468798300723e-05,-6.221223965899124e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-03-01,0.0011207501596555,-0.0006732662095933291,-6.20719790543641e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2002-04-01,0.0016728039530418,0.0003382172009277256,-1.5310262972997442e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2002-05-01,-0.0033663437488771,-0.0008048613974780236,5.387713286746123e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2002-06-01,-0.0005583459041429,-0.0006237885608302035,-8.48772482915448e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2002-07-01,0.0016700684281381,0.0016440999038712712,-1.0741241957489501e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-08-01,0.0005506062855729,1.9762961779629183e-05,-3.880794324446278e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-09-01,-0.0011157279162818,-0.0002090621825884053,-1.6267818045383664e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-10-01,0.0005503395190349,0.00035268914961411943,-6.13731271335319e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-11-01,-0.000556760241458,0.000323645293183609,-3.893454520819911e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2002-12-01,-2.7365770891574215e-06,-0.0005078643304476601,-6.1138030627363055e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-01-01,0.0027475474820206,0.001121905539766944,-6.10029415884199e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-02-01,0.0010760112155794,-5.5997648039679115e-05,4.870414112789254e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-03-01,-0.0038424643314791,-0.0006968992817621359,9.120972848767867e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-04-01,-0.0054404034588279,-0.0005550423943163162,-6.102684480591295e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-05-01,0.0021688619455705,0.0015502522965213951,-2.7497569418966525e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-06-01,0.0027310482975639,0.0024475323441967125,-1.888439485038038e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-07-01,0.0021834041576052,0.0001154670155099313,-8.142470270637076e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-08-01,0.0010780286405986,-0.0013502955144744932,3.8494851487199276e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2003-09-01,-0.0011028939902899,-0.00024636960205936544,4.561862050080242e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2003-10-01,-0.0043325295489582,0.00011102076529024711,2.8597072830425535e-07,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2003-11-01,0.0016213299112723,-0.0003479758332867318,-1.6378704347413068e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2003-12-01,0.0021618698200633,0.0014286290002706052,-1.0103958693697692e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-01-01,0.0016099657609092,-0.00100183991843769,-1.8139824388999924e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-02-01,-0.0021655938527693,-0.0011053570357163474,4.314457649876053e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-03-01,-4.600052727843362e-06,-0.0009203172024060088,-3.904892010802641e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-04-01,-0.0005390539274359,0.0007742640769713399,-3.907515258791474e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-05-01,0.0026655228058205,0.0005819907178401832,-5.919343875998649e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2004-06-01,-0.0005494960401124,0.0002367965454671087,4.086057433726064e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+2004-07-01,-0.0026606861470486,-0.0004761565681467825,2.0204525921360415e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2004-08-01,-0.0005299405195655,-9.259032003803116e-05,-7.878084952996806e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+2004-09-01,0.0026424266275213,0.0010563029053330753,-9.811649525635708e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+2004-10-01,0.0020974565415468,0.0003899789114674436,-2.4792414761405987e-08,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Unemployment_diff1_lag1
+2004-11-01,-0.0005517227667655,-0.0004001530541260489,7.686536018920858e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2004-12-01,-0.0047169811320753,-0.00031383100749870157,5.637417693703198e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1
+2005-01-01,-0.0005216484089722,-8.644101224185768e-05,-1.1598416429541337e-05,7.0,CPI_pct1_diff1_lag1; CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1
+2005-02-01,0.0046970137534398,0.002118767132980077,-1.3453143675151005e-05,7.0,CPI_pct1_diff1_lag1; CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1
+2005-03-01,-0.000537111706214,0.0004835500580336359,3.6137653723669336e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-04-01,-0.000531055295426,-0.0019452367780129257,1.6616878576147069e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-05-01,-0.0036234606040561,-7.103762872775717e-05,-2.5456028369325967e-07,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-06-01,0.0010327911868484,9.068244858628896e-05,-1.3240961874275362e-05,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-07-01,0.0056786182091248,0.001478534631997844,-9.505132771694375e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-08-01,-3.8143543159119275e-05,-0.0002485299185922264,1.0737299050001334e-05,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-09-01,0.0076114818750132,-0.001884265530560432,1.0563962730110835e-05,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2005-10-01,-0.0122594311406429,0.00017471736456917456,3.7422329911323156e-05,8.0,CPI_pct1_diff1_lag1; CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2005-11-01,-0.0065316560336402,-0.001908508816099282,-5.87644991457199e-06,8.0,CPI_pct1_diff1_lag1; CapacityUtilization_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2005-12-01,0.0050226017076845,0.005631880885908692,-2.877392213817069e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-01-01,0.0060575466935892,0.002577211848015339,-1.1111769586343165e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-02-01,-0.0055557905470764,-0.002350222431052863,1.0033381853292876e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-03-01,0.0010027573941089,-0.001595248612612577,-9.292395677713018e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-04-01,0.0035029977262786,0.0020514845127699087,-5.79049329090813e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-05-01,-0.0020179746450765,-0.00040128403071760426,6.308776431745347e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-06-01,-0.0005056816789523,-0.0017808555376802883,-6.475239858087614e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-07-01,0.0029670865833921,0.0009096083888021735,-2.377093009666608e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-08-01,-0.0010152589239964,0.00020592197492077152,7.757595305697783e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2006-09-01,-0.0093424539467225,-0.001325251433670665,4.2779472808607165e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2006-10-01,0.00046890152197,0.0002808677911800161,-2.7405889647964234e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-11-01,0.0049331645228319,0.004026947637541132,-2.572917541952517e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2006-12-01,0.0049502498541087,-0.0006651238481850256,-9.032563640900842e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-01-01,-0.0037862634121608,-0.0022081475047120687,7.609323666983725e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-02-01,0.0022190694035746,-0.0017890288753756702,-5.079213911035619e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-03-01,0.0013217708882282,0.0014521556141828447,2.3346148139164997e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-04-01,-0.0021994589501725,-0.0009315043192748307,6.718124027917442e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-05-01,0.001132331532704,-0.0007998290562001612,-5.87098072083941e-07,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-06-01,-0.0018162423056666,0.0013575452285395375,3.1519073100153456e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-07-01,-0.0005361558627907,-0.0009596617965028291,-2.8329420747761392e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-08-01,-0.0014723151393185,0.000986277169551707,-4.581541814828349e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-09-01,0.003929272681912,-0.00027336104436818774,-9.37805683935015e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-10-01,-0.0011543155594848,0.0008280176385497694,3.4514243943676024e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2007-11-01,0.0047756464366102,-0.0022769298232283883,-3.0755931952579904e-07,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2007-12-01,-0.0049608697161578,0.0004864216816057156,1.514860247959953e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2008-01-01,0.0005496905252377,-0.0023560772712576806,-9.030695160049871e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
+2008-02-01,-0.0010298781990305,0.0011427362663578133,8.673278947786301e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
+2008-03-01,0.001160200928179,-0.001043324612479221,-2.4363436658793246e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
+2008-04-01,-0.0012636467859172,0.00013405859310409876,1.2781524103023984e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
+2008-05-01,0.0036031106364156,-0.0005764411615584776,-2.7502709601673545e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
+2008-06-01,0.0045607433532337,-4.4301464407113875e-05,8.69690652356524e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2008-07-01,-0.0033367902583298,-0.0014435983335077452,2.31021167979644e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2008-08-01,-0.0086299204793216,-0.0015581345056203042,1.2503087223428869e-05,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2008-09-01,0.0023435674100906,0.0012330524848617496,-1.4674345375769337e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2008-10-01,-0.0094535282471186,0.0025303782016765173,-7.281737991862225e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2008-11-01,-0.0091070405198968,-0.0017293056786980981,-3.680125833288327e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2008-12-01,0.0094719546853222,0.002650896512717967,-6.505745540940639e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2009-01-01,0.0107642937406646,0.003582509585071686,-3.543940528291071e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2009-02-01,0.0011118893109258,-0.003747567489406719,-2.0036989487078874e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2009-03-01,-0.0046299435087258,-0.00347763848105287,1.4342424397936812e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2009-04-01,0.0019943653761271,0.00014015305256104705,-1.281615064071584e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2009-05-01,0.0004644113993332,0.0020457121894665365,-6.659152092348305e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2009-06-01,0.0068281183277003,-0.0009672785731493695,-5.218569366276292e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2009-07-01,-0.0085975777012524,0.0002538759466665073,1.5614774832097395e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2009-08-01,0.0036464188324231,-0.0028730494493943333,-1.056514150858497e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2009-09-01,-0.0014175661443924,0.0030515530575412246,5.166281093898327e-07,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2009-10-01,0.0010710445653032,-0.0015272673678201902,-3.7676098739992607e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2009-11-01,0.0003466587910638,0.00014794962710886638,-5.302238041884193e-07,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2009-12-01,-0.0028284141901249,-5.228961029521938e-05,5.123858500698044e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2010-01-01,0.0001285558119819,-0.0013839688602532907,-7.957454197759447e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2010-02-01,-0.0016005088613708,0.00045333947664943816,-7.549951910655986e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2010-03-01,0.0012831447859384,-0.0013488427341473022,-1.229090104595402e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2010-04-01,-0.0001013276030503,0.0008788168465126525,-8.446878235911426e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2010-05-01,-0.0007498125694063,-0.0010451400927299986,-8.721673279740979e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2010-06-01,0.0001009768777205,-0.0007611321979453161,-1.0907782117872422e-05,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2010-07-01,0.0022880487002266,0.0006039397514800678,-1.0578709588936032e-05,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2010-08-01,-0.0004078900619832,0.00044482082894381226,-3.837866744902203e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2010-09-01,0.0001538859432617,-0.0013471235771716674,-5.019305912265647e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2010-10-01,0.0018665968718503,0.0008603272656350779,-4.556025302429013e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2010-11-01,-0.0009480046713268,0.00011362704549922975,8.833726544103064e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2010-12-01,0.0014827347233434,-0.0012156102284522968,-1.8670274730714628e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-01-01,-0.000773534146458,0.0005189490008094865,2.423729032178455e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-02-01,-2.8567570306003987e-05,-0.0005000850870421818,1.8753918926727775e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-03-01,0.0019590735767696,0.00042790448628137595,1.0490956428086606e-07,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-04-01,-0.0004794492317345,0.000394413567649668,5.718000301258858e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2011-05-01,-0.0015123842405915,-0.00020381692969581645,4.331808209728118e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2011-06-01,-0.0031817147345076,0.0001842139341532597,1.0679865565076043e-08,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2011-07-01,0.002620036831757,0.001045022480770506,-9.028312788904153e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2011-08-01,0.0005344253346617,0.0016114111949647016,-1.580536175459665e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-09-01,-0.0009829143083344,0.0003501759961970687,-6.639529738859227e-08,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-10-01,-0.001496340331065,0.0006119970073039114,-2.8349809679153848e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2011-11-01,0.0011726425281075,0.00023319491728532955,-7.030220715379106e-06,5.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1
+2011-12-01,-0.001610141564972,0.00020245537856719564,-3.725815256491489e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2012-01-01,0.0024864875639418,-0.0006176568205524164,-8.213010088099055e-06,6.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2012-02-01,-0.0005867499291505,0.0007916951258413194,-1.263983419492094e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-03-01,-4.397573791692366e-05,-0.00047692112750332804,-2.890333268744895e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-04-01,-0.0004326820370224,-7.405922635679238e-05,-3.004143253919905e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-05-01,-0.0037289684823879,0.0002629798646941458,-4.1910987615676404e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-06-01,0.0012418169610703,-0.00014841559432675328,-1.4452193482301339e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-07-01,0.0011151730993707,0.0012753043378377262,-1.1000904596167817e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-08-01,0.0055207180477918,-0.00011931173199656236,-7.915496366121606e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-09-01,-0.0010382616983095,-0.0002725595282343172,7.190059765457417e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-10-01,-0.0020744716971037,-0.0015542099551571957,4.341417372882601e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-11-01,-0.0043761390748652,0.0011784097530544168,-1.3075313077602946e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2012-12-01,0.0015582628897494,0.0009982213060145272,-1.3163443349921378e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-01-01,0.0021018705468579,0.0014650266420549848,-8.916345152355645e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-02-01,0.0034491378099201,0.0005014435026951683,-3.2268926132444424e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2013-03-01,-0.0082418458546908,-0.0014314949708517791,6.053657662382828e-06,10.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-04-01,0.0007239398360087,-0.001580814923709276,-1.6058673469931337e-05,10.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-05-01,0.0025021347560828,0.003263898398371716,-1.408006782961414e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2013-06-01,0.0019662527160069,-0.0013622496818555955,-7.370161632514372e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2013-07-01,-0.0004229559049642,-0.0006291429296845519,-2.121164617515932e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1
+2013-08-01,0.0004298383821519,-0.0005272423148409354,-3.2374371383294174e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-09-01,-0.0020103459907627,0.00022367239542860832,-2.09173391269389e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2013-10-01,0.0001582863566056,0.00023665687465562984,-7.390557809395752e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2013-11-01,0.0013092583788132,0.000564542400907199,-6.95456592935629e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2013-12-01,0.0007996797311269,0.0005974222388981614,-3.4999387778010243e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-01-01,-0.0002199938680256,-0.00012635060084623757,-1.3973741968986653e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-02-01,-0.0013233966702095,-0.0006468175461238611,-1.9681222225610714e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-03-01,0.000941276680821,6.349101701589937e-05,-5.409342399610392e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1
+2014-04-01,-0.0001778696959675,0.0007354986837726407,-2.9504176639724425e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1
+2014-05-01,3.882029844959334e-05,-0.00015263498758186282,-3.4035764160541202e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-06-01,-0.0005818736974674,-1.0902977674762517e-05,-3.2944707962462455e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-07-01,-0.0001956469195869,0.00012827637709225237,-4.785654370140972e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1
+2014-08-01,-0.0012854866338725,-0.0003924672639153972,-5.276300296148064e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2014-09-01,0.0002315923521805,0.0004194837971732563,-8.558890895061787e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2014-10-01,-0.000269504908042,-0.0005810794120613405,-7.944693342438867e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2014-11-01,-0.0016847462492247,-0.000138590008032335,-8.611938788100996e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2014-12-01,-0.0012019492920932,0.00014525752941759086,-1.2876911588194123e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1
+2015-01-01,-0.0032857069972063,2.760346980222139e-05,-1.5894861792521548e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1
+2015-02-01,0.0089049601219829,4.186113455800116e-05,-2.4172867198632377e-05,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1
+2015-03-01,0.000159308100595,0.0013835847381709707,-1.6245515693860876e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-04-01,-0.0016514728846535,-0.0033468613620977732,-1.2191796495765504e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2015-05-01,0.0022552664450878,0.00022945526903392013,-5.365545742551233e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2015-06-01,-0.000529824530786,0.0007717798224946655,3.0019859536944754e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2015-07-01,-0.0011816010302734,-0.0012535561491466706,-1.025113228083984e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-08-01,-0.0015905208607052,0.00021364527620182372,-3.969192821713201e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-09-01,-0.0022433864388596,0.0004184164314314097,-7.915838761721876e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-10-01,0.0032370695360682,0.00024092616415533096,-1.3462912211096264e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-11-01,0.0002051354743601,0.001045411224289944,-5.417039814365334e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2015-12-01,-0.0022701709179069,-0.0018864645486031334,-4.897157063317271e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2016-01-01,0.0006171098637821,0.0007439616250473469,-1.0476649085099496e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2016-02-01,-0.0008712317605084,0.0007566786077548091,-8.934667481003181e-06,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2016-03-01,0.0044644715618267,0.00048170831331140077,-1.1048140748227148e-05,9.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Yield10Y_diff1
+2016-04-01,0.0006958489230457,0.0012191812908984123,-1.0554978838625159e-07,10.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2016-05-01,-0.0014665492919723,-0.0016845087509893416,1.5919001453554222e-06,10.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2016-06-01,0.0004118614185093,-0.00019659422696670836,-1.980219543495321e-06,10.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag1; Yield10Y_diff1
+2016-07-01,-0.0032796580313061,0.0004956800446562271,-9.75749548221546e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2016-08-01,0.0023529225293106,-0.00012062586708496466,-8.914447567005756e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2016-09-01,0.0007739880085935,0.0010132948500789437,-3.209527333001877e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2016-10-01,-0.0002805222964983,-0.0005674359963130778,-1.3367621861910291e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2016-11-01,-0.0011637397811556,-0.0009338826077995774,-2.007881259056696e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2016-12-01,0.001345574442005,0.0002538691178568273,-4.793809076554401e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-01-01,0.0015185545360394,0.0003172938715345295,-1.5632630213353718e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-02-01,-0.0024504193378058,9.905890161471926e-07,2.06470308620815e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-03-01,-0.0020598589831992,-0.0005972658358011265,-3.774544630201394e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-04-01,0.0017013544479302,0.001313430278885077,-8.658355648180013e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-05-01,-0.002008130781797,0.0005650415569189907,-4.606192606525084e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-06-01,0.0014256066218815,-0.0002792359078318882,-9.342657356384363e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-07-01,-0.0003239786902897,0.0008067543677839807,-5.958343018559154e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-08-01,0.0035209761917527,-0.00016085571733947385,-6.706626188608897e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-09-01,0.0012577637577095,2.5634831947673206e-05,1.5743193934129549e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-10-01,-0.0043313376759839,-0.0012400659082177513,4.516215033497468e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-11-01,0.0018929551832378,-0.0008067983219623466,-5.614284711870284e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2017-12-01,-0.0005611181834965,0.0019767424779298533,-1.1887148565097468e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-01-01,0.0021464551187564,-0.0006877542224549765,-2.490876411486468e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-02-01,-0.0015610567629025,0.000362536462321887,2.4950771735898332e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-03-01,-0.002499925189827,-0.0007746292909243994,-1.1242557895492871e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-04-01,0.0024120442452799,0.0003645132474623926,-6.8951586395203044e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-05-01,-0.0003464568744637,0.0008351716793199072,-1.321565542931776e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-06-01,-0.0013568046095033,-0.0014592244615196344,-2.1149800461979087e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-07-01,-0.0001203246731664,0.0003056384189609427,-5.222066352292179e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-08-01,0.001006500271411,-2.7337953316380588e-05,-5.485459045230639e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-09-01,0.000274960931778,-0.00014242052022873155,-3.1749893409926696e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-10-01,0.0002772984423813,-0.0003237072438650242,-2.5414223224983817e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-11-01,-0.0030437720644899,-0.0003138370747994484,-1.9054226299897659e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2018-12-01,0.0013890854645725,-0.000477794539855729,-8.803079414252603e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2019-01-01,-0.0014998733481157,0.0009024296181208366,-5.640435649576691e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2019-02-01,0.0038162349458563,-0.0001380956652822726,-9.013421907965231e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag1; Yield10Y_diff1
+2019-03-01,0.0007805377749088,0.0007074427441834058,-3.97997656243914e-07,5.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1
+2019-04-01,-2.2113512487154097e-05,-0.0015943145436761543,1.3569141922168585e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2019-05-01,-0.0035128461190792,-0.00023569820303403666,1.3042899171510045e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2019-06-01,-0.0005719460958925,-5.034260504891417e-05,-6.557344107449332e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2019-07-01,0.0026329889764108,0.0015569957276595837,-7.819372571255225e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2019-08-01,-0.0013931061487473,0.00013673840094267025,-1.937839500025704e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2019-09-01,0.0006240760823317,-0.0009631861267970071,-5.029324631686314e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2019-10-01,0.0012884361994955,0.0006346301157690627,-3.6344124211244816e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2019-11-01,-1.1859694218907537e-05,-0.0003179071727566938,-7.758491204239849e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2019-12-01,9.679591604538906e-05,-0.00033256179723663217,-8.003167696480104e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-01-01,-0.0009905543676653,0.0005145094217541321,-5.85347093843964e-07,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-02-01,-0.0014469934321172,0.00011262511158250987,-2.761103183011999e-06,8.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-03-01,-0.005003118165858,0.000263346982626494,-5.928279342955393e-06,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2020-04-01,-0.0033917001088825,-0.0007855732927410723,-1.686304933532967e-05,7.0,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2020-05-01,0.0070218223440853,0.0035230484528928404,-2.4231689203336592e-05,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Yield10Y_diff1
+2020-06-01,0.0057458244470404,0.007498684957848417,-8.880808956520392e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2020-07-01,0.0002489441451019,0.0027138654374463623,3.6294198608642184e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2020-08-01,-0.0013651000992114,-5.457661844199182e-05,4.1615559242937975e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-09-01,-0.0011052037472634,0.0007106410798570725,1.1977861079827726e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-10-01,-0.0013876637077514,-0.00012381728015983297,-1.1918500332081188e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; FedFundsRate_diff1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; Unemployment_diff1_lag1; Yield10Y_diff1
+2020-11-01,0.001035657062232,0.0008174745883159681,-4.179935933462845e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2020-12-01,0.0020721767703495,0.0011250814084970964,-1.9437273352575487e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-01-01,-0.0018963487765679,0.000621697144008778,2.5071750202891414e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-02-01,0.0009457153384524,-0.0007053518862734762,-1.5588976811844969e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-03-01,0.0018475335926195,0.001225062036432912,4.651925669641879e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-04-01,0.0009954441749342,-0.0001798826228554311,4.403504720594328e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-05-01,0.0003964064338466,0.0005598539497957437,6.512101891261576e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-06-01,0.0018267273937215,0.000652786272863392,7.339903020678429e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-07-01,-0.0038470398373384,0.0005484671939684541,1.119453753487507e-05,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-08-01,-0.0017718223786722,-0.0007937115045107458,3.037593824783579e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-09-01,0.0016825918618053,0.0013450900405955343,-7.068364969400149e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-10-01,0.005112684865282,0.0007237535084585009,2.836950236327859e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-11-01,-0.001071939447294,-0.0003890019598563217,1.3571924847768345e-05,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2021-12-01,-0.0016610323311327,-0.001576572762607917,1.1296219665081199e-05,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-01-01,-0.0008591909204043,0.0007336630639149808,7.797624370525173e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-02-01,0.0008803397171672,0.0008055170796546924,5.987627408573554e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-03-01,0.0042300354151734,0.0005640393247114258,7.809194262237369e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-04-01,-0.0080730634692636,-0.0005761407027578247,1.658721135352877e-05,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-05-01,0.0064016449464852,-0.002116544940753243,-1.962962826063535e-07,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-06-01,0.0030760237464424,0.0026760188714502683,1.305803341256509e-05,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2022-07-01,-0.012710194272827,-0.002596505881647146,1.9386474968411854e-05,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-08-01,0.000773087101387,-0.001204828181483672,-6.860083274465282e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2022-09-01,0.003618759933317,0.003794921994153858,-5.255253676396424e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-10-01,0.0013520820847015,-0.0008742945789580422,2.1862559478199966e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-11-01,-0.0029807222767019,-0.0012728581813196004,4.9524359247742505e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2022-12-01,-0.0024600762129463,-0.00039619031234041095,-1.1532383341760035e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2023-01-01,0.0051600662512991,0.0005574687421921786,-6.171448486445645e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2023-02-01,-0.0018854892080431,0.0002902583744742806,4.350420555887443e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2023-03-01,-0.0021978151912029,-0.0024822976455379365,5.092830993854364e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-04-01,0.002162021209755,0.0003878684309690513,-3.949792913398104e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2023-05-01,-0.0017780520238104,-0.0007028167415052673,4.347637721654548e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-06-01,0.0006270659334943,-0.00206721900140544,-3.158138829011445e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-07-01,-0.0002846066044792,0.0008194703057667495,-1.8875257799725147e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-08-01,0.002878560704731,-0.0007862020587890181,-2.4563770449608996e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-09-01,-0.0009347919741193,-0.0005717525981935015,3.328797818043038e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-10-01,-0.0025340660937935,-0.002058216978318233,1.448796271074415e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-11-01,0.0001021330250448,-0.0002810878346895131,-3.622233509054734e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2023-12-01,0.0004554175914421,0.0007051959540716519,-3.4111451686278786e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-01-01,0.0011752855332514,3.577799880147086e-05,-2.497143701275831e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-02-01,0.0009978546874034,-0.0007255411949481246,-1.5562744490868222e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-03-01,0.0003337981892166,-0.0008066394855015459,1.8245517512189123e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-04-01,-0.0022606617179041,-0.00024812248284508545,2.4819252907543256e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2024-05-01,-0.0016850893345616,-0.0008736003168039151,-1.990690604887679e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2024-06-01,-0.0009038838006635,0.0005794325397671858,-5.310411796123798e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2024-07-01,0.0020953770178032,0.0002534217275371267,-7.079257049799735e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2024-08-01,-0.0001048587943406,0.0002572706668440143,-2.948694623762407e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-09-01,0.0005611149858317,-0.0009709192428843576,-3.148518348697383e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-10-01,0.0007230617299514,-0.0002225008061775454,-2.0442844853306563e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2024-11-01,-1.4472286356870256e-05,-0.00089453072810671,-6.280618008839122e-07,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2024-12-01,0.0005574571356166,-0.0006514708890222904,-6.550485933907218e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-01-01,0.0008732329050002,-0.0005928884463409702,4.3077277666762575e-07,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-02-01,-0.0020215573070134,-0.0003252264574589958,2.1255341984608926e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-03-01,-0.0019194762880736,-0.0004258225828757143,-1.7963317728799234e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-04-01,0.0012851286090416,0.001048663252655996,-5.505577336324256e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-05-01,-0.0006238981951558,0.0009897083066078604,-3.014005547949885e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-06-01,0.001549136939229,-0.00045895234226510503,-4.210314198446706e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-07-01,-0.0002584400865717,0.00028546511641329246,-1.2231079418554566e-06,6.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; Yield10Y_diff1
+2025-08-01,0.0011991343169088,-0.0008347565395051791,-1.7168065572678259e-06,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2025-09-01,-0.0005317423831625,0.00015598184728705776,5.836745221690851e-07,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2026-03-01,0.0059814076015174,0.0002810344738387516,-4.341573280884084e-07,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
+2026-04-01,-0.002251060497278,-0.0003064587435356083,1.0981571219326648e-05,7.0,CPI_pct1_diff1_lag1; DXY_Datastream_pct1; Housing_pct1_lag1; M2MoneySupply_pct1_lag1; T10Y3M_diff1; TradeSales_pct1_lag2; Yield10Y_diff1
