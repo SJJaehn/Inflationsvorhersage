@@ -1,0 +1,13 @@
+Predictor,TimesSelected,FracOrigins
+CapacityUtilization_diff3_lag2,76,0.608
+CoreCPI_pct1_diff1_lag1,73,0.584
+Housing_pct3_lag3,62,0.496
+DXY_pct1,42,0.336
+Payroll_pct1_lag2,39,0.312
+CPI_pct1_diff1_lag1,32,0.256
+FedFundsRate_diff1,32,0.256
+Yield10Y_diff1,32,0.256
+T10Y3M_diff1,27,0.216
+TradeSales_pct1_lag2,25,0.2
+M2MoneySupply_pct1_lag1,19,0.152
+Unemployment_diff1_lag2,15,0.12
