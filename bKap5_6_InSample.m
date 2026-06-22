@@ -8,7 +8,8 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -82,7 +83,13 @@ end
 fprintf('  R2            : %8.4f\n', dR2);
 
 % === Save results
-sFilename = [sResultsPath, 'InSamplePLSResults.mat'];
+% Structured output: <GWZ>/PLS/<country>/insample/<options>/
+sCountry = fCountryFromPath(sDataPath);
+sOutDir  = fResultDir(sResultsPath, 'PLS', sCountry, 'insample', ...
+    sprintf('comp%d_lag%d', iNumComp, iTimeLag));
+tRes = cell2table({vBeta(1), dR2}, 'VariableNames', {'Intercept', 'R2'});
+writetable(tRes, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, 'vBeta', 'vBetaT', 'dR2', 'vYhat', 'rModel');
 
 % Restore path

@@ -14,10 +14,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/US/aggregated.csv';    % input CSV
+sCountry    = fCfg('COUNTRY', 'US');                 % 'US' or 'UK'
+sCSVPath    = ['./DATA/Liedtke/', sCountry, '/aggregated.csv'];    % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
-lRolling         = true;   % true = rolling window, false = expanding window
+lRolling         = fCfg('ROLLING', true);   % true = rolling window, false = expanding window
 iTrainObs        = 60;     % in-sample window length (number of observations)
 iTimeLag         = 1;      % predictor lag (periods; 1 = standard predictive regression)
 lSharedTimeframe = true;  % true = evaluate every predictor on the SAME sample
@@ -208,13 +209,12 @@ if isempty(cRowData)
 else
     tOut = cell2table(cRowData, 'VariableNames', cColNames);
 
-    % Ensure output directory exists
-    if ~exist(sOutputDir, 'dir')
-        mkdir(sOutputDir);
-    end
-
-    sTimestamp  = datestr(now, 'yyyymmdd_HHMMSS');
-    sOutFile    = fullfile(sOutputDir, ['inflation_OOS_results_', sTimestamp, '.csv']);
+    % Structured output dir: <root>/single/<country>/oos/<options>/results.csv
+    sCountry = fCountryFromPath(sCSVPath);
+    if lRolling, sWindow = 'rolling'; else, sWindow = 'expanding'; end
+    sOptions = sprintf('train%d_%s_lag%d', iTrainObs, sWindow, iTimeLag);
+    sOutDir  = fResultDir(sOutputDir, 'single', sCountry, 'oos', sOptions);
+    sOutFile = fullfile(sOutDir, 'results.csv');
     writetable(tOut, sOutFile);
     fprintf('\nResults saved to: %s\n', sOutFile);
 

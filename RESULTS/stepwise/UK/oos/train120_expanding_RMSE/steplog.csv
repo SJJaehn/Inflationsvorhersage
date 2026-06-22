@@ -1,0 +1,3 @@
+Step,Action,Predictor,Metric
+1,ADD,CoreCPI_pct1_diff1_lag1,0.00422847596361422
+2,ADD,Housing_pct3_lag3,0.00422550406911526

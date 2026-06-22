@@ -38,16 +38,17 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "UK")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE       = "oos"     # "insample" or "oos"
+MODE       = util.cfg("MODE", "oos")     # "insample" or "oos"
 
 REPORT_LAG = 1         # reporting lag r for the AR (target) terms ONLY
 NUM_LAGS   = 1         # number of AR lags p
 
 # OOS-only settings
-ROLLING      = True   # False = expanding, True = rolling
+ROLLING      = util.cfg("ROLLING", True)   # False = expanding, True = rolling
 MIN_INSAMPLE = 120     # minimum in-sample obs before forecasting (rolling: window length)
 # =========================================================================
 
@@ -117,11 +118,11 @@ def run_insample():
 
     terms = (["Intercept"] + [f"AR_y(t-{REPORT_LAG + k + 1})" for k in range(NUM_LAGS)]
              + names)
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+    options = f"lags{NUM_LAGS}_report{REPORT_LAG}"
+    out_dir = util.result_dir(OUTPUT_DIR, "VAR", COUNTRY, "insample", options)
     pd.DataFrame({"Term": terms, "Coef": res_vx.params,
                   "t_stat": res_vx.tvalues, "p_value": res_vx.pvalues}
-                 ).to_csv(os.path.join(OUTPUT_DIR, f"varx_insample_coefs_{ts}.csv"),
+                 ).to_csv(os.path.join(out_dir, "coefficients.csv"),
                           index=False)
     summary = {
         "Mode": "insample", "ReportLag": REPORT_LAG, "NumLags": NUM_LAGS,
@@ -129,7 +130,7 @@ def run_insample():
         "AR_R2": res_ar.rsquared, "AR_AIC": res_ar.aic, "AR_NumObs": len(ok_ar),
         "VARX_R2": res_vx.rsquared, "VARX_AIC": res_vx.aic, "VARX_NumObs": len(ok_vx),
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "varx_insample", summary)
+    sum_path, _ = util.save_summary(out_dir, "varx_insample", summary)
     print(f"\nSummary saved to: {sum_path}")
 
 
@@ -171,8 +172,8 @@ def run_oos():
     print(f"  Reporting lag r = {REPORT_LAG} | AR lags p = {NUM_LAGS} | "
           f"window = {window} (min in-sample {MIN_INSAMPLE})\n")
 
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+    options = f"min{MIN_INSAMPLE}_{window}_lags{NUM_LAGS}_report{REPORT_LAG}"
+    out_dir = util.result_dir(OUTPUT_DIR, "VAR", COUNTRY, "oos", options)
     summary = {"Mode": "oos", "WindowType": window, "ReportLag": REPORT_LAG,
                "NumLags": NUM_LAGS, "NumPredictors": X.shape[1],
                "MinInSample": MIN_INSAMPLE}
@@ -193,11 +194,11 @@ def run_oos():
             f"{label}_HitRate": fq["HitRate"], f"{label}_NumObs": n_obs,
         })
 
-    pred_path = os.path.join(OUTPUT_DIR, f"varx_oos_predictions_{ts}.csv")
+    pred_path = os.path.join(out_dir, "predictions.csv")
     pd.DataFrame({"Date": dates, "Actual": y, "Forecast_AR": yhat_ar,
                   "Forecast_VARX": yhat_vx, "Benchmark": yhat_bm}
                  ).to_csv(pred_path, index=False)
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "varx_oos", summary)
+    sum_path, _ = util.save_summary(out_dir, "varx_oos", summary)
     print(f"\nSummary saved to:     {sum_path}")
     print(f"Predictions saved to: {pred_path}")
 

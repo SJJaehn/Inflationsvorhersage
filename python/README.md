@@ -63,6 +63,40 @@ python3 python/inflation_dimreduction.py     # set METHOD / MODE in the CONFIG b
 ```
 
 Each script has a `CONFIG` block at the top (input CSV, window type, train
-length, lag, metric, etc.). Results are written to `./RESULTS/` with a
-timestamp. Input CSV layout: column 0 = date, column 1 = target (inflation),
-columns 2.. = predictors.
+length, lag, metric, etc.). Input CSV layout: column 0 = date, column 1 =
+target (inflation), columns 2.. = predictors.
+
+### Output structure
+
+Results are written to a fixed directory tree (no timestamps), so re-running a
+configuration overwrites the previous output:
+
+```
+RESULTS/<type>/<country>/<mode>/<options>/
+    results.csv        # primary metrics / per-predictor table
+    predictions.csv    # one-step-ahead forecasts (where applicable)
+    chart.png          # diagram (single: R² bar chart; where applicable)
+    coefficients.csv / selection_freq.csv / steplog.csv  # extras per script
+```
+
+- `type`    — model family: `single`, `full`, `AR`, `VAR`, `PCA`, `PLS`,
+  `stepwise`, `selection_cv` (TimeSeriesSplit), `selection_split` (single
+  validation split).
+- `country` — `US` / `UK`, taken from the input CSV path.
+- `mode`    — `insample` or `oos`.
+- `options` — a chain of the run options, e.g. `train120_rolling_lag1`,
+  `comp3_min120_expanding_lag1`.
+
+### Batch runs
+
+Each varying dimension can be overridden from the environment (defaults fall
+back to the literal `CONFIG` value), which makes it easy to sweep
+country/mode/window/method without editing the source:
+
+```bash
+INF_COUNTRY=UK INF_MODE=oos INF_ROLLING=False python3 python/inflation_full.py
+INF_METHOD=PCA INF_MODE=insample python3 python/inflation_dimreduction.py
+```
+
+Recognised overrides: `INF_COUNTRY` (US/UK), `INF_MODE` (oos/insample),
+`INF_ROLLING` (True/False), `INF_METHOD` (PCA/PLS, dimreduction only).

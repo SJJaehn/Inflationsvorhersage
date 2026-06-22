@@ -25,10 +25,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/US/aggregated.csv';    % input CSV (date, target)
+sCountry    = fCfg('COUNTRY', 'US');                 % 'US' or 'UK'
+sCSVPath    = ['./DATA/Liedtke/', sCountry, '/aggregated.csv'];    % input CSV (date, target)
 sOutputDir  = './RESULTS/';                     % output directory
 
-lRolling      = true;     % true = rolling window, false = expanding window
+lRolling      = fCfg('ROLLING', true);     % true = rolling window, false = expanding window
 iTrainObs     = 60;       % in-sample window length (number of observations)
 iReportLag    = 1;        % reporting lag r: first usable lag is y(t-(r+1))
 iLookback     = 1;        % lookback p: number of AR lags (used if not optimal)
@@ -189,17 +190,20 @@ end
 % =========================================================================
 %  5. Save results
 % =========================================================================
-if ~exist(sOutputDir, 'dir')
-    mkdir(sOutputDir);
-end
-sTimestamp = datestr(now, 'yyyymmdd_HHMMSS');
-
 if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
 if lOptimalLookback
     sLookback = ['optimal[', num2str(vLookbackGrid), ']'];
+    sLookbackTag = sprintf('optimal%d-%d', min(vLookbackGrid), max(vLookbackGrid));
 else
     sLookback = num2str(iLookback);
+    sLookbackTag = ['p', num2str(iLookback)];
 end
+
+% Structured output dir: <root>/AR/<country>/oos/<options>/
+sCountry = fCountryFromPath(sCSVPath);
+sOptions = sprintf('train%d_%s_report%d_%s', ...
+    iTrainObs, sWindowType, iReportLag, sLookbackTag);
+sOutDir  = fResultDir(sOutputDir, 'AR', sCountry, 'oos', sOptions);
 
 % --- (a) Summary ---------------------------------------------------------
 cSummary = { ...
@@ -227,14 +231,14 @@ cSummary = { ...
     'p_MZ',         num2str(dP_MZ,  '%.4f'); ...
 };
 tSummary = cell2table(cSummary, 'VariableNames', {'Key','Value'});
-sSumFile = fullfile(sOutputDir, ['ar_summary_', sTimestamp, '.csv']);
+sSumFile = fullfile(sOutDir, 'results.csv');
 writetable(tSummary, sSumFile);
 fprintf('\nSummary saved to:     %s\n', sSumFile);
 
 % --- (b) Predictions -----------------------------------------------------
 tPred = table(dtDates, vY, vYhat, vYhatBM, vLagUsed, ...
     'VariableNames', {'Date','Actual','Forecast','Benchmark','LookbackUsed'});
-sPredFile = fullfile(sOutputDir, ['ar_predictions_', sTimestamp, '.csv']);
+sPredFile = fullfile(sOutDir, 'predictions.csv');
 writetable(tPred, sPredFile);
 fprintf('Predictions saved to: %s\n', sPredFile);
 

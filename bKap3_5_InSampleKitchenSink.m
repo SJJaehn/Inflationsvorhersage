@@ -6,7 +6,8 @@ clear; clc; close all;
 % Set paths
 sOldPath = path;
 addpath('./Utils/');
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 
 %% Load data
@@ -83,7 +84,11 @@ cTable = [{'Predictor','Beta', 'Beta T'}; cTable];
 cTable = [cTable; cell(1, size(cTable,2)); {'R2','',num2str(round(dR2 * 100,2))}];
 
 % === Save results
-sFilename = [sResultsPath,'InSampleKitchenSinkResults.mat'];
+% Structured output: <GWZ>/full/<country>/insample/<options>/
+sCountry = fCountryFromPath(sDataPath);
+sOutDir  = fResultDir(sResultsPath, 'full', sCountry, 'insample', sprintf('lag%d', iTimeLag));
+writecell(cTable, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, "cTable", 'mYhat');
 
 % Restore path

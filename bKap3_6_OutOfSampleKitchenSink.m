@@ -10,7 +10,8 @@ clear; clc; close all;
 % Set paths
 sOldPath = path;
 addpath('./Utils/');
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 
 %% Load data
@@ -46,7 +47,7 @@ mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 %% Settings
 iNumIn = 60;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
-lRoll = true;                      % Rolling time window
+lRoll = fCfg('ROLLING', true);     % Rolling time window
 
 %% Out-of-sample analysis
 % Get data
@@ -136,7 +137,13 @@ cTable_OOS = sprintfc('%.2f', mResults');
 cTable_OOS = [{'OOS R2', 'CW (p)', 'OOS R2 CT', 'CW (p) CT'}; cTable_OOS];
 
 % === Save results
-sFilename = [sResultsPath,'OutOfSampleKitchenSinkResults.mat'];
+% Structured output: <GWZ>/full/<country>/oos/<options>/
+sCountry = fCountryFromPath(sDataPath);
+if lRoll; sWindow = 'rolling'; else; sWindow = 'expanding'; end
+sOutDir  = fResultDir(sResultsPath, 'full', sCountry, 'oos', ...
+    sprintf('train%d_%s', iNumIn, sWindow));
+writecell(cTable_OOS, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, "cTable_OOS", 'mYhat','mYroll','rStatsOOS');
 
 % Restore path

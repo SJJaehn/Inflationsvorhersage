@@ -21,10 +21,11 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-ROLLING   = True
+ROLLING   = util.cfg("ROLLING", True)
 TRAIN_OBS = 240
 TIME_LAG  = 1
 
@@ -126,11 +127,11 @@ def main():
     print(f"  Cor/Hit    : {fq['Cor']:.6f} / {fq['HitRate']:.6f}")
     print(f"  OOS period : {beg} to {end}")
 
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+    options = f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}_{METRIC}"
+    out_dir = util.result_dir(OUTPUT_DIR, "stepwise", COUNTRY, "oos", options)
     if step_log:
         pd.DataFrame(step_log, columns=["Step", "Action", "Predictor", "Metric"]
-                     ).to_csv(os.path.join(OUTPUT_DIR, f"stepwise_steplog_{ts}.csv"),
+                     ).to_csv(os.path.join(out_dir, "steplog.csv"),
                               index=False)
 
     summary = {
@@ -143,7 +144,7 @@ def main():
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
         "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "stepwise", summary)
+    sum_path, _ = util.save_summary(out_dir, "stepwise", summary)
     print(f"\nSummary saved to: {sum_path}")
 
 

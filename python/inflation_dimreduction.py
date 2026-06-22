@@ -33,18 +33,19 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-METHOD     = "PLS"     # "PCA" (PCR) or "PLS"
-MODE       = "oos"     # "insample" or "oos"
+METHOD     = util.cfg("METHOD", "PLS")    # "PCA" (PCR) or "PLS"
+MODE       = util.cfg("MODE", "oos")      # "insample" or "oos"
 
 TIME_LAG   = 1         # additional predictive lag
 N_COMP     = 3         # number of components to retain
 STANDARDIZE = True     # z-standardise predictors (iTransformX = 2)
 
 # OOS-only settings
-ROLLING    = False     # False = expanding, True = rolling
+ROLLING    = util.cfg("ROLLING", False)   # False = expanding, True = rolling
 MIN_INSAMPLE = 120     # minimum in-sample obs before forecasting (rolling: window length)
 # =========================================================================
 
@@ -101,14 +102,15 @@ def run_insample():
     fq = util.forecast_quality(y, np.asarray(yhat))
     print(f"  RMSE/MAE  : {fq['RMSE']:.4f} / {fq['MAE']:.4f}   Cor: {fq['Cor']:.4f}")
 
-    util.ensure_dir(OUTPUT_DIR)
+    options = f"comp{n_comp}_lag{TIME_LAG}"
+    out_dir = util.result_dir(OUTPUT_DIR, METHOD, COUNTRY, "insample", options)
     summary = {
         "Method": METHOD, "Mode": "insample", "NumComp": n_comp,
         "TimeLag": TIME_LAG, "NumObs": len(y),
         "VarExplained_X": expl, "R2": res.rsquared,
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"],
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, f"{METHOD.lower()}_insample", summary)
+    sum_path, _ = util.save_summary(out_dir, f"{METHOD.lower()}_insample", summary)
     print(f"\nSummary saved to: {sum_path}")
 
 
@@ -153,8 +155,8 @@ def run_oos():
     print(f"  Cor/Hit    : {fq['Cor']:.6f} / {fq['HitRate']:.6f}")
     print(f"  OOS period : {beg} to {end}")
 
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+    options = f"comp{n_comp}_min{MIN_INSAMPLE}_{window}_lag{TIME_LAG}"
+    out_dir = util.result_dir(OUTPUT_DIR, METHOD, COUNTRY, "oos", options)
     summary = {
         "Method": METHOD, "Mode": "oos", "WindowType": window,
         "NumComp": n_comp, "TimeLag": TIME_LAG, "MinInSample": MIN_INSAMPLE,
@@ -164,8 +166,8 @@ def run_oos():
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
         "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, f"{METHOD.lower()}_oos", summary)
-    pred_path = os.path.join(OUTPUT_DIR, f"{METHOD.lower()}_oos_predictions_{ts}.csv")
+    sum_path, _ = util.save_summary(out_dir, f"{METHOD.lower()}_oos", summary)
+    pred_path = os.path.join(out_dir, "predictions.csv")
     pd.DataFrame({"Date": dates, "Actual": y, "Forecast": yhat,
                   "Benchmark": yhat_bm}).to_csv(pred_path, index=False)
     print(f"\nSummary saved to:     {sum_path}")

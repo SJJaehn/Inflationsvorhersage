@@ -219,11 +219,53 @@ def ensure_dir(path):
     os.makedirs(path, exist_ok=True)
 
 
+def cfg(name, default):
+    """Read an ``INF_<NAME>`` environment override, falling back to the literal
+    default given in a script's CONFIG block. Used to drive batch runs (varying
+    country/mode/window/method) without editing the source. The override is cast
+    to the type of `default` (bool/int/float/str), so direct runs with no env var
+    set behave exactly as the CONFIG literal specifies."""
+    v = os.environ.get(f"INF_{name}")
+    if v is None:
+        return default
+    if isinstance(default, bool):
+        return v.strip().lower() in ("1", "true", "yes", "y")
+    if isinstance(default, int):
+        return int(v)
+    if isinstance(default, float):
+        return float(v)
+    return v
+
+
+def country_from_path(csv_path):
+    """Pull the country code ('US'/'UK') out of a .../Liedtke/<country>/... path."""
+    for part in os.path.normpath(csv_path).split(os.sep):
+        if part.upper() in ("US", "UK"):
+            return part.upper()
+    return "NA"
+
+
+def result_dir(root, type_name, country, mode, options):
+    """Build (and create) the structured output directory
+    ``<root>/<type>/<country>/<mode>/<options>/`` and return it. Files written
+    there (results.csv, chart.png, ...) use fixed names, so each new run for the
+    same configuration overwrites the previous one."""
+    d = os.path.join(root, type_name, country, mode, options)
+    ensure_dir(d)
+    return d
+
+
+def window_tag(rolling):
+    return "rolling" if rolling else "expanding"
+
+
 def save_summary(out_dir, prefix, summary_dict):
-    """Write a 2-column Key/Value summary CSV and return (path, timestamp)."""
+    """Write the primary results.csv (2-column Key/Value) into out_dir and return
+    (path, timestamp). `prefix` is kept for signature compatibility but the file
+    is always named results.csv so it is overwritten on re-runs."""
     ensure_dir(out_dir)
     ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
-    path = os.path.join(out_dir, f"{prefix}_summary_{ts}.csv")
+    path = os.path.join(out_dir, "results.csv")
     pd.DataFrame(list(summary_dict.items()),
                  columns=["Key", "Value"]).to_csv(path, index=False)
     return path, ts

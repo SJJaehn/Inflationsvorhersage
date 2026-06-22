@@ -11,10 +11,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/US/aggregated.csv';    % input CSV
+sCountry    = fCfg('COUNTRY', 'US');                 % 'US' or 'UK'
+sCSVPath    = ['./DATA/Liedtke/', sCountry, '/aggregated.csv'];    % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
-lRolling    = true;     % true = rolling window, false = expanding window
+lRolling    = fCfg('ROLLING', true);     % true = rolling window, false = expanding window
 iTrainObs   = 120;       % in-sample window length (number of observations)
 iTimeLag    = 1;        % predictor lag (periods; 1 = standard predictive regression)
 
@@ -308,23 +309,23 @@ fprintf('  OOS period   : %s  to  %s\n', char(dtOOSBeg,'yyyy-MM-dd'), char(dtOOS
 % =========================================================================
 %  6. Save results
 % =========================================================================
-if ~exist(sOutputDir, 'dir')
-    mkdir(sOutputDir);
-end
+if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
 
-sTimestamp = datestr(now, 'yyyymmdd_HHMMSS');
+% Structured output dir: <root>/stepwise/<country>/oos/<options>/
+sCountry = fCountryFromPath(sCSVPath);
+sOptions = sprintf('train%d_%s_%s', iTrainObs, sWindowType, sMetric);
+sOutDir  = fResultDir(sOutputDir, 'stepwise', sCountry, 'oos', sOptions);
 
 % --- (a) Step log --------------------------------------------------------
 if ~isempty(cStepLog)
     tLog = cell2table(cStepLog, 'VariableNames', {'Step','Action','Predictor','Metric'});
-    sLogFile = fullfile(sOutputDir, ['fb_steplog_', sTimestamp, '.csv']);
+    sLogFile = fullfile(sOutDir, 'steplog.csv');
     writetable(tLog, sLogFile);
     fprintf('\nStep log saved to: %s\n', sLogFile);
 end
 
 % --- (b) Final model summary ---------------------------------------------
 sFinalPreds = strjoin(cPredNames(vSelected), '; ');
-if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
 cSummary = { ...
     'Metric',           sMetric; ...
     'WindowType',       sWindowType; ...
@@ -353,7 +354,7 @@ cSummary = { ...
 };
 
 tSummary  = cell2table(cSummary, 'VariableNames', {'Key','Value'});
-sSumFile  = fullfile(sOutputDir, ['fb_summary_', sTimestamp, '.csv']);
+sSumFile  = fullfile(sOutDir, 'results.csv');
 writetable(tSummary, sSumFile);
 fprintf('Summary saved to:  %s\n', sSumFile);
 

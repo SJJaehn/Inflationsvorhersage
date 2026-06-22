@@ -25,12 +25,13 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE      = "oos"     # "oos" or "insample"
+MODE      = util.cfg("MODE", "oos")     # "oos" or "insample"
 
-ROLLING   = True      # (oos) rolling vs expanding window
+ROLLING   = util.cfg("ROLLING", True)   # (oos) rolling vs expanding window
 TRAIN_OBS = 60        # (oos) in-sample window length
 TIME_LAG  = 1
 
@@ -52,6 +53,16 @@ def prepare():
     print(f"Loaded {len(y)} observations; using {X_raw.shape[1]} predictors from {CSV_PATH}")
     print("Predictors: " + ", ".join(pred_names))
     X_lag = util.apply_lag(X_raw, TIME_LAG)
+
+    # Restrict to the common complete sample (all predictors present). The
+    # kitchen-sink model uses every predictor at once, so a window is only
+    # usable when none of them is missing; predictors with shorter histories
+    # otherwise leave an expanding window reaching back into the early region
+    # where some series is still NaN, and every step gets skipped.
+    ok = ~(np.isnan(y) | np.isnan(X_lag).any(axis=1))
+    y, X_lag = y[ok], X_lag[ok, :]
+    dates = dates[ok].reset_index(drop=True)
+    print(f"Common complete sample: {int(ok.sum())} of {len(ok)} observations retained.")
     return dates, y, X_lag, pred_names
 
 
@@ -83,12 +94,12 @@ def run_oos():
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
         "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
     }
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
-    pred_path = os.path.join(OUTPUT_DIR, f"full_oos_predictions_{ts}.csv")
+    options = f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}_lag{TIME_LAG}"
+    out_dir = util.result_dir(OUTPUT_DIR, "full", COUNTRY, "oos", options)
+    pred_path = os.path.join(out_dir, "predictions.csv")
     pd.DataFrame({"Date": dates, "Actual": y,
                   "Forecast": yhat, "Benchmark": yhat_bm}).to_csv(pred_path, index=False)
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "full_oos", summary)
+    sum_path, _ = util.save_summary(out_dir, "full_oos", summary)
     print(f"\nSummary saved to:     {sum_path}")
     print(f"Predictions saved to: {pred_path}")
 
@@ -111,9 +122,8 @@ def run_insample():
         "Term": ["Intercept"] + pred_names,
         "Coef": res.params, "t_stat": res.tvalues, "p_value": res.pvalues,
     })
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
-    coef_path = os.path.join(OUTPUT_DIR, f"full_insample_coefs_{ts}.csv")
+    out_dir = util.result_dir(OUTPUT_DIR, "full", COUNTRY, "insample", f"lag{TIME_LAG}")
+    coef_path = os.path.join(out_dir, "coefficients.csv")
     coef.to_csv(coef_path, index=False)
 
     summary = {
@@ -122,7 +132,7 @@ def run_insample():
         "F_stat": res.fvalue, "F_p": res.f_pvalue, "AIC": res.aic, "BIC": res.bic,
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "full_insample", summary)
+    sum_path, _ = util.save_summary(out_dir, "full_insample", summary)
     print(f"\nCoefficients saved to: {coef_path}")
     print(f"Summary saved to:      {sum_path}")
 

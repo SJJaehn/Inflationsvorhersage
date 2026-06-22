@@ -21,10 +21,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/UK/aggregated.csv';  % input CSV
+sCountry    = fCfg('COUNTRY', 'UK');               % 'US' or 'UK'
+sCSVPath    = ['./DATA/Liedtke/', sCountry, '/aggregated.csv'];  % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
-lRolling    = true;     % true = rolling window, false = expanding window
+lRolling    = fCfg('ROLLING', true);     % true = rolling window, false = expanding window
 iTrainObs   = 120;       % in-sample window length (number of observations)
 iTimeLag    = 1;        % predictor lag (periods; 1 = standard predictive regression)
 dValFrac    = 0.5;     % fraction of each training window used for validation
@@ -242,25 +243,27 @@ disp(tFreq);
 % =========================================================================
 %  6. Save results
 % =========================================================================
-if ~exist(sOutputDir, 'dir')
-    mkdir(sOutputDir);
-end
-sTimestamp = datestr(now, 'yyyymmdd_HHMMSS');
+if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
+
+% Structured output dir: <root>/selection_split/<country>/oos/<options>/
+sCountry = fCountryFromPath(sCSVPath);
+sOptions = sprintf('train%d_%s_%s_val%d', ...
+    iTrainObs, sWindowType, sMetric, round(dValFrac * 100));
+sOutDir  = fResultDir(sOutputDir, 'selection_split', sCountry, 'oos', sOptions);
 
 % --- (a) Per-origin predictions + selected predictors --------------------
 tPred = table(dtDates, vY, vYhat, vYhatBM, vNumSel, cSelNames, ...
     'VariableNames', {'Date','Actual','Forecast','Benchmark','NumSelected','SelectedPredictors'});
-sPredFile = fullfile(sOutputDir, ['fb_oos_predictions_', sTimestamp, '.csv']);
+sPredFile = fullfile(sOutDir, 'predictions.csv');
 writetable(tPred, sPredFile);
 fprintf('\nPredictions saved to:        %s\n', sPredFile);
 
 % --- (b) Selection-frequency table ---------------------------------------
-sFreqFile = fullfile(sOutputDir, ['fb_oos_selection_freq_', sTimestamp, '.csv']);
+sFreqFile = fullfile(sOutDir, 'selection_freq.csv');
 writetable(tFreq, sFreqFile);
 fprintf('Selection frequency saved to: %s\n', sFreqFile);
 
 % --- (c) Summary ---------------------------------------------------------
-if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
 cSummary = { ...
     'Metric',           sMetric; ...
     'WindowType',       sWindowType; ...
@@ -288,7 +291,7 @@ cSummary = { ...
     'p_MZ',             num2str(dP_MZ,  '%.4f'); ...
 };
 tSummary = cell2table(cSummary, 'VariableNames', {'Key','Value'});
-sSumFile = fullfile(sOutputDir, ['fb_oos_summary_', sTimestamp, '.csv']);
+sSumFile = fullfile(sOutDir, 'results.csv');
 writetable(tSummary, sSumFile);
 fprintf('Summary saved to:            %s\n', sSumFile);
 

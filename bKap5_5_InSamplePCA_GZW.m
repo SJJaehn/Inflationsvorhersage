@@ -7,7 +7,8 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -92,7 +93,14 @@ end
 fprintf('  R2            : %8.4f\n', dR2);
 
 % === Save results
-sFilename = [sResultsPath, 'InSamplePCAResults.mat'];
+% Structured output: <GWZ>/PCA/<country>/insample/<options>/
+sCountry = fCountryFromPath(sDataPath);
+sOutDir  = fResultDir(sResultsPath, 'PCA', sCountry, 'insample', ...
+    sprintf('comp%d_lag%d', iNumComp, iTimeLag));
+exportgraphics(gcf, fullfile(sOutDir, 'chart.png'), 'Resolution', 150);
+tRes = cell2table({vBeta(1), dR2}, 'VariableNames', {'Intercept', 'R2'});
+writetable(tRes, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, 'vBeta', 'vBetaT', 'dR2', 'vYhat', 'rModel');
 
 % Restore path

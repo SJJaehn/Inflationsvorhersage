@@ -5,7 +5,8 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -98,7 +99,11 @@ cTable3 = [cXnamesM, sprintfc('%.2f', mResults)];
 cTable3 = [{'Predictor','Beta', 'Beta T', 'R2'}; cTable3];
 
 % === Save results
-sFilename = [sResultsPath,'InSampleResults.mat'];
+% Structured output: <GWZ>/single/<country>/insample/<options>/
+sCountry = fCountryFromPath(sDataPath);
+sOutDir  = fResultDir(sResultsPath, 'single', sCountry, 'insample', sprintf('lag%d', iTimeLag));
+writecell(cTable3, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, "cTable3", 'mBetaT','mBeta','vR2','cXnamesM','mYhat');
 
 % % Compare with actual results

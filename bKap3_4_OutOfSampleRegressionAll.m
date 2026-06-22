@@ -8,7 +8,8 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/UK/';
+sCountry = fCfg('COUNTRY', 'UK');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -45,7 +46,7 @@ mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 %% Settings
 iNumIn = 120;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
-lRoll = true;                      % Rolling time window
+lRoll = fCfg('ROLLING', true);     % Rolling time window
 
 %% Out-of-sample analysis
 % Initialize memory
@@ -133,7 +134,13 @@ cTable3_OOS = [cXnamesM, sprintfc('%.2f', mResults')];
 cTable3_OOS = [{'Predictor','OOS R2', 'CW (p)', 'OOS R2 CT', 'CW (p) CT'}; cTable3_OOS];
 
 % === Save results
-sFilename = [sResultsPath,'OutOfSampleResults.mat'];
+% Structured output: <GWZ>/single/<country>/oos/<options>/
+sCountry = fCountryFromPath(sDataPath);
+if lRoll; sWindow = 'rolling'; else; sWindow = 'expanding'; end
+sOutDir  = fResultDir(sResultsPath, 'single', sCountry, 'oos', ...
+    sprintf('train%d_%s', iNumIn, sWindow));
+writecell(cTable3_OOS, fullfile(sOutDir, 'results.csv'));
+sFilename = fullfile(sOutDir, 'results.mat');
 save(sFilename, "cTable3_OOS", 'cXnamesM','mYhat','mYroll','rStatsOOS');
 
 % NOTE: The original GWZ replication comparison (vs ./RESULTS/GWZ/ResultsGWZ.xlsx)
@@ -144,6 +151,7 @@ set(gca, 'XTick', 1:iNumPredictors, 'XTickLabel', cXnamesM, 'TickLabelInterprete
 xtickangle(45);
 ylabel('OOS $R^2$ CT (in \%)','FontSize',12,'Interpreter','latex');
 box off
+exportgraphics(gcf, fullfile(sOutDir, 'chart.png'), 'Resolution', 150);
 
 
 % Restore path

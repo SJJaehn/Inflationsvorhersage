@@ -27,10 +27,11 @@ import util
 # =========================================================================
 #  CONFIG — edit here
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-ROLLING    = True
+ROLLING    = util.cfg("ROLLING", True)
 TRAIN_OBS  = 120           # In-sample window length
 TIME_LAG   = 1
 VAL_FRAC   = 0.5          # Fraction of the window used for validation
@@ -197,14 +198,13 @@ print(freq.to_string(index=False))
 # =========================================================================
 #  Save
 # =========================================================================
-util.ensure_dir(OUTPUT_DIR)
-ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+options = f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}_{METRIC}_val{int(VAL_FRAC*100)}"
+out_dir = util.result_dir(OUTPUT_DIR, "selection_split", COUNTRY, "oos", options)
 
 pd.DataFrame({"Date": dates, "Actual": y, "Forecast": yhat, "Benchmark": yhat_bm,
               "NumSelected": num_sel, "SelectedPredictors": sel_names}
-             ).to_csv(os.path.join(OUTPUT_DIR, f"selection_predictions_{ts}.csv"),
-                      index=False)
-freq.to_csv(os.path.join(OUTPUT_DIR, f"selection_freq_{ts}.csv"), index=False)
+             ).to_csv(os.path.join(out_dir, "predictions.csv"), index=False)
+freq.to_csv(os.path.join(out_dir, "selection_freq.csv"), index=False)
 
 summary = {
     "Metric": METRIC, "WindowType": "rolling" if ROLLING else "expanding",
@@ -217,5 +217,5 @@ summary = {
     "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
     "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
 }
-sum_path, _ = util.save_summary(OUTPUT_DIR, "selection", summary)
-print(f"\nResults saved to {OUTPUT_DIR} (selection_predictions / selection_freq / {os.path.basename(sum_path)})")
+sum_path, _ = util.save_summary(out_dir, "selection", summary)
+print(f"\nResults saved to {out_dir} (results.csv / predictions.csv / selection_freq.csv)")

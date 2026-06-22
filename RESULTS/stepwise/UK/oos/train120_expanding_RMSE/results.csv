@@ -1,0 +1,25 @@
+Key,Value
+Metric,RMSE
+WindowType,expanding
+TrainObs,120
+TimeLag,1
+NumSelected,2
+SelectedPredictors,CoreCPI_pct1_diff1_lag1; Housing_pct3_lag3
+OOS_Beg,2007-03-01
+OOS_End,2017-07-01
+Num_OOS_Obs,125
+R2_OOS,0.016760
+R2_OOS_CT,-0.000252
+CW_stat,1.2971
+CW_p,0.0985
+CW_stat_CT,NaN
+CW_p_CT,NaN
+DM_stat,0.4818
+DM_p,0.6308
+RMSE,0.004226
+MAE,0.003253
+Cor,0.115293
+HitRate,0.632000
+R2_MZ,0.013293
+F_MZ,1.6570
+p_MZ,0.2004

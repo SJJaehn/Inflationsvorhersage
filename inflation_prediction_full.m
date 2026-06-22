@@ -16,10 +16,11 @@ clear; clc; close all;
 % =========================================================================
 %  CONFIG — edit here
 % =========================================================================
-sCSVPath    = './DATA/Liedtke/US/aggregated.csv';  % input CSV
+sCountry    = fCfg('COUNTRY', 'US');               % 'US' or 'UK'
+sCSVPath    = ['./DATA/Liedtke/', sCountry, '/aggregated.csv'];  % input CSV
 sOutputDir  = './RESULTS/';                     % output directory
 
-lRolling    = true;     % true = rolling window, false = expanding window
+lRolling    = fCfg('ROLLING', true);     % true = rolling window, false = expanding window
 iTrainObs   = 60;      % in-sample window length (number of observations)
 iTimeLag    = 1;        % predictor lag (periods; 1 = standard predictive regression)
 
@@ -75,6 +76,19 @@ if iTimeLag > 0
 else
     mXlag = mX_raw;
 end
+
+% Restrict to the common complete sample (all predictors present). The
+% kitchen-sink model uses every predictor at once, so a window is only usable
+% when none of them is missing; predictors with shorter histories otherwise
+% leave an expanding window reaching back into the early region where some
+% series is still NaN, and every step gets skipped.
+lComplete = ~isnan(vY) & ~any(isnan(mXlag), 2);
+vY      = vY(lComplete);
+mXlag   = mXlag(lComplete, :);
+dtDates = dtDates(lComplete);
+iNumObs = length(vY);
+fprintf('Common complete sample: %d of %d observations retained.\n', ...
+    iNumObs, numel(lComplete));
 
 % =========================================================================
 %  3. Rolling/expanding one-step-ahead loop (all predictors at once)
@@ -160,12 +174,12 @@ end
 % =========================================================================
 %  5. Save results
 % =========================================================================
-if ~exist(sOutputDir, 'dir')
-    mkdir(sOutputDir);
-end
-sTimestamp = datestr(now, 'yyyymmdd_HHMMSS');
-
 if lRolling; sWindowType = 'rolling'; else; sWindowType = 'expanding'; end
+
+% Structured output dir: <root>/full/<country>/oos/<options>/
+sCountry = fCountryFromPath(sCSVPath);
+sOptions = sprintf('train%d_%s_lag%d', iTrainObs, sWindowType, iTimeLag);
+sOutDir  = fResultDir(sOutputDir, 'full', sCountry, 'oos', sOptions);
 
 % --- (a) Summary ---------------------------------------------------------
 cSummary = { ...
@@ -193,14 +207,14 @@ cSummary = { ...
     'p_MZ',         num2str(dP_MZ,  '%.4f'); ...
 };
 tSummary = cell2table(cSummary, 'VariableNames', {'Key','Value'});
-sSumFile = fullfile(sOutputDir, ['full_summary_', sTimestamp, '.csv']);
+sSumFile = fullfile(sOutDir, 'results.csv');
 writetable(tSummary, sSumFile);
 fprintf('\nSummary saved to:     %s\n', sSumFile);
 
 % --- (b) Predictions -----------------------------------------------------
 tPred = table(dtDates, vY, vYhat, vYhatBM, ...
     'VariableNames', {'Date','Actual','Forecast','Benchmark'});
-sPredFile = fullfile(sOutputDir, ['full_predictions_', sTimestamp, '.csv']);
+sPredFile = fullfile(sOutDir, 'predictions.csv');
 writetable(tPred, sPredFile);
 fprintf('Predictions saved to: %s\n', sPredFile);
 

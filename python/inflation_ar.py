@@ -25,10 +25,11 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/UK/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "UK")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-ROLLING          = True
+ROLLING          = util.cfg("ROLLING", True)
 TRAIN_OBS        = 240
 REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
 LOOKBACK         = 1          # p: AR lags, used when OPTIMAL_LOOKBACK is False
@@ -110,10 +111,13 @@ def main():
     print(f"  Cor/Hit    : {fq['Cor']:.6f} / {fq['HitRate']:.6f}")
     print(f"  OOS period : {beg} to {end}")
 
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
     lookback_str = f"optimal[{min(LOOKBACK_GRID)}-{max(LOOKBACK_GRID)}]" \
         if OPTIMAL_LOOKBACK else str(LOOKBACK)
+    lookback_tag = f"optimal{min(LOOKBACK_GRID)}-{max(LOOKBACK_GRID)}" \
+        if OPTIMAL_LOOKBACK else f"p{LOOKBACK}"
+    options = (f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}"
+               f"_report{REPORT_LAG}_{lookback_tag}")
+    out_dir = util.result_dir(OUTPUT_DIR, "AR", COUNTRY, "oos", options)
 
     summary = {
         "WindowType": "rolling" if ROLLING else "expanding",
@@ -124,9 +128,9 @@ def main():
         "RMSE": fq["RMSE"], "MAE": fq["MAE"], "Cor": fq["Cor"], "HitRate": fq["HitRate"],
         "R2_MZ": fq["MZ_R2"], "F_MZ": fq["MZ_F"], "p_MZ": fq["MZ_p"],
     }
-    sum_path, _ = util.save_summary(OUTPUT_DIR, "ar", summary)
+    sum_path, _ = util.save_summary(out_dir, "ar", summary)
 
-    pred_path = os.path.join(OUTPUT_DIR, f"ar_predictions_{ts}.csv")
+    pred_path = os.path.join(out_dir, "predictions.csv")
     pd.DataFrame({"Date": dates, "Actual": y, "Forecast": yhat,
                   "Benchmark": yhat_bm, "LookbackUsed": lag_used}
                  ).to_csv(pred_path, index=False)

@@ -8,7 +8,8 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sCountry = fCfg('COUNTRY', 'US');
+sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
@@ -18,7 +19,7 @@ iTimeLag    = 1;     % additional predictive lag (predictors are already
 iNumComp    = 3;     % number of principal components to retain
 iTransformX = 2;     % PCA preprocessing: 0 = none, 1 = centre, 2 = z-standardise
 iNumIn      = 120;   % minimum in-sample observations before forecasting
-lRoll       = false; % false = expanding window, true = rolling window
+lRoll       = fCfg('ROLLING', false); % false = expanding window, true = rolling window
 
 %% Load data
 % Macro panel produced by DATA/Liedtke/aggregate.py.
@@ -108,6 +109,14 @@ mResults = round([rStatsOOS.vR2OOS * 100; ...
 cTable_OOS = sprintfc('%.2f', mResults');
 cTable_OOS = [{'OOS R2', 'CW (p)', 'OOS R2 CT', 'CW (p) CT'}; cTable_OOS];
 disp(cTable_OOS);
+
+% === Save results
+% Structured output: <GWZ>/PCA/<country>/oos/<options>/
+sCountry = fCountryFromPath(sDataPath);
+sOutDir  = fResultDir(sResultsPath, 'PCA', sCountry, 'oos', ...
+    sprintf('comp%d_min%d_%s', iNumComp, iNumIn, sWindow));
+writecell(cTable_OOS, fullfile(sOutDir, 'results.csv'));
+save(fullfile(sOutDir, 'results.mat'), 'cTable_OOS', 'vYhat', 'vYroll', 'rStatsOOS');
 
 % Restore path
 path(sOldPath);

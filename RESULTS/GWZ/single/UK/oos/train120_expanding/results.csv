@@ -1,0 +1,13 @@
+Predictor,OOS R2,CW (p),OOS R2 CT,CW (p) CT
+CPI_pct1_diff1_lag1,0.47,2.76,0.27,3.72
+CapacityUtilization_diff3_lag2,-1.62,NaN,-0.92,NaN
+CoreCPI_pct1_diff1_lag1,1.93,0.00,1.13,0.23
+DXY_pct1,-0.81,NaN,-0.54,NaN
+FedFundsRate_diff1,-0.65,NaN,-0.52,NaN
+Housing_pct3_lag3,-0.23,NaN,-0.25,NaN
+M2MoneySupply_pct1_lag1,0.17,16.99,0.16,17.66
+Payroll_pct1_lag2,-0.29,NaN,-0.14,NaN
+T10Y3M_diff1,-0.55,NaN,-0.69,NaN
+TradeSales_pct1_lag2,-0.58,NaN,-0.19,NaN
+Unemployment_diff1_lag2,-0.35,NaN,-0.19,NaN
+Yield10Y_diff1,-0.36,NaN,-0.51,NaN

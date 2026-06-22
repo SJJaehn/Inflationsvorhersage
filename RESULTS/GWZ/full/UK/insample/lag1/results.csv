@@ -1,0 +1,15 @@
+Predictor,Beta,Beta T
+CPI_pct1_diff1_lag1,-0.10,-1.45
+CapacityUtilization_diff3_lag2,-0.03,-1.19
+CoreCPI_pct1_diff1_lag1,0.14,2.18
+DXY_pct1,0.02,0.57
+FedFundsRate_diff1,0.08,2.84
+Housing_pct3_lag3,0.06,1.97
+M2MoneySupply_pct1_lag1,0.01,0.49
+Payroll_pct1_lag2,-0.01,-0.37
+T10Y3M_diff1,0.01,0.25
+TradeSales_pct1_lag2,0.00,0.06
+Unemployment_diff1_lag2,0.00,0.10
+Yield10Y_diff1,-0.02,-0.48
+,,
+R2,,7.81

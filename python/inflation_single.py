@@ -22,21 +22,25 @@ import os
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 import util
 
 # =========================================================================
 #  CONFIG
 # =========================================================================
-CSV_PATH   = "./DATA/Liedtke/US/aggregated.csv"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE             = "oos"   # "oos" or "insample"
+MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
 
-ROLLING          = True    # (oos) rolling vs expanding window
+ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
 TRAIN_OBS        = 120      # (oos) in-sample window length
 TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
 SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
+
+PLOT_R2          = True     # bar chart of R2 per predictor (port of bKap3_4)
 # =========================================================================
 
 
@@ -109,19 +113,55 @@ def run_insample():
     return out, "single_insample"
 
 
+def plot_r2_bar(out, out_dir):
+    """Bar chart of the R2 (in %) per predictor (port of the bKap3_4 diagram).
+
+    OOS mode plots the OOS R2 vs the historical-mean benchmark; in-sample mode
+    plots the regression R2. Bars are sorted descending so the strongest
+    predictors are easy to read off. Saved as chart.png in `out_dir`.
+    """
+    col = "R2_OOS" if MODE == "oos" else "R2"
+    ylabel = "OOS $R^2$ (in %)" if MODE == "oos" else "In-sample $R^2$ (in %)"
+
+    d = out[["Predictor", col]].copy()
+    d[col] = d[col] * 100
+    d = d.sort_values(col, ascending=False).reset_index(drop=True)
+
+    fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(d)), 5))
+    colors = ["#2c7fb8" if v >= 0 else "#d95f5f" for v in d[col]]
+    ax.bar(np.arange(len(d)), d[col], color=colors)
+    ax.axhline(0, color="black", linewidth=0.8)
+    ax.set_xticks(np.arange(len(d)))
+    ax.set_xticklabels(d["Predictor"], rotation=45, ha="right", fontsize=8)
+    ax.set_ylabel(ylabel, fontsize=12)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+
+    path = os.path.join(out_dir, "chart.png")
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    print(f"R2 bar chart saved to: {path}")
+
+
 def main():
     if MODE == "oos":
-        out, prefix = run_oos()
+        out, _ = run_oos()
+        options = f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}_lag{TIME_LAG}"
+        mode_dir = "oos"
     elif MODE == "insample":
-        out, prefix = run_insample()
+        out, _ = run_insample()
+        options = f"lag{TIME_LAG}"
+        mode_dir = "insample"
     else:
         raise ValueError(f"Unknown MODE: {MODE}")
 
-    util.ensure_dir(OUTPUT_DIR)
-    ts = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
-    path = os.path.join(OUTPUT_DIR, f"{prefix}_results_{ts}.csv")
+    out_dir = util.result_dir(OUTPUT_DIR, "single", COUNTRY, mode_dir, options)
+    path = os.path.join(out_dir, "results.csv")
     out.to_csv(path, index=False)
     print(f"\nResults saved to: {path}")
+
+    if PLOT_R2:
+        plot_r2_bar(out, out_dir)
 
 
 if __name__ == "__main__":
