@@ -33,7 +33,7 @@ COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
 CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE             = util.cfg("MODE", "insample")        # "oos" or "insample"
+MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
 
 ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
 TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))  # (oos) in-sample window length
