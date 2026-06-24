@@ -30,9 +30,9 @@ CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING          = util.cfg("ROLLING", True)
-TRAIN_OBS        = 240
+TRAIN_OBS        = 120
 REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
-LOOKBACK         = 1          # p: AR lags, used when OPTIMAL_LOOKBACK is False
+LOOKBACK         = 11          # p: AR lags, used when OPTIMAL_LOOKBACK is False
 OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
 # =========================================================================

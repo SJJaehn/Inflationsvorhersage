@@ -45,7 +45,7 @@ OUTPUT_DIR = "./RESULTS/"
 MODE       = util.cfg("MODE", "oos")     # "insample" or "oos"
 
 REPORT_LAG = 1         # reporting lag r for the AR (target) terms ONLY
-NUM_LAGS   = 1         # number of AR lags p
+NUM_LAGS   = 11         # number of AR lags p
 
 # OOS-only settings
 ROLLING      = util.cfg("ROLLING", True)   # False = expanding, True = rolling

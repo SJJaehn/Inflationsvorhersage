@@ -1,0 +1,14 @@
+Key,Value
+Mode,insample
+ReportLag,1
+OptimalLookback,True
+NumLags,1
+AR_Lookback,11
+VARX_Lookback,11
+NumPredictors,11
+AR_R2,0.48983063942194627
+AR_AIC,-3769.6584509420773
+AR_NumObs,445
+VARX_R2,0.593557337725407
+VARX_AIC,-2160.6400536268593
+VARX_NumObs,245

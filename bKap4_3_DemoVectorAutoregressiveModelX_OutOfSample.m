@@ -13,9 +13,9 @@ sOldPath = path;
 addpath('./Utils/');
 
 %% Settings
-sDataPath  = './DATA/Liedtke/US/';
+sDataPath  = './DATA/Liedtke/UK/';
 iReportLag = 1;       % reporting/publication lag r for the AR terms
-iNumLags   = 1;       % number of AR lags p
+iNumLags   = 11;       % number of AR lags p
 iNumIn     = 120;     % minimum in-sample observations before forecasting
 lRoll      = true;   % false = expanding window, true = rolling window
 

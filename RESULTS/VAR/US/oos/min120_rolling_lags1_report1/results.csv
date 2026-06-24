@@ -2,6 +2,7 @@ Key,Value
 Mode,oos
 WindowType,rolling
 ReportLag,1
+OptimalLookback,False
 NumLags,1
 NumPredictors,11
 MinInSample,120

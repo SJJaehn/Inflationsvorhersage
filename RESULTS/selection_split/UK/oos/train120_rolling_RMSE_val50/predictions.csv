@@ -119,25 +119,25 @@ Date,Actual,Forecast,Benchmark,NumSelected,SelectedPredictors
 2006-12-01,0.00242715565841789,NaN,NaN,NaN,
 2007-01-01,-0.0109194488137949,NaN,NaN,NaN,
 2007-02-01,0.00970734915490179,NaN,NaN,NaN,
-2007-03-01,0.00120028854227017,-0.000595662718000701,1.840828070472e-05,5,DXY_pct1; Housing_pct3_lag3; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-04-01,-0.00123118052624172,-0.00107225285331626,2.84280624086438e-05,5,DXY_pct1; Housing_pct3_lag3; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-05-01,-0.00121644953696443,-0.000180795504039508,-5.82981804006696e-06,3,DXY_pct1; Housing_pct3_lag3; T10Y3M_diff1
-2007-06-01,-5.77848467897546e-06,-0.000548963134642882,-1.58118484986073e-05,4,CapacityUtilization_diff3_lag2; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
-2007-07-01,-0.00719137954583038,0.00333030709583641,8.10324129651985e-06,5,CapacityUtilization_diff3_lag2; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Unemployment_diff1_lag2
-2007-08-01,0.00840052746492581,0.000481600740104666,-2.80323803178245e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-09-01,-0.00241106753586307,0.000458346428168778,-5.63004985387564e-06,5,CapacityUtilization_diff3_lag2; DXY_pct1; Housing_pct3_lag3; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-10-01,0.00239377360387127,-0.000642717622777424,-1.37159120498775e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-11-01,-1.28621039543475e-05,0.000599730229520457,1.81197887912118e-05,6,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2; Unemployment_diff1_lag2
-2007-12-01,0.00117629030106814,-0.000345474583554209,2.98329355608584e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2008-01-01,-0.00948997037902211,-0.000845478506673936,2.78317664455852e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2008-02-01,0.0106790310211147,-0.000648419227499153,-4.0870528303899e-06,4,DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2008-03-01,-0.0023992039196834,-0.00114695067578999,2.58699509962897e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2008-04-01,0.00469889481993802,-0.00107757970788572,5.94365084148896e-06,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2007-03-01,0.00120028854227017,-0.000595662718000701,1.840828070472e-05,5,GBP_pct1; Housing_pct3_lag3; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-04-01,-0.00123118052624172,-0.00107225285331626,2.84280624086438e-05,5,GBP_pct1; Housing_pct3_lag3; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-05-01,-0.00121644953696443,-0.000180795504039508,-5.82981804006696e-06,3,GBP_pct1; Housing_pct3_lag3; T10Y3M_diff1
+2007-06-01,-5.77848467897546e-06,-0.000548963134642882,-1.58118484986073e-05,4,CapacityUtilization_diff3_lag2; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2007-07-01,-0.00719137954583038,0.00333030709583641,8.10324129651985e-06,5,CapacityUtilization_diff3_lag2; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Unemployment_diff1_lag2
+2007-08-01,0.00840052746492581,0.000481600740104666,-2.80323803178245e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; T10Y3M_diff1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-09-01,-0.00241106753586307,0.000458346428168778,-5.63004985387564e-06,5,CapacityUtilization_diff3_lag2; GBP_pct1; Housing_pct3_lag3; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-10-01,0.00239377360387127,-0.000642717622777424,-1.37159120498775e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-11-01,-1.28621039543475e-05,0.000599730229520457,1.81197887912118e-05,6,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2; Unemployment_diff1_lag2
+2007-12-01,0.00117629030106814,-0.000345474583554209,2.98329355608584e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2008-01-01,-0.00948997037902211,-0.000845478506673936,2.78317664455852e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2008-02-01,0.0106790310211147,-0.000648419227499153,-4.0870528303899e-06,4,GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2008-03-01,-0.0023992039196834,-0.00114695067578999,2.58699509962897e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2008-04-01,0.00469889481993802,-0.00107757970788572,5.94365084148896e-06,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
 2008-05-01,-0.00240387261539121,0.000181734715644168,2.16273049716165e-05,3,M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
 2008-06-01,-3.39205661750164e-05,-0.00124368800349434,1.35636529104977e-05,2,M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
 2008-07-01,-0.0058072009291521,0.000949064902356339,6.0048352731279e-05,2,M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
 2008-08-01,0.00577367205542734,3.47300491384866e-05,2.33426704014938e-05,4,CapacityUtilization_diff3_lag2; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2008-09-01,-0.00118124955255694,0.00095925215156325,2.47056940948528e-05,5,CapacityUtilization_diff3_lag2; DXY_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2008-09-01,-0.00118124955255694,0.00095925215156325,2.47056940948528e-05,5,CapacityUtilization_diff3_lag2; GBP_pct1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
 2008-10-01,-0.00687813678858473,0.00172894544736573,3.2561819216792e-06,4,CapacityUtilization_diff3_lag2; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2
 2008-11-01,0.00228571428571434,-0.000369629362819825,-1.90476190476195e-05,3,CapacityUtilization_diff3_lag2; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
 2008-12-01,-0.00229095074455898,-0.00101849984918576,-1.16225011622488e-05,3,CapacityUtilization_diff3_lag2; M2MoneySupply_pct1_lag1; TradeSales_pct1_lag2
@@ -154,7 +154,7 @@ Date,Actual,Forecast,Benchmark,NumSelected,SelectedPredictors
 2009-11-01,0.00112994060765659,-0.000299945110363906,9.43752359381008e-06,1,CapacityUtilization_diff3_lag2
 2009-12-01,0.00112356107575895,-0.00027944904192497,7.40680887739339e-06,1,CapacityUtilization_diff3_lag2
 2010-01-01,-0.00451086390724875,-0.0004262624048331,5.35433574755939e-06,1,CapacityUtilization_diff3_lag2
-2010-02-01,0.00337711164482835,0.000331648616905156,4.76257157321811e-05,1,DXY_pct1
+2010-02-01,0.00337711164482835,0.000331648616905156,4.76257157321811e-05,1,GBP_pct1
 2010-03-01,0.00224212977021954,-0.00249295197561749,-4.18807236989098e-06,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; T10Y3M_diff1
 2010-04-01,0.00109845914083917,-2.46186875829992e-05,1.45594106268262e-05,1,Yield10Y_diff1
 2010-05-01,-0.00336814705875055,-4.1030760342797e-06,1.23604343517936e-05,1,Yield10Y_diff1
@@ -167,65 +167,65 @@ Date,Actual,Forecast,Benchmark,NumSelected,SelectedPredictors
 2010-12-01,0.00548962180986301,0.000161367154832325,5.01025981562246e-06,3,CoreCPI_pct1_diff1_lag1; Unemployment_diff1_lag2; Yield10Y_diff1
 2011-01-01,-0.00771036754711463,8.20332928580128e-05,7.33406674000736e-05,2,CoreCPI_pct1_diff1_lag1; Unemployment_diff1_lag2
 2011-02-01,0.00435611055278762,0.000317444005733178,6.53939108137584e-05,3,CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2; Yield10Y_diff1
-2011-03-01,-0.00219635223777725,-0.000791541945980164,2.2712788819231e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; Unemployment_diff1_lag2; Yield10Y_diff1
-2011-04-01,0.00430912439247555,0.000514209648598096,4.47138874719218e-06,5,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_pct1; Payroll_pct1_lag2; Yield10Y_diff1
+2011-03-01,-0.00219635223777725,-0.000791541945980164,2.2712788819231e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; Unemployment_diff1_lag2; Yield10Y_diff1
+2011-04-01,0.00430912439247555,0.000514209648598096,4.47138874719218e-06,5,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; GBP_pct1; Payroll_pct1_lag2; Yield10Y_diff1
 2011-05-01,-0.00541577252597913,-0.000872792298864107,6.61246153081755e-06,3,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2
 2011-06-01,-0.00214362272240098,0.00211243539144843,-3.81400615427167e-05,3,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2
-2011-07-01,0,-0.00176980322169928,-1.11259457053851e-05,4,CoreCPI_pct1_diff1_lag1; DXY_pct1; Payroll_pct1_lag2; Yield10Y_diff1
+2011-07-01,0,-0.00176980322169928,-1.11259457053851e-05,4,CoreCPI_pct1_diff1_lag1; GBP_pct1; Payroll_pct1_lag2; Yield10Y_diff1
 2011-08-01,0.00427807486631027,0.000139787789549271,5.55555555555559e-05,3,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2
-2011-09-01,0.00211170149151707,0.000152957221995813,2.09357690605372e-06,4,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1
-2011-10-01,-0.00638977635782734,0.00158815826456118,3.0966496386529e-05,5,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2011-11-01,0.00211640211640218,-0.00118160349526381,1.11111111111108e-05,6,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Payroll_pct1_lag2; Yield10Y_diff1
-2011-12-01,0.00105149651084169,0.000218095484797285,1.76366843033515e-05,4,CoreCPI_pct1_diff1_lag1; DXY_pct1; Payroll_pct1_lag2; Yield10Y_diff1
-2012-01-01,-0.0063257933640859,-0.000297095542572548,1.52732095216472e-05,5,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Payroll_pct1_lag2
-2012-02-01,0.00843772578224855,0.000714070806900468,-4.093567251461e-06,3,CoreCPI_pct1_diff1_lag1; DXY_pct1; Yield10Y_diff1
-2012-03-01,-0.00317899070927208,-0.00119547864714381,2.17169521163555e-05,3,CoreCPI_pct1_diff1_lag1; DXY_pct1; Payroll_pct1_lag2
-2012-04-01,0.00314024981061611,0.00151949375608711,-4.71521942110124e-06,5,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; Housing_pct3_lag3
-2012-05-01,-0.00524109014675056,-0.000208488853405726,-6.5048991182981e-07,3,CoreCPI_pct1_diff1_lag1; DXY_pct1; Unemployment_diff1_lag2
-2012-06-01,-0.00312825860271126,0.000139325451047255,-2.20458553791899e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; Housing_pct3_lag3; Unemployment_diff1_lag2
-2012-07-01,0.00417428370731376,-0.000729074218480765,-2.60688216892605e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; Housing_pct3_lag3; Unemployment_diff1_lag2
-2012-08-01,0.00313370321305673,0.000545552159712059,3.07045627670264e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; Housing_pct3_lag3; Yield10Y_diff1
-2012-09-01,-0.00105798013867897,0.00178546789442624,1.2785213934637e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3; Yield10Y_diff1
-2012-10-01,0.00102762941438073,0.000163869679040754,4.02688126282894e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2012-11-01,-0.0020832618908817,-0.000682554608470774,2.36132343306402e-05,4,CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2012-12-01,0.00102666780267535,0.000336328818377341,1.7217630853994e-05,4,CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2013-01-01,-0.00617603119271881,-0.000512652467736589,3.87218842994493e-06,4,CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2013-02-01,0.0082378868628219,-0.000671447919389278,1.79934689207998e-05,5,CoreCPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3; Yield10Y_diff1
+2011-09-01,0.00211170149151707,0.000152957221995813,2.09357690605372e-06,4,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1
+2011-10-01,-0.00638977635782734,0.00158815826456118,3.0966496386529e-05,5,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2011-11-01,0.00211640211640218,-0.00118160349526381,1.11111111111108e-05,6,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Payroll_pct1_lag2; Yield10Y_diff1
+2011-12-01,0.00105149651084169,0.000218095484797285,1.76366843033515e-05,4,CoreCPI_pct1_diff1_lag1; GBP_pct1; Payroll_pct1_lag2; Yield10Y_diff1
+2012-01-01,-0.0063257933640859,-0.000297095542572548,1.52732095216472e-05,5,CPI_pct1_diff1_lag1; CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Payroll_pct1_lag2
+2012-02-01,0.00843772578224855,0.000714070806900468,-4.093567251461e-06,3,CoreCPI_pct1_diff1_lag1; GBP_pct1; Yield10Y_diff1
+2012-03-01,-0.00317899070927208,-0.00119547864714381,2.17169521163555e-05,3,CoreCPI_pct1_diff1_lag1; GBP_pct1; Payroll_pct1_lag2
+2012-04-01,0.00314024981061611,0.00151949375608711,-4.71521942110124e-06,5,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; Housing_pct3_lag3
+2012-05-01,-0.00524109014675056,-0.000208488853405726,-6.5048991182981e-07,3,CoreCPI_pct1_diff1_lag1; GBP_pct1; Unemployment_diff1_lag2
+2012-06-01,-0.00312825860271126,0.000139325451047255,-2.20458553791899e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; Housing_pct3_lag3; Unemployment_diff1_lag2
+2012-07-01,0.00417428370731376,-0.000729074218480765,-2.60688216892605e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; Housing_pct3_lag3; Unemployment_diff1_lag2
+2012-08-01,0.00313370321305673,0.000545552159712059,3.07045627670264e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; Housing_pct3_lag3; Yield10Y_diff1
+2012-09-01,-0.00105798013867897,0.00178546789442624,1.2785213934637e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3; Yield10Y_diff1
+2012-10-01,0.00102762941438073,0.000163869679040754,4.02688126282894e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2012-11-01,-0.0020832618908817,-0.000682554608470774,2.36132343306402e-05,4,CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2012-12-01,0.00102666780267535,0.000336328818377341,1.7217630853994e-05,4,CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2013-01-01,-0.00617603119271881,-0.000512652467736589,3.87218842994493e-06,4,CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2013-02-01,0.0082378868628219,-0.000671447919389278,1.79934689207998e-05,5,CoreCPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3; Yield10Y_diff1
 2013-03-01,-0.00207771609833474,-0.000522257876647224,2.09966088495902e-05,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; Housing_pct3_lag3; T10Y3M_diff1
 2013-04-01,-0.00103193330187179,0.000466397675679294,-7.21048552848972e-06,3,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; Housing_pct3_lag3
-2013-05-01,-4.17344852055024e-06,-0.000487294074424401,-2.65884359932467e-05,4,CapacityUtilization_diff3_lag2; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2013-06-01,-0.00407747620433108,-0.000500033567746787,1.70068027210886e-05,3,DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2013-07-01,0.00203665987780044,0.00080925849363502,-6.12147120389317e-06,4,CPI_pct1_diff1_lag1; DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3
-2013-08-01,0.00408163265306127,0.000154250807160821,1.08648413733166e-05,4,DXY_pct1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
-2013-09-01,-0.0010328521652565,0.000519365261326498,1.22555549634991e-05,1,DXY_pct1
+2013-05-01,-4.17344852055024e-06,-0.000487294074424401,-2.65884359932467e-05,4,CapacityUtilization_diff3_lag2; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2013-06-01,-0.00407747620433108,-0.000500033567746787,1.70068027210886e-05,3,GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2013-07-01,0.00203665987780044,0.00080925849363502,-6.12147120389317e-06,4,CPI_pct1_diff1_lag1; GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3
+2013-08-01,0.00408163265306127,0.000154250807160821,1.08648413733166e-05,4,GBP_pct1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2013-09-01,-0.0010328521652565,0.000519365261326498,1.22555549634991e-05,1,GBP_pct1
 2013-10-01,-0.00203560926186763,0.000923649447286454,3.70511517615024e-06,2,CapacityUtilization_diff3_lag2; Housing_pct3_lag3
-2013-11-01,-0.00101317122593714,0.000706016259064943,-2.37941727303329e-06,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; DXY_pct1; Housing_pct3_lag3
-2013-12-01,0.00404858299595157,0.000618965451797851,0,3,CoreCPI_pct1_diff1_lag1; DXY_pct1; Housing_pct3_lag3
-2014-01-01,-0.0090889055765967,-0.000645752951270361,1.21212439459432e-05,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; DXY_pct1; Housing_pct3_lag3
+2013-11-01,-0.00101317122593714,0.000706016259064943,-2.37941727303329e-06,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; GBP_pct1; Housing_pct3_lag3
+2013-12-01,0.00404858299595157,0.000618965451797851,0,3,CoreCPI_pct1_diff1_lag1; GBP_pct1; Housing_pct3_lag3
+2014-01-01,-0.0090889055765967,-0.000645752951270361,1.21212439459432e-05,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; GBP_pct1; Housing_pct3_lag3
 2014-02-01,0.00909300748439368,-0.000865589839232651,-9.66116165199149e-06,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; Housing_pct3_lag3; Payroll_pct1_lag2
 2014-03-01,-0.00203452143250726,-0.000933188799023909,1.2127352552882e-05,2,CoreCPI_pct1_diff1_lag1; TradeSales_pct1_lag2
-2014-04-01,0.00100298456501235,0.00125219294537148,6.02355569730428e-06,5,CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
-2014-05-01,-0.00302114803625364,-0.00131880159231555,-7.16529288460518e-06,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2014-06-01,0.00200803212851408,-0.000952282125847956,-3.22164948453626e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
-2014-07-01,-0.00401204014454615,0.000876133434195735,1.67336010709507e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2; TradeSales_pct1_lag2
-2014-08-01,0.00501605620880319,0.00193787637063971,4.69488399134632e-06,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
+2014-04-01,0.00100298456501235,0.00125219294537148,6.02355569730428e-06,5,CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
+2014-05-01,-0.00302114803625364,-0.00131880159231555,-7.16529288460518e-06,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2014-06-01,0.00200803212851408,-0.000952282125847956,-3.22164948453626e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
+2014-07-01,-0.00401204014454615,0.000876133434195735,1.67336010709507e-05,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2; TradeSales_pct1_lag2
+2014-08-01,0.00501605620880319,0.00193787637063971,4.69488399134632e-06,6,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1; Yield10Y_diff1
 2014-09-01,-0.00201104719177025,-0.000955733588865581,3.65038015640399e-06,4,CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2; TradeSales_pct1_lag2; Yield10Y_diff1
 2014-10-01,-1.00100100097755e-06,0.00108234680950586,8.34167500834056e-06,3,CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2; Yield10Y_diff1
 2014-11-01,-0.00299800199800182,-0.000970886260425505,-1.30616174582802e-05,4,CoreCPI_pct1_diff1_lag1; M2MoneySupply_pct1_lag1; Payroll_pct1_lag2; Yield10Y_diff1
 2014-12-01,0.00199800199800193,0.000218247531563926,-3.79901788352492e-05,3,CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2; Yield10Y_diff1
 2015-01-01,-0.00700700700700707,-0.000704305298008628,-3.19284802043425e-05,3,CoreCPI_pct1_diff1_lag1; Payroll_pct1_lag2; Yield10Y_diff1
 2015-02-01,0.0100312005553941,0.000580107021929573,-2.65851092823112e-05,1,CoreCPI_pct1_diff1_lag1
-2015-03-01,-0.00201916842275884,-0.00143220830962849,3.91595943366278e-06,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2015-04-01,0.00200702306714295,0.00082210230392035,-2.3471924377727e-05,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2015-05-01,-0.00101004619076916,-0.00200112261316338,-6.62548671844602e-06,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2015-06-01,-0.00200200200200196,-0.000906151320192313,-1.49222125623312e-05,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2015-07-01,-0.000999000999000965,0.00150865602260909,0,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2015-08-01,0.00399900099900086,0.00151174709740105,-1.88203903569134e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
-2015-09-01,-0.00399700897308064,0.0014582848694528,4.03563941299701e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2
-2015-10-01,0.00199501296509663,0.00105402623611325,-2.92201605138589e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
-2015-11-01,-0.000998003992015883,-0.00110228623194858,-2.11300386294503e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
-2015-12-01,0.00099700897308086,0.000405598899070224,0,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3
-2016-01-01,-0.00597708865435576,-0.000273351512556496,-2.29415918909922e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; FedFundsRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2015-03-01,-0.00201916842275884,-0.00143220830962849,3.91595943366278e-06,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2015-04-01,0.00200702306714295,0.00082210230392035,-2.3471924377727e-05,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2015-05-01,-0.00101004619076916,-0.00200112261316338,-6.62548671844602e-06,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2015-06-01,-0.00200200200200196,-0.000906151320192313,-1.49222125623312e-05,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2015-07-01,-0.000999000999000965,0.00150865602260909,0,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2015-08-01,0.00399900099900086,0.00151174709740105,-1.88203903569134e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2015-09-01,-0.00399700897308064,0.0014582848694528,4.03563941299701e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; Payroll_pct1_lag2
+2015-10-01,0.00199501296509663,0.00105402623611325,-2.92201605138589e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2015-11-01,-0.000998003992015883,-0.00110228623194858,-2.11300386294503e-06,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
+2015-12-01,0.00099700897308086,0.000405598899070224,0,4,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3
+2016-01-01,-0.00597708865435576,-0.000273351512556496,-2.29415918909922e-05,5,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; RiskFreeRate_diff1; Housing_pct3_lag3; T10Y3M_diff1
 2016-02-01,0.00698208168327685,0.00107717452148479,-1.03674136992915e-05,3,CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; Housing_pct3_lag3
 2016-03-01,0.00099500099500105,-0.00231151501705154,-4.14998331664991e-06,5,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; Housing_pct3_lag3; Yield10Y_diff1
 2016-04-01,-0.00100497112449327,0.00195876167767263,4.19364509140115e-06,4,CPI_pct1_diff1_lag1; CapacityUtilization_diff3_lag2; CoreCPI_pct1_diff1_lag1; Housing_pct3_lag3

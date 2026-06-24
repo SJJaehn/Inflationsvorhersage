@@ -8,7 +8,7 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sCountry = fCfg('COUNTRY', 'UK');
+sCountry = fCfg('COUNTRY', 'US');
 sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
@@ -44,7 +44,7 @@ iTimeLag = 1;
 mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 
 %% Settings
-iNumIn = 120;                       % Number of in-sample periods (10 years)
+iNumIn = 360;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
 lRoll = fCfg('ROLLING', true);     % Rolling time window
 
@@ -150,6 +150,7 @@ bar(rStatsOOS.vR2OOSCT * 100);
 set(gca, 'XTick', 1:iNumPredictors, 'XTickLabel', cXnamesM, 'TickLabelInterpreter', 'none');
 xtickangle(45);
 ylabel('OOS $R^2$ CT (in \%)','FontSize',12,'Interpreter','latex');
+title(['Out-of-Sample R^2 ', sCountry], 'FontSize', 12);
 box off
 exportgraphics(gcf, fullfile(sOutDir, 'chart.png'), 'Resolution', 150);
 

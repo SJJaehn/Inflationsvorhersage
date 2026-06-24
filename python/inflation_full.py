@@ -32,7 +32,7 @@ OUTPUT_DIR = "./RESULTS/"
 MODE      = util.cfg("MODE", "oos")     # "oos" or "insample"
 
 ROLLING   = util.cfg("ROLLING", True)   # (oos) rolling vs expanding window
-TRAIN_OBS = 60        # (oos) in-sample window length
+TRAIN_OBS = 120        # (oos) in-sample window length
 TIME_LAG  = 1
 
 # Leave empty to use ALL predictors, or list column names to use a subset

@@ -1,4 +1,4 @@
-observation_date,CPI_pct1_diff1,CPI_pct1_diff1_lag1,CapacityUtilization_diff3_lag2,CoreCPI_pct1_diff1_lag1,DXY_pct1,FedFundsRate_diff1,Housing_pct3_lag3,M2MoneySupply_pct1_lag1,Payroll_pct1_lag2,T10Y3M_diff1,TradeSales_pct1_lag2,Unemployment_diff1_lag2,Yield10Y_diff1
+observation_date,CPI_pct1_diff1,CPI_pct1_diff1_lag1,CapacityUtilization_diff3_lag2,CoreCPI_pct1_diff1_lag1,GBP_pct1,RiskFreeRate_diff1,Housing_pct3_lag3,M2MoneySupply_pct1_lag1,Payroll_pct1_lag2,T10Y3M_diff1,TradeSales_pct1_lag2,Unemployment_diff1_lag2,Yield10Y_diff1
 1948-03-01,,,,,,,,,,,,,
 1948-04-01,,,,,,,,,,,0.0,,
 1948-05-01,,,,,,,,,,,0.0,,

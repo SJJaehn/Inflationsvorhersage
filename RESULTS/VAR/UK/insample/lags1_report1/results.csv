@@ -1,7 +1,10 @@
 Key,Value
 Mode,insample
 ReportLag,1
+OptimalLookback,False
 NumLags,1
+AR_Lookback,1
+VARX_Lookback,1
 NumPredictors,11
 AR_R2,0.004465621762704819
 AR_AIC,-3581.0144760648072

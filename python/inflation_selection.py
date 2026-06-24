@@ -21,6 +21,7 @@ CSV format: col 0 = date, col 1 = target, col 2.. = predictors.
 import os
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import TimeSeriesSplit
 
@@ -209,6 +210,32 @@ pd.DataFrame({"Date": dates, "Actual": y, "Forecast": yhat, "Benchmark": yhat_bm
               "NumSelected": num_sel, "SelectedPredictors": sel_names}
              ).to_csv(os.path.join(out_dir, "predictions.csv"), index=False)
 freq.to_csv(os.path.join(out_dir, "selection_freq.csv"), index=False)
+
+# Count chart: how many of the rolling origins each predictor was selected in.
+fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(freq)), 5))
+ax.bar(np.arange(len(freq)), freq["TimesSelected"], color="#3a6ea5")
+ax.set_xticks(np.arange(len(freq)))
+ax.set_xticklabels(freq["Predictor"], rotation=45, ha="right", fontsize=8)
+ax.set_ylabel(f"Ausgewählt (von {n_orig} Origins)", fontsize=12)
+ax.set_title(f"Auswahlhäufigkeit {COUNTRY}", fontsize=13)
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+fig.savefig(os.path.join(out_dir, "chart.png"), dpi=150)
+plt.close(fig)
+print(f"Count chart saved to: {os.path.join(out_dir, 'chart.png')}")
+
+# Same chart as a share (%) of the origins each predictor was selected in.
+fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(freq)), 5))
+ax.bar(np.arange(len(freq)), freq["FracOrigins"] * 100, color="#3a6ea5")
+ax.set_xticks(np.arange(len(freq)))
+ax.set_xticklabels(freq["Predictor"], rotation=45, ha="right", fontsize=8)
+ax.set_ylabel("Ausgewählt (in %)", fontsize=12)
+ax.set_title(f"Auswahlhäufigkeit {COUNTRY} (in %)", fontsize=13)
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+fig.savefig(os.path.join(out_dir, "chart_pct.png"), dpi=150)
+plt.close(fig)
+print(f"Percent chart saved to: {os.path.join(out_dir, 'chart_pct.png')}")
 
 summary = {
     "Metric": METRIC, "WindowType": "rolling" if ROLLING else "expanding",

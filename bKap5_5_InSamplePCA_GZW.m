@@ -66,7 +66,7 @@ figure;
 bar(1:iNumPredictors, vExplVarPerFactor);
 xlabel('Factor');
 ylabel('Explained Variance (%)');
-title('Explained Variance by Factor');
+title(['Erklärte Varianz je Faktor ', sCountry]);
 box off;
 
 % Estimate PCA keeping iNumComp principal components

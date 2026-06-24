@@ -29,14 +29,14 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
+COUNTRY    = util.cfg("COUNTRY", "UK")            # "US" or "UK"
 CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
 
 ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
-TRAIN_OBS        = 120      # (oos) in-sample window length
+TRAIN_OBS        = 60      # (oos) in-sample window length
 TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
 SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
 
@@ -113,30 +113,86 @@ def run_insample():
     return out, "single_insample"
 
 
+# Orange->red colour ramp by significance, plus a colour for the
+# non-significant bars. In-sample uses the |t| of the slope (two-sided normal
+# critical values); OOS uses the Clark-West p-value (one-sided).
+_SIG_COLORS = ["#fdae61", "#f16913", "#b30000"]   # 90% -> 95% -> 99%
+_SIG_LABELS = ["90%", "95%", "99%"]
+_SIG_NS = "#3a6ea5"                                # non-significant (steel blue)
+_T_THRESH = [1.645, 1.960, 2.576]                  # |t| for 90/95/99% (two-sided)
+_P_THRESH = [0.10, 0.05, 0.01]                     # p for 90/95/99%
+
+
+def _sig_index_t(t):
+    """Highest significance level cleared by |t| (-1 = none)."""
+    if t is None or np.isnan(t):
+        return -1
+    idx = -1
+    for i, thr in enumerate(_T_THRESH):
+        if abs(t) >= thr:
+            idx = i
+    return idx
+
+
+def _sig_index_p(p):
+    """Highest significance level cleared by a p-value (-1 = none)."""
+    if p is None or np.isnan(p):
+        return -1
+    idx = -1
+    for i, thr in enumerate(_P_THRESH):
+        if p <= thr:
+            idx = i
+    return idx
+
+
 def plot_r2_bar(out, out_dir):
     """Bar chart of the R2 (in %) per predictor (port of the bKap3_4 diagram).
 
     OOS mode plots the OOS R2 vs the historical-mean benchmark; in-sample mode
-    plots the regression R2. Bars are sorted descending so the strongest
-    predictors are easy to read off. Saved as chart.png in `out_dir`.
+    plots the regression R2. Bars are sorted descending and coloured on an
+    orange->red scale by significance: in-sample by the slope's |t| (90/95/99%),
+    OOS by the Clark-West p-value. Non-significant bars are steel blue. Saved as
+    chart.png in `out_dir`.
     """
     col = "R2_OOS" if MODE == "oos" else "R2"
-    ylabel = "OOS $R^2$ (in %)" if MODE == "oos" else "In-sample $R^2$ (in %)"
+    title = f"{'Out-of-Sample' if MODE == 'oos' else 'In-Sample'} R² {COUNTRY}"
 
-    d = out[["Predictor", col]].copy()
+    # Pick the per-predictor significance measure available for this mode.
+    if MODE == "oos":
+        sig_col, sig_index, legend_title = "CW_p", _sig_index_p, "Signifikanz (CW)"
+    else:
+        sig_col, sig_index, legend_title = "t_Beta", _sig_index_t, "Signifikanz (|t|)"
+
+    keep = ["Predictor", col] + ([sig_col] if sig_col in out.columns else [])
+    d = out[keep].copy()
     d[col] = d[col] * 100
     d = d.sort_values(col, ascending=False).reset_index(drop=True)
 
+    have_sig = sig_col in d.columns
+    if have_sig:
+        colors = [_SIG_COLORS[i] if (i := sig_index(v)) >= 0 else _SIG_NS
+                  for v in d[sig_col]]
+    else:
+        colors = ["#3a6ea5" if v >= 0 else "#d95f5f" for v in d[col]]
+
     fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(d)), 5))
-    colors = ["#2c7fb8" if v >= 0 else "#d95f5f" for v in d[col]]
     ax.bar(np.arange(len(d)), d[col], color=colors)
     ax.axhline(0, color="black", linewidth=0.8)
     ax.set_xticks(np.arange(len(d)))
     ax.set_xticklabels(d["Predictor"], rotation=45, ha="right", fontsize=8)
-    ax.set_ylabel(ylabel, fontsize=12)
+    ax.set_ylabel("R² (in %)", fontsize=12)
+    ax.set_title(title, fontsize=13)
     ax.spines[["top", "right"]].set_visible(False)
-    fig.tight_layout()
 
+    if have_sig:
+        from matplotlib.patches import Patch
+        handles = [Patch(facecolor=c, label=lbl)
+                   for c, lbl in zip(_SIG_COLORS, _SIG_LABELS)]
+        handles.append(Patch(facecolor=_SIG_NS, label="n.s."))
+        ax.legend(handles=handles, title=legend_title,
+                  fontsize=8, title_fontsize=8, frameon=False)
+
+    fig.tight_layout()
     path = os.path.join(out_dir, "chart.png")
     fig.savefig(path, dpi=150)
     plt.close(fig)
