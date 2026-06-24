@@ -29,14 +29,14 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-COUNTRY    = util.cfg("COUNTRY", "UK")            # "US" or "UK"
+COUNTRY    = util.cfg("COUNTRY", "US")            # "US" or "UK"
 CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
-MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
+MODE             = util.cfg("MODE", "insample")        # "oos" or "insample"
 
 ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
-TRAIN_OBS        = 60      # (oos) in-sample window length
+TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))  # (oos) in-sample window length
 TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
 SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
 

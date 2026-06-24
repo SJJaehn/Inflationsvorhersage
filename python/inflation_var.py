@@ -44,12 +44,12 @@ OUTPUT_DIR = "./RESULTS/"
 
 MODE       = util.cfg("MODE", "oos")     # "insample" or "oos"
 
-REPORT_LAG = 1         # reporting lag r for the AR (target) terms ONLY
-NUM_LAGS   = 11         # number of AR lags p
+REPORT_LAG   = 1                              # reporting lag r for the AR (target) terms ONLY
+NUM_LAGS     = int(util.cfg("NUM_LAGS", 1))  # number of AR lags p
 
 # OOS-only settings
 ROLLING      = util.cfg("ROLLING", True)   # False = expanding, True = rolling
-MIN_INSAMPLE = 120     # minimum in-sample obs before forecasting (rolling: window length)
+MIN_INSAMPLE = int(util.cfg("MIN_INSAMPLE", 120))  # minimum in-sample obs before forecasting (rolling: window length)
 # =========================================================================
 
 
@@ -140,6 +140,15 @@ def run_oos():
     X, names = drop_collinear_with_ar(y, X, names)
     Ylag = ar_lag_matrix(y)
     Xvarx = np.column_stack([Ylag, X])
+
+    # Pre-filter to rows where y and all VARX regressors are complete.
+    # Both AR and VARX are evaluated on the same observations (fair comparison).
+    # Expanding windows work correctly because the filtered series has no gaps.
+    ok = ~np.isnan(y) & ~np.isnan(Xvarx).any(axis=1)
+    dates = dates[ok]
+    y     = y[ok]
+    Ylag  = Ylag[ok]
+    Xvarx = Xvarx[ok]
     n = len(y)
 
     yhat_ar = np.full(n, np.nan)
@@ -150,22 +159,15 @@ def run_oos():
         idx = util.window_index(t, MIN_INSAMPLE, ROLLING)
         i_out = t + 1
         yin = y[idx]
-        # Standardized NaN handling (same rule as inflation_ar / inflation_single):
-        # use a step only if the whole window AND the next-step row are complete,
-        # then OLS on the full window. No complete-row subsetting.
-        if np.isnan(yin).any():
-            continue
         yhat_bm[i_out] = yin.mean()
 
         # --- AR model (target lags only) ---
-        if not (np.isnan(Ylag[idx, :]).any() or np.isnan(Ylag[i_out, :]).any()):
-            res = sm.OLS(yin, sm.add_constant(Ylag[idx, :])).fit()
-            yhat_ar[i_out] = float(res.predict(np.r_[1.0, Ylag[i_out, :]])[0])
+        res = sm.OLS(yin, sm.add_constant(Ylag[idx, :])).fit()
+        yhat_ar[i_out] = float(res.predict(np.r_[1.0, Ylag[i_out, :]])[0])
 
         # --- VARX model (AR lags + exogenous predictors) ---
-        if not (np.isnan(Xvarx[idx, :]).any() or np.isnan(Xvarx[i_out, :]).any()):
-            res = sm.OLS(yin, sm.add_constant(Xvarx[idx, :])).fit()
-            yhat_vx[i_out] = float(res.predict(np.r_[1.0, Xvarx[i_out, :]])[0])
+        res = sm.OLS(yin, sm.add_constant(Xvarx[idx, :])).fit()
+        yhat_vx[i_out] = float(res.predict(np.r_[1.0, Xvarx[i_out, :]])[0])
 
     window = "rolling" if ROLLING else "expanding"
     print(f"\nOne-step-ahead OOS inflation forecast")

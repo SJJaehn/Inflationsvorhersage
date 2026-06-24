@@ -1,13 +1,13 @@
 Predictor,OOS R2,CW (p),OOS R2 CT,CW (p) CT
-CPI_pct1_diff1_lag1,4.01,0.01,3.17,0.23
-CapacityUtilization_diff1_lag1,0.25,11.94,0.65,8.12
-CoreCPI_pct1_diff1_lag1,-0.95,NaN,0.51,6.19
-DXY_Datastream_pct1,-0.64,NaN,0.32,8.45
-FedFundsRate_diff1,-2.68,NaN,-1.34,NaN
-Housing_pct1_lag1,-1.95,NaN,-0.69,NaN
-M2MoneySupply_pct1_lag1,0.15,6.15,0.46,6.98
-Payroll_pct1_lag1,-62.92,NaN,-61.69,NaN
-T10Y3M_diff1,-0.14,NaN,0.24,22.83
-TradeSales_pct1_lag2,-1.64,NaN,-0.91,NaN
-Unemployment_diff1_lag1,-4.35,NaN,-3.69,NaN
-Yield10Y_diff1,-1.15,NaN,-0.19,NaN
+CPI_pct1_diff1_lag1,0.45,1.21,0.54,1.21
+CapacityUtilization_diff1_lag1,-2.65,NaN,-0.79,NaN
+CoreCPI_pct1_diff1_lag1,-1.87,NaN,-0.84,NaN
+DXY_Datastream_pct1,-0.68,NaN,-0.64,NaN
+FedFundsRate_diff1,-1.15,NaN,-0.35,NaN
+Housing_pct1_lag1,-1.46,NaN,-0.74,NaN
+M2MoneySupply_pct1_lag1,-1.81,NaN,-1.00,NaN
+Payroll_pct1_lag1,-26.38,NaN,-25.87,NaN
+T10Y3M_diff1,-1.00,NaN,-0.18,NaN
+TradeSales_pct1_lag2,-0.45,NaN,-0.16,NaN
+Unemployment_diff1_lag1,-21.29,NaN,-20.91,NaN
+Yield10Y_diff1,-0.50,NaN,-0.61,NaN

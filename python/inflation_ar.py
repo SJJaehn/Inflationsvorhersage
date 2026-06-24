@@ -30,9 +30,9 @@ CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING          = util.cfg("ROLLING", True)
-TRAIN_OBS        = 120
+TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))
 REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
-LOOKBACK         = 11          # p: AR lags, used when OPTIMAL_LOOKBACK is False
+LOOKBACK         = int(util.cfg("LOOKBACK", 1))   # p: AR lags, used when OPTIMAL_LOOKBACK is False
 OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
 # =========================================================================
@@ -51,12 +51,19 @@ def fit_predict(yin, Xin, xout):
 
 def main():
     dates, y, _, _ = util.load_data(CSV_PATH)
-    n = len(y)
-    print(f"Loaded {n} observations from {CSV_PATH}")
     print(f"Reporting lag r = {REPORT_LAG} -> first usable lag is y[t-{REPORT_LAG + 1}]")
 
     p_max = max(LOOKBACK_GRID) if OPTIMAL_LOOKBACK else LOOKBACK
     reg = lag_matrix(y, [REPORT_LAG + k for k in range(1, p_max + 1)])
+
+    # Pre-filter to rows where y and all lags are complete.
+    # Expanding windows work correctly because the filtered series has no gaps.
+    ok = ~np.isnan(y) & ~np.isnan(reg).any(axis=1)
+    dates = dates[ok]
+    y     = y[ok]
+    reg   = reg[ok]
+    n = len(y)
+    print(f"Loaded {n} complete observations (filtered from {ok.size})")
 
     yhat = np.full(n, np.nan)
     yhat_bm = np.full(n, np.nan)
@@ -66,16 +73,13 @@ def main():
         idx = util.window_index(t, TRAIN_OBS, ROLLING)
         i_out = t + 1
         yin = y[idx]
-        if np.isnan(yin).any():
-            continue
+        yhat_bm[i_out] = yin.mean()
 
         if OPTIMAL_LOOKBACK:
             best_aic, best_p, best_res, best_xout = np.inf, None, None, None
             for p in LOOKBACK_GRID:
                 Xin = reg[idx, :p]
                 xout = reg[i_out, :p]
-                if np.isnan(Xin).any() or np.isnan(xout).any():
-                    continue
                 res = sm.OLS(yin, sm.add_constant(Xin)).fit()
                 if res.aic < best_aic:
                     best_aic, best_p, best_res, best_xout = res.aic, p, res, xout
@@ -86,12 +90,9 @@ def main():
             p_use = LOOKBACK
             Xin = reg[idx, :p_use]
             xout = reg[i_out, :p_use]
-            if np.isnan(Xin).any() or np.isnan(xout).any():
-                continue
             res = sm.OLS(yin, sm.add_constant(Xin)).fit()
 
         yhat[i_out] = float(res.predict(np.r_[1.0, xout])[0])
-        yhat_bm[i_out] = yin.mean()
         lag_used[i_out] = p_use
 
     oos = util.evaluate_oos(y, yhat_bm, yhat)

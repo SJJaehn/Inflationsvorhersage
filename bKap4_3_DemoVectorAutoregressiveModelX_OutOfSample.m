@@ -64,12 +64,18 @@ if ~isempty(cDropped)
         numel(cDropped), strjoin(cDropped, ', '));
 end
 
+% Pre-filter: keep only rows where y, all AR lags, and all exogenous
+% predictors are complete. Matches the bKap3_2 / bKap3_4 approach.
+% AR and VARX are then evaluated on the same observations (fair comparison).
+mZall    = [mYlag, mX];
+lIsNaN   = isnan(vY) | any(isnan(mZall), 2);
+vY(lIsNaN)       = [];
+mYlag(lIsNaN,:)  = [];
+mX(lIsNaN,:)     = [];
+dtDates(lIsNaN)  = [];
+
 iNumObs  = numel(vY);
 iNumPred = size(mX,2);
-
-% A VARX fit needs enough complete (target + all predictors) rows to be
-% well-determined; require a comfortable multiple of the parameter count.
-iMinCompleteX = 3 * (iNumLags + iNumPred + 1);
 
 %% Out-of-sample analysis
 vYhatAR   = NaN(iNumObs,1);    % AR forecast
@@ -85,40 +91,21 @@ for iIdxT = iNumIn : iNumObs-1
     end
     iIdxOut = iIdxT + 1;
 
-    vYin = vY(vIdxIn);
-
-    % Benchmark: historical mean of the available target values
-    if sum(~isnan(vYin)) < iNumLags + iReportLag + 2
-        continue
-    end
-    vYhatBM(iIdxOut) = mean(vYin, 'omitnan');
-
-    % AR lag regressors taken from the FULL series (mYlag, computed above) and
-    % passed as EXOGENOUS regressors with iNumLags = 0. Using the full series
-    % means the first r+p rows of each window keep their valid lags instead of
-    % being discarded by fEstVAR's within-window lagging, so the whole window
-    % length is used. With iNumLags = 0 fPredictVAR no longer reads the in-sample
-    % tail, so a forecast is made whenever the next-step regressor row exists.
+    vYin     = vY(vIdxIn);
     mYlagIn  = mYlag(vIdxIn, :);
     vYlagOut = mYlag(iIdxOut, :);
 
+    vYhatBM(iIdxOut) = mean(vYin);
+
     % --- AR model (target lags only) -----------------------------------
-    if ~any(isnan(vYlagOut))
-        rAR     = fEstVAR(vYin, mYlagIn, 'iNumLags', 0, 'lEstAlpha', true);
-        mYhatAR = fPredictVAR(rAR, 1, vYlagOut);
-        vYhatAR(iIdxOut) = mYhatAR(1);
-    end
+    rAR     = fEstVAR(vYin, mYlagIn, 'iNumLags', 0, 'lEstAlpha', true);
+    vYhatAR(iIdxOut) = fPredictVAR(rAR, 1, vYlagOut);
 
     % --- VARX model (AR lags + exogenous predictors) -------------------
-    mZin    = [mYlagIn,  mX(vIdxIn, :)];
-    vZout   = [vYlagOut, mX(iIdxOut, :)];
-    lComplZ = ~isnan(vYin) & ~any(isnan(mZin), 2);
-    % Need a complete next-step regressor row and enough complete in-sample rows.
-    if ~any(isnan(vZout)) && sum(lComplZ) >= iMinCompleteX
-        rVARX     = fEstVAR(vYin, mZin, 'iNumLags', 0, 'lEstAlpha', true);
-        mYhatVARX = fPredictVAR(rVARX, 1, vZout);
-        vYhatVARX(iIdxOut) = mYhatVARX(1);
-    end
+    mZin  = [mYlagIn, mX(vIdxIn, :)];
+    vZout = [vYlagOut, mX(iIdxOut, :)];
+    rVARX = fEstVAR(vYin, mZin, 'iNumLags', 0, 'lEstAlpha', true);
+    vYhatVARX(iIdxOut) = fPredictVAR(rVARX, 1, vZout);
 end
 
 %% Performance evaluation

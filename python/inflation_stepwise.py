@@ -26,7 +26,7 @@ CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING   = util.cfg("ROLLING", True)
-TRAIN_OBS = 240
+TRAIN_OBS = int(util.cfg("TRAIN_OBS", 240))
 TIME_LAG  = 1
 
 # 'R2OOS' (higher better) | 'RMSE','MAE' (lower better) | 'Cor','HitRate' (higher)

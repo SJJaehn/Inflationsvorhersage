@@ -5,13 +5,13 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sDataPath = './DATA/Liedtke/US/';
+sDataPath = './DATA/Liedtke/UK/';
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
 
 %% Settings
-iNumIn = 240;                       % Number of in-sample periods (20 years)
-iNumOut = 1;                        % Number of forecasting periods
+iNumIn = 120;                       % Number of in-sample periods (20 years)
+iNumOut = 11;                        % Number of forecasting periods
 lRoll = true;                      % Rolling time window
 
 %% Load data

@@ -8,7 +8,7 @@ clear; clc; close all;
 
 % Set paths
 sOldPath = path;
-sCountry = fCfg('COUNTRY', 'US');
+sCountry = fCfg('COUNTRY', 'UK');
 sDataPath = ['./DATA/Liedtke/', sCountry, '/'];
 sResultsPath = './RESULTS/GWZ/';
 addpath('./Utils/');
@@ -34,7 +34,7 @@ cXnamesM = cAllNames(3:end)';       % predictor names as an Nx1 cell
 %% Data preprocessing
 % Predictive lag (periods). The predictors are already reporting-lag aligned
 % in Python; this is the additional one-period predictive lag.
-iTimeLag = 1;
+iTimeLag = 11;
 
 % Determine dimensions
 [iNumObs, iNumAssets]       = size(vY);
@@ -44,7 +44,7 @@ iTimeLag = 1;
 mXlag       = [NaN(iTimeLag, iNumPredictors); mX(1:end-iTimeLag,:)];
 
 %% Settings
-iNumIn = 360;                       % Number of in-sample periods (10 years)
+iNumIn = 120;                       % Number of in-sample periods (10 years)
 iNumOut = 1;                        % Number of forecasting periods 
 lRoll = fCfg('ROLLING', true);     % Rolling time window
 
