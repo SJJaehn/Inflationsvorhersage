@@ -25,14 +25,14 @@ import util
 # =========================================================================
 #  CONFIG
 # =========================================================================
-COUNTRY    = util.cfg("COUNTRY", "UK")            # "US" or "UK"
+COUNTRY    = util.cfg("COUNTRY", "UK-Adj")            # "US" or "UK"
 CSV_PATH   = f"./DATA/Liedtke/{COUNTRY}/aggregated.csv"
 OUTPUT_DIR = "./RESULTS/"
 
 ROLLING          = util.cfg("ROLLING", True)
 TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))
 REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
-LOOKBACK         = int(util.cfg("LOOKBACK", 1))   # p: AR lags, used when OPTIMAL_LOOKBACK is False
+LOOKBACK         = int(util.cfg("LOOKBACK", 12))   # p: AR lags, used when OPTIMAL_LOOKBACK is False
 OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
 # =========================================================================

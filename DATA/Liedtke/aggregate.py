@@ -73,7 +73,7 @@ OUTPUT_NAME = "aggregated.csv"   # written into each country subfolder
 # ── Country selector ──────────────────────────────────────────────────────────
 # Set to "US" or "UK" to choose which country subfolder to aggregate.
 # variables.csv is read from that subfolder (e.g. US/variables.csv).
-COUNTRY = "US-Adj"
+COUNTRY = "UK-Adj"
 
 # Row frequency of the output. "monthly" keeps every month; "quarterly" keeps
 # only the quarter-end months (Mar/Jun/Sep/Dec); "yearly" keeps only the

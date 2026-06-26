@@ -1,0 +1,13 @@
+Predictor,TimesSelected,FracOrigins
+CapacityUtilization_diff3_lag2,111,0.888
+M2MoneySupply_pct1_lag1,74,0.592
+T10Y3M_diff1,73,0.584
+CPI_adj_pct1_diff1_lag1,49,0.392
+TradeSales_pct1_lag2,45,0.36
+CoreCPI_adj_pct1_diff1_lag1,27,0.216
+Payroll_pct1_lag2,21,0.168
+Yield10Y_diff1,21,0.168
+GBP_pct1,17,0.136
+RiskFree_diff1,17,0.136
+Unemployment_diff1_lag2,15,0.12
+Housing_pct3_lag3,9,0.072
