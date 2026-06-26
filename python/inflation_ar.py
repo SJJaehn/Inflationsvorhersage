@@ -19,6 +19,7 @@ import os
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 import util
 
@@ -35,6 +36,7 @@ REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
 LOOKBACK         = int(util.cfg("LOOKBACK", 12))   # p: AR lags, used when OPTIMAL_LOOKBACK is False
 OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
+PLOT_LAG_GRID    = True        # produce a chart comparing R² and RMSE% across all lags
 # =========================================================================
 
 
@@ -49,11 +51,63 @@ def fit_predict(yin, Xin, xout):
     return res, float(res.predict(np.r_[1.0, xout])[0])
 
 
+def _run_ar_for_lag(p, y, reg, train_obs, rolling):
+    """Run the AR OOS loop for a fixed lookback p. Returns (yhat, yhat_bm)."""
+    n = len(y)
+    yhat = np.full(n, np.nan)
+    yhat_bm = np.full(n, np.nan)
+    for t in range(train_obs - 1, n - 1):
+        idx = util.window_index(t, train_obs, rolling)
+        i_out = t + 1
+        yin = y[idx]
+        yhat_bm[i_out] = yin.mean()
+        Xin = reg[idx, :p]
+        xout = reg[i_out, :p]
+        res = sm.OLS(yin, sm.add_constant(Xin)).fit()
+        yhat[i_out] = float(res.predict(np.r_[1.0, xout])[0])
+    return yhat, yhat_bm
+
+
+def plot_lag_grid(y, reg, out_dir):
+    """Run the AR model for each p in LOOKBACK_GRID, collect R² and RMSE%,
+    and save a two-panel chart (R² by lag, RMSE% by lag)."""
+    lags, r2s, rmses = [], [], []
+    for p in LOOKBACK_GRID:
+        print(f"  Lag grid: p={p}...", end=" ", flush=True)
+        yhat, yhat_bm = _run_ar_for_lag(p, y, reg, TRAIN_OBS, ROLLING)
+        oos = util.evaluate_oos(y, yhat_bm, yhat)
+        fq = util.forecast_quality(y, yhat)
+        lags.append(p)
+        r2s.append(oos["R2OOS"] * 100)
+        rmses.append(fq["RMSE"] * 100)
+        print(f"R²={oos['R2OOS']*100:.2f}%  RMSE={fq['RMSE']*100:.3f}%")
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6), sharex=True)
+    colors = ["#b30000" if v > 0 else "#3a6ea5" for v in r2s]
+    ax1.bar(lags, r2s, color=colors)
+    ax1.axhline(0, color="black", linewidth=0.8)
+    ax1.set_ylabel("OOS R² (in %)", fontsize=11)
+    ax1.set_title(f"AR-Modell nach Lag  —  {COUNTRY}", fontsize=12)
+    ax1.spines[["top", "right"]].set_visible(False)
+
+    ax2.bar(lags, rmses, color="#3a6ea5")
+    ax2.set_ylabel("RMSE (in %)", fontsize=11)
+    ax2.set_xlabel("AR-Lags (p)", fontsize=11)
+    ax2.spines[["top", "right"]].set_visible(False)
+    ax2.set_xticks(lags)
+
+    fig.tight_layout()
+    path = os.path.join(out_dir, "lag_grid_chart.png")
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    print(f"Lag-grid chart saved to: {path}")
+
+
 def main():
     dates, y, _, _ = util.load_data(CSV_PATH)
     print(f"Reporting lag r = {REPORT_LAG} -> first usable lag is y[t-{REPORT_LAG + 1}]")
 
-    p_max = max(LOOKBACK_GRID) if OPTIMAL_LOOKBACK else LOOKBACK
+    p_max = max(LOOKBACK_GRID) if (OPTIMAL_LOOKBACK or PLOT_LAG_GRID) else LOOKBACK
     reg = lag_matrix(y, [REPORT_LAG + k for k in range(1, p_max + 1)])
 
     # Pre-filter to rows where y and all lags are complete.
@@ -138,6 +192,13 @@ def main():
 
     print(f"\nSummary saved to:     {sum_path}")
     print(f"Predictions saved to: {pred_path}")
+
+    if PLOT_LAG_GRID:
+        grid_dir = util.result_dir(
+            OUTPUT_DIR, "AR", COUNTRY, "oos",
+            f"train{TRAIN_OBS}_{util.window_tag(ROLLING)}_report{REPORT_LAG}_grid")
+        print("\n--- Lag-grid comparison ---")
+        plot_lag_grid(y, reg, grid_dir)
 
 
 if __name__ == "__main__":

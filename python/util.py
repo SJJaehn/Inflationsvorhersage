@@ -20,6 +20,7 @@ Mincer-Zarnowitz regression) are reported.
 """
 
 import os
+import re
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -86,19 +87,39 @@ def rolling_oos_forecast(y, X, train_obs, rolling):
         idx = window_index(t, train_obs, rolling)
         i_out = t + 1
         yin = y[idx]
-        if np.isnan(yin).any():
-            continue
+
         if k == 0:
-            yhat[i_out] = yin.mean()
-            yhat_bm[i_out] = yin.mean()
+            # benchmark-only: use valid y rows
+            valid_in = ~np.isnan(yin)
+            if valid_in.sum() < 1:
+                continue
+            mu = yin[valid_in].mean()
+            yhat[i_out] = mu
+            yhat_bm[i_out] = mu
             continue
+
         Xin = X[idx, :]
         xout = X[i_out, :]
-        if np.isnan(Xin).any() or np.isnan(xout).any():
+        if np.isnan(xout).any():
             continue
-        model = LinearRegression().fit(Xin, yin)
+
+        if rolling:
+            # Rolling: require a fully clean window (original behaviour).
+            if np.isnan(yin).any() or np.isnan(Xin).any():
+                continue
+            yin_fit, Xin_fit = yin, Xin
+        else:
+            # Expanding: drop NaN rows from the window so early missing data
+            # doesn't block every step (the window always reaches back to row 0).
+            valid_in = ~(np.isnan(yin) | np.isnan(Xin).any(axis=1))
+            if valid_in.sum() < k + 2:
+                continue
+            yin_fit = yin[valid_in]
+            Xin_fit = Xin[valid_in]
+
+        model = LinearRegression().fit(Xin_fit, yin_fit)
         yhat[i_out] = model.predict(xout.reshape(1, -1))[0]
-        yhat_bm[i_out] = yin.mean()
+        yhat_bm[i_out] = yin_fit.mean()
 
     return yhat, yhat_bm
 
@@ -269,6 +290,13 @@ def save_summary(out_dir, prefix, summary_dict):
     pd.DataFrame(list(summary_dict.items()),
                  columns=["Key", "Value"]).to_csv(path, index=False)
     return path, ts
+
+
+def short_name(pred):
+    """Strip transformation suffixes so chart labels show the source base name.
+    E.g. 'CPI_pct1_diff1_lag1' -> 'CPI', 'DXY_Datastream_pct1' -> 'DXY_Datastream'.
+    """
+    return re.sub(r'_(pct|diff|lag)\d+.*$', '', pred)
 
 
 def oos_date_range(dates, valid_mask):

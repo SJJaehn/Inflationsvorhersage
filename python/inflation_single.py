@@ -163,23 +163,35 @@ def plot_r2_bar(out, out_dir):
     else:
         sig_col, sig_index, legend_title = "t_Beta", _sig_index_t, "Signifikanz (|t|)"
 
-    keep = ["Predictor", col] + ([sig_col] if sig_col in out.columns else [])
-    d = out[keep].copy()
+    rmse_col = "RMSE"
+    keep = (["Predictor", col, rmse_col]
+            + ([sig_col] if sig_col in out.columns else []))
+    d = out[[c for c in keep if c in out.columns]].copy()
     d[col] = d[col] * 100
+    if rmse_col in d.columns:
+        d[rmse_col] = d[rmse_col] * 100
     d = d.sort_values(col, ascending=False).reset_index(drop=True)
 
     have_sig = sig_col in d.columns
+    have_rmse = rmse_col in d.columns
     if have_sig:
         colors = [_SIG_COLORS[i] if (i := sig_index(v)) >= 0 else _SIG_NS
                   for v in d[sig_col]]
     else:
         colors = ["#3a6ea5" if v >= 0 else "#d95f5f" for v in d[col]]
 
-    fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(d)), 5))
+    fig, ax = plt.subplots(figsize=(max(10, 0.6 * len(d)), 5))
     ax.bar(np.arange(len(d)), d[col], color=colors)
     ax.axhline(0, color="black", linewidth=0.8)
     ax.set_xticks(np.arange(len(d)))
-    ax.set_xticklabels(d["Predictor"], rotation=45, ha="right", fontsize=8)
+    if have_rmse:
+        tick_labels = [
+            f"{util.short_name(p)}  |  R²: {r2:.1f}%  |  RMSE: {rmse:.2f}%"
+            for p, r2, rmse in zip(d["Predictor"], d[col], d[rmse_col])
+        ]
+    else:
+        tick_labels = [util.short_name(p) for p in d["Predictor"]]
+    ax.set_xticklabels(tick_labels, rotation=45, ha="right", fontsize=7.5)
     ax.set_ylabel("R² (in %)", fontsize=12)
     ax.set_title(title, fontsize=13)
     ax.spines[["top", "right"]].set_visible(False)
