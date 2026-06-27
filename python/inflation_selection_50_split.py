@@ -208,7 +208,9 @@ pd.DataFrame({"Date": dates, "Actual": y, "Forecast": yhat, "Benchmark": yhat_bm
 freq.to_csv(os.path.join(out_dir, "selection_freq.csv"), index=False)
 
 _rmse_pct = fq["RMSE"] * 100
+_r2_pct   = oos["R2OOS"] * 100
 _short_labels = [util.short_name(p) for p in freq["Predictor"]]
+_metrics_str = f"R²: {_r2_pct:.2f}%  |  RMSE: {_rmse_pct:.2f}%"
 
 # Count chart: how many of the rolling origins each predictor was selected in.
 fig, ax = plt.subplots(figsize=(max(8, 0.35 * len(freq)), 5))
@@ -216,7 +218,7 @@ ax.bar(np.arange(len(freq)), freq["TimesSelected"], color="#3a6ea5")
 ax.set_xticks(np.arange(len(freq)))
 ax.set_xticklabels(_short_labels, rotation=45, ha="right", fontsize=8)
 ax.set_ylabel(f"Ausgewählt (von {n_orig} Origins)", fontsize=12)
-ax.set_title(f"Auswahlhäufigkeit {COUNTRY}  |  RMSE: {_rmse_pct:.2f}%", fontsize=13)
+ax.set_title(f"Auswahlhäufigkeit {COUNTRY}  |  {_metrics_str}", fontsize=13)
 ax.spines[["top", "right"]].set_visible(False)
 fig.tight_layout()
 fig.savefig(os.path.join(out_dir, "chart.png"), dpi=150)
@@ -229,7 +231,7 @@ ax.bar(np.arange(len(freq)), freq["FracOrigins"] * 100, color="#3a6ea5")
 ax.set_xticks(np.arange(len(freq)))
 ax.set_xticklabels(_short_labels, rotation=45, ha="right", fontsize=8)
 ax.set_ylabel("Ausgewählt (in %)", fontsize=12)
-ax.set_title(f"Auswahlhäufigkeit {COUNTRY} (in %)  |  RMSE: {_rmse_pct:.2f}%", fontsize=13)
+ax.set_title(f"Auswahlhäufigkeit {COUNTRY} (in %)  |  {_metrics_str}", fontsize=13)
 ax.spines[["top", "right"]].set_visible(False)
 fig.tight_layout()
 fig.savefig(os.path.join(out_dir, "chart_pct.png"), dpi=150)

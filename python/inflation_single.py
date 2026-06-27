@@ -37,7 +37,7 @@ MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
 
 ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
 TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))  # (oos) in-sample window length
-TIME_LAG         = 1       # predictor lag (1 = standard predictive regression)
+TIME_LAG         = int(util.cfg("TIME_LAG", 1))  # predictor lag (1 = standard predictive regression)
 SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
 
 PLOT_R2          = True     # bar chart of R2 per predictor (port of bKap3_4)
@@ -180,21 +180,31 @@ def plot_r2_bar(out, out_dir):
     else:
         colors = ["#3a6ea5" if v >= 0 else "#d95f5f" for v in d[col]]
 
-    fig, ax = plt.subplots(figsize=(max(10, 0.6 * len(d)), 5))
-    ax.bar(np.arange(len(d)), d[col], color=colors)
+    n = len(d)
+    short_labels = [util.short_name(p) for p in d["Predictor"]]
+    # Extra height scales with the longest label (rotated 90° → depth in inches).
+    max_name_chars = max(len(s) for s in short_labels)
+    label_depth_in = max_name_chars * 7.5 * 0.55 / 72   # approx inches
+    fig_h = 5.5 + label_depth_in
+    fig_w = max(10, 0.6 * n)
+    fig = plt.figure(figsize=(fig_w, fig_h))
+
+    tbl_h_frac  = 0.28                          # table fraction of figure height
+    tbl_bot     = 0.02
+    tbl_top     = tbl_bot + tbl_h_frac
+    label_frac  = label_depth_in / fig_h        # space for tick labels
+    ax_bot      = tbl_top + label_frac + 0.03   # chart bottom, with buffer
+
+    # --- top axes: bar chart ---
+    ax = fig.add_axes([0.07, ax_bot, 0.91, 0.96 - ax_bot])
+    ax.bar(np.arange(n), d[col], color=colors)
     ax.axhline(0, color="black", linewidth=0.8)
-    ax.set_xticks(np.arange(len(d)))
-    if have_rmse:
-        tick_labels = [
-            f"{util.short_name(p)}  |  R²: {r2:.1f}%  |  RMSE: {rmse:.2f}%"
-            for p, r2, rmse in zip(d["Predictor"], d[col], d[rmse_col])
-        ]
-    else:
-        tick_labels = [util.short_name(p) for p in d["Predictor"]]
-    ax.set_xticklabels(tick_labels, rotation=45, ha="right", fontsize=7.5)
+    ax.set_xticks(np.arange(n))
+    ax.set_xticklabels(short_labels, rotation=90, ha="center", fontsize=7.5)
     ax.set_ylabel("R² (in %)", fontsize=12)
     ax.set_title(title, fontsize=13)
     ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlim(-0.5, n - 0.5)
 
     if have_sig:
         from matplotlib.patches import Patch
@@ -204,7 +214,24 @@ def plot_r2_bar(out, out_dir):
         ax.legend(handles=handles, title=legend_title,
                   fontsize=8, title_fontsize=8, frameon=False)
 
-    fig.tight_layout()
+    # --- bottom axes: R² / RMSE table ---
+    if have_rmse:
+        ax_tbl = fig.add_axes([0.07, 0.02, 0.91, 0.30])
+        ax_tbl.axis("off")
+        tbl = ax_tbl.table(
+            cellText=[
+                [f"{v:.1f}%" for v in d[col]],
+                [f"{v:.2f}%" for v in d[rmse_col]],
+            ],
+            rowLabels=["R² (%)", "RMSE (%)"],
+            loc="center",
+            cellLoc="center",
+        )
+        tbl.auto_set_font_size(False)
+        tbl.set_fontsize(7.5)
+        for (_, __), cell in tbl.get_celld().items():
+            cell.set_height(0.40)
+
     path = os.path.join(out_dir, "chart.png")
     fig.savefig(path, dpi=150)
     plt.close(fig)
