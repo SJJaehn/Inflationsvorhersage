@@ -38,7 +38,7 @@ MODE             = util.cfg("MODE", "oos")        # "oos" or "insample"
 ROLLING          = util.cfg("ROLLING", True)      # (oos) rolling vs expanding window
 TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))  # (oos) in-sample window length
 TIME_LAG         = int(util.cfg("TIME_LAG", 1))  # predictor lag (1 = standard predictive regression)
-SHARED_TIMEFRAME = False    # evaluate every predictor on the SAME complete sample
+SHARED_TIMEFRAME = util.cfg("SHARED_TIMEFRAME", False)  # evaluate every predictor on the SAME complete sample
 
 PLOT_R2          = True     # bar chart of R2 per predictor (port of bKap3_4)
 # =========================================================================
@@ -170,7 +170,12 @@ def plot_r2_bar(out, out_dir):
     d[col] = d[col] * 100
     if rmse_col in d.columns:
         d[rmse_col] = d[rmse_col] * 100
-    d = d.sort_values(col, ascending=False).reset_index(drop=True)
+    # Sort descending but keep Kitchen-Sink pinned at the last position.
+    ks_mask = d["Predictor"] == "Kitchen-Sink (all)"
+    d = pd.concat([
+        d[~ks_mask].sort_values(col, ascending=False),
+        d[ks_mask],
+    ]).reset_index(drop=True)
 
     have_sig = sig_col in d.columns
     have_rmse = rmse_col in d.columns
@@ -220,8 +225,8 @@ def plot_r2_bar(out, out_dir):
         ax_tbl.axis("off")
         tbl = ax_tbl.table(
             cellText=[
-                [f"{v:.1f}%" for v in d[col]],
-                [f"{v:.2f}%" for v in d[rmse_col]],
+                [f"{v:.1f}" for v in d[col]],
+                [f"{v:.2f}" for v in d[rmse_col]],
             ],
             rowLabels=["R² (%)", "RMSE (%)"],
             loc="center",
@@ -256,7 +261,25 @@ def main():
     print(f"\nResults saved to: {path}")
 
     if PLOT_R2:
-        plot_r2_bar(out, out_dir)
+        full_path = os.path.join(OUTPUT_DIR, "full", COUNTRY, mode_dir,
+                                 options, "results.csv")
+        out_plot = out.copy()
+        if os.path.exists(full_path):
+            fd = pd.read_csv(full_path, index_col=0)["Value"].to_dict()
+            r2_key  = "R2_OOS" if MODE == "oos" else "R2"
+            full_row = {"Predictor": "Kitchen-Sink (all)"}
+            try:
+                full_row[r2_key] = float(fd[r2_key])
+                full_row["RMSE"]  = float(fd["RMSE"])
+                if MODE == "oos":
+                    full_row["CW_p"]  = float(fd["CW_p"]) if fd.get("CW_p") not in (None, "", "nan") else float("nan")
+                else:
+                    full_row["t_Beta"] = float("nan")
+            except (KeyError, ValueError):
+                pass
+            out_plot = pd.concat([out_plot, pd.DataFrame([full_row])],
+                                 ignore_index=True)
+        plot_r2_bar(out_plot, out_dir)
 
 
 if __name__ == "__main__":

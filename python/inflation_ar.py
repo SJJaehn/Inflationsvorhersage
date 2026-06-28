@@ -32,7 +32,8 @@ OUTPUT_DIR = "./RESULTS/"
 
 ROLLING          = util.cfg("ROLLING", True)
 TRAIN_OBS        = int(util.cfg("TRAIN_OBS", 120))
-REPORT_LAG       = 1          # r: first usable lag is y[t-(r+1)]
+REPORT_LAG       = 1
+TIME_LAG         = 1
 LOOKBACK         = int(util.cfg("LOOKBACK", 12))   # p: AR lags, used when OPTIMAL_LOOKBACK is False
 OPTIMAL_LOOKBACK = False       # select p by AIC each window
 LOOKBACK_GRID    = range(1, 13)
@@ -105,10 +106,10 @@ def plot_lag_grid(y, reg, out_dir):
 
 def main():
     dates, y, _, _ = util.load_data(CSV_PATH)
-    print(f"Reporting lag r = {REPORT_LAG} -> first usable lag is y[t-{REPORT_LAG + 1}]")
+    print(f"Reporting lag r = {REPORT_LAG} -> first usable lag is y[t-{REPORT_LAG + TIME_LAG}]")
 
     p_max = max(LOOKBACK_GRID) if (OPTIMAL_LOOKBACK or PLOT_LAG_GRID) else LOOKBACK
-    reg = lag_matrix(y, [REPORT_LAG + k for k in range(1, p_max + 1)])
+    reg = lag_matrix(y, [REPORT_LAG + k for k in range(TIME_LAG, TIME_LAG + p_max)])
 
     # Pre-filter to rows where y and all lags are complete.
     # Expanding windows work correctly because the filtered series has no gaps.

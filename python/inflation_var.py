@@ -44,8 +44,9 @@ OUTPUT_DIR = "./RESULTS/"
 
 MODE       = util.cfg("MODE", "oos")     # "insample" or "oos"
 
-REPORT_LAG   = 1                              # reporting lag r for the AR (target) terms ONLY
-NUM_LAGS     = int(util.cfg("NUM_LAGS", 1))  # number of AR lags p
+REPORT_LAG   = 1
+TIME_LAG     = 1
+NUM_LAGS     = int(util.cfg("NUM_LAGS", 1))
 
 # OOS-only settings
 ROLLING      = util.cfg("ROLLING", True)   # False = expanding, True = rolling
@@ -54,8 +55,7 @@ MIN_INSAMPLE = int(util.cfg("MIN_INSAMPLE", 120))  # minimum in-sample obs befor
 
 
 def ar_lag_matrix(y):
-    """Columns y[t-(r+1)] .. y[t-(r+p)] (reporting lag on the target only)."""
-    lags = [REPORT_LAG + k for k in range(1, NUM_LAGS + 1)]
+    lags = [REPORT_LAG + k for k in range(TIME_LAG, TIME_LAG + NUM_LAGS)]
     return np.column_stack([util.apply_lag(y, L) for L in lags])
 
 

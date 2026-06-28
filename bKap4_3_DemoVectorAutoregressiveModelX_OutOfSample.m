@@ -44,7 +44,7 @@ mX       = [NaN(iTimeLag, size(mX,2)); mX(1:end-iTimeLag,:)];
 % (near-)perfect correlation, independent of naming, so correlated-but-distinct
 % transforms (e.g. yearly inflation) are kept.
 cXnames  = tData.Properties.VariableNames(3:end);
-mYlag    = lagmatrix(vY, (iReportLag+1):(iReportLag+iNumLags));
+mYlag    = lagmatrix(vY, (iReportLag+iTimeLag):(iReportLag+iTimeLag+iNumLags-1));
 lExcl    = false(1, size(mX,2));
 for jX = 1:size(mX,2)
     for kL = 1:size(mYlag,2)
